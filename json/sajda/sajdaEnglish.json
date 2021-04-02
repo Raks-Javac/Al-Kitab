@@ -1,0 +1,361 @@
+{
+    "code": 200,
+    "status": "OK",
+        "ayahs": [
+            {
+                "number": 1160,
+                "text": "Behold, those who are near unto thy Sustainer are never too proud to worship Him; and they extol His limitless glory, and prostrate themselves before Him [alone].",
+                "surah": {
+                    "number": 7,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0623\u064e\u0639\u06e1\u0631\u064e\u0627\u0641\u0650",
+                    "englishName": "Al-A'raaf",
+                    "englishNameTranslation": "The Heights",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 206
+                },
+                "numberInSurah": 206,
+                "juz": 9,
+                "manzil": 2,
+                "page": 176,
+                "ruku": 145,
+                "hizbQuarter": 70,
+                "sajda": {
+                    "id": 1,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 1722,
+                "text": "And before God prostrate themselves, willingly or unwillingly, all [things and beings] that are in the heavens and on earth, as do their shadows in the mornings and the evenings.",
+                "surah": {
+                    "number": 13,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0631\u0651\u064e\u0639\u06e1\u062f\u0650",
+                    "englishName": "Ar-Ra'd",
+                    "englishNameTranslation": "The Thunder",
+                    "revelationType": "Medinan",
+                    "numberOfAyahs": 43
+                },
+                "numberInSurah": 15,
+                "juz": 13,
+                "manzil": 3,
+                "page": 251,
+                "ruku": 206,
+                "hizbQuarter": 100,
+                "sajda": {
+                    "id": 2,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 1951,
+                "text": "they fear their Sustainer high above them, and do whatever they are bidden to do.",
+                "surah": {
+                    "number": 16,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0646\u0651\u064e\u062d\u06e1\u0644\u0650",
+                    "englishName": "An-Nahl",
+                    "englishNameTranslation": "The Bee",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 128
+                },
+                "numberInSurah": 50,
+                "juz": 14,
+                "manzil": 3,
+                "page": 272,
+                "ruku": 229,
+                "hizbQuarter": 108,
+                "sajda": {
+                    "id": 3,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 2138,
+                "text": "And so they fall down upon their faces, weeping, and [their consciousness of God's grace] increases their humility.",
+                "surah": {
+                    "number": 17,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0625\u0650\u0633\u06e1\u0631\u064e\u0627\u0621\u0650",
+                    "englishName": "Al-Israa",
+                    "englishNameTranslation": "The Night Journey",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 111
+                },
+                "numberInSurah": 109,
+                "juz": 15,
+                "manzil": 4,
+                "page": 293,
+                "ruku": 251,
+                "hizbQuarter": 117,
+                "sajda": {
+                    "id": 4,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 2308,
+                "text": "THESE WERE some of the prophets upon whom God bestowed His blessings - [prophets] of the seed of Adam and of those whom We caused to be borne [in the ark] with Noah, and of the seed of Abraham and Israel and [all of them were] among those whom We had guided and elected; [and] whenever the messages of the Most Gracious were conveyed unto them, they would fall down [before Him], prostrating themselves and weeping.",
+                "surah": {
+                    "number": 19,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0645\u064e\u0631\u06e1\u064a\u064e\u0645\u064e",
+                    "englishName": "Maryam",
+                    "englishNameTranslation": "Mary",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 98
+                },
+                "numberInSurah": 58,
+                "juz": 16,
+                "manzil": 4,
+                "page": 309,
+                "ruku": 267,
+                "hizbQuarter": 123,
+                "sajda": {
+                    "id": 5,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 2613,
+                "text": "ART THOU NOT aware that before God prostrate themselves all [things and beings] that are in the heavens and all that are on earth the sun, and the moon, and the stars, and the mountains, and the trees, and the beasts? And many human beings [submit to God con\u00adsciously], whereas many [others, having defied Him,] will inevitably have to suffer [in the life to come]; and he whom God shall scorn [on Resur\u00adrection Day] will have none who could bestow honour on him: for, verily, God does what He wills.",
+                "surah": {
+                    "number": 22,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u062d\u064e\u062c\u0651\u0650",
+                    "englishName": "Al-Hajj",
+                    "englishNameTranslation": "The Pilgrimage",
+                    "revelationType": "Medinan",
+                    "numberOfAyahs": 78
+                },
+                "numberInSurah": 18,
+                "juz": 17,
+                "manzil": 4,
+                "page": 334,
+                "ruku": 286,
+                "hizbQuarter": 133,
+                "sajda": {
+                    "id": 6,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 2672,
+                "text": "O YOU who have attained to faith! Bow down and prostrate yourselves, and worship your Sustainer [alone], and do good, so that you might attain to a happy state!",
+                "surah": {
+                    "number": 22,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u062d\u064e\u062c\u0651\u0650",
+                    "englishName": "Al-Hajj",
+                    "englishNameTranslation": "The Pilgrimage",
+                    "revelationType": "Medinan",
+                    "numberOfAyahs": 78
+                },
+                "numberInSurah": 77,
+                "juz": 17,
+                "manzil": 4,
+                "page": 341,
+                "ruku": 294,
+                "hizbQuarter": 136,
+                "sajda": {
+                    "id": 7,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 2915,
+                "text": "Yet when they [who are bent on denying the truth! are told, \u201cProstrate yourselves before the Most Gracious.\u201d they are wont to ask, \u201cAnd [who and] what is the Most Gracious? Are we to prostrate ourselves before whatever thou biddest us [to worship]?\u201d - and so [thy call] but increases their aversion,",
+                "surah": {
+                    "number": 25,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0641\u064f\u0631\u06e1\u0642\u064e\u0627\u0646\u0650",
+                    "englishName": "Al-Furqaan",
+                    "englishNameTranslation": "The Criterion",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 77
+                },
+                "numberInSurah": 60,
+                "juz": 19,
+                "manzil": 4,
+                "page": 365,
+                "ruku": 314,
+                "hizbQuarter": 146,
+                "sajda": {
+                    "id": 8,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 3185,
+                "text": "God, save whom there is no deity - the Sustainer, in awesome almightiness enthroned!\u201d",
+                "surah": {
+                    "number": 27,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0646\u0651\u064e\u0645\u06e1\u0644\u0650",
+                    "englishName": "An-Naml",
+                    "englishNameTranslation": "The Ant",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 93
+                },
+                "numberInSurah": 26,
+                "juz": 19,
+                "manzil": 5,
+                "page": 379,
+                "ruku": 328,
+                "hizbQuarter": 151,
+                "sajda": {
+                    "id": 9,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 3518,
+                "text": "ONLY THEY [truly] believe in Our messages who, whenever they are conveyed to them, fall down, prostrating themselves in adoration, and extol their Sustainer\u2019s limitless glory and praise; and who are never filled with false pride;",
+                "surah": {
+                    "number": 32,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0633\u0651\u064e\u062c\u06e1\u062f\u064e\u0629\u0650",
+                    "englishName": "As-Sajda",
+                    "englishNameTranslation": "The Prostration",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 30
+                },
+                "numberInSurah": 15,
+                "juz": 21,
+                "manzil": 5,
+                "page": 416,
+                "ruku": 359,
+                "hizbQuarter": 166,
+                "sajda": {
+                    "id": 10,
+                    "recommended": false,
+                    "obligatory": true
+                }
+            },
+            {
+                "number": 3994,
+                "text": "Said [David]: \u201cHe has certainly wronged thee by demanding that thy ewe be added to his ewes! Thus, behold, do many kinsmen wrong one another [all] save those who believe [in God] and do righteous deeds: but how few are they!\u201d And [suddenly] David understood that We had tried him: and so he asked his Sustainer to forgive him his sin, and fell down in prostration, and turned unto Him in repentance.",
+                "surah": {
+                    "number": 38,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0635\u0653",
+                    "englishName": "Saad",
+                    "englishNameTranslation": "The letter Saad",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 88
+                },
+                "numberInSurah": 24,
+                "juz": 23,
+                "manzil": 6,
+                "page": 454,
+                "ruku": 392,
+                "hizbQuarter": 182,
+                "sajda": {
+                    "id": 11,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 4256,
+                "text": "And though some be too proud [to listen to this call], they who [in their hearts] are with thy Sustainer extol His limitless glory by night and by day, and never grow weary [thereof].",
+                "surah": {
+                    "number": 41,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0641\u064f\u0635\u0651\u0650\u0644\u064e\u062a\u06e1",
+                    "englishName": "Fussilat",
+                    "englishNameTranslation": "Explained in detail",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 54
+                },
+                "numberInSurah": 38,
+                "juz": 24,
+                "manzil": 6,
+                "page": 480,
+                "ruku": 417,
+                "hizbQuarter": 192,
+                "sajda": {
+                    "id": 12,
+                    "recommended": false,
+                    "obligatory": true
+                }
+            },
+            {
+                "number": 4846,
+                "text": "[Nay,] but prostrate yourselves before God, and worship [Him alone]!",
+                "surah": {
+                    "number": 53,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0646\u0651\u064e\u062c\u06e1\u0645\u0650",
+                    "englishName": "An-Najm",
+                    "englishNameTranslation": "The Star",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 62
+                },
+                "numberInSurah": 62,
+                "juz": 27,
+                "manzil": 7,
+                "page": 528,
+                "ruku": 462,
+                "hizbQuarter": 211,
+                "sajda": {
+                    "id": 13,
+                    "recommended": false,
+                    "obligatory": true
+                }
+            },
+            {
+                "number": 5905,
+                "text": "and [that], when the Qur\u2019an is read unto them, they do not fall down in prostration?",
+                "surah": {
+                    "number": 84,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0627\u0646\u0634\u0650\u0642\u064e\u0627\u0642\u0650",
+                    "englishName": "Al-Inshiqaaq",
+                    "englishNameTranslation": "The Splitting Open",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 25
+                },
+                "numberInSurah": 21,
+                "juz": 30,
+                "manzil": 7,
+                "page": 589,
+                "ruku": 526,
+                "hizbQuarter": 236,
+                "sajda": {
+                    "id": 14,
+                    "recommended": true,
+                    "obligatory": false
+                }
+            },
+            {
+                "number": 6125,
+                "text": "Nay, pay thou no heed to him, but prostrate thyself [before God] and draw close [unto Him]!",
+                "surah": {
+                    "number": 96,
+                    "name": "\u0633\u064f\u0648\u0631\u064e\u0629\u064f \u0627\u0644\u0639\u064e\u0644\u064e\u0642\u0650",
+                    "englishName": "Al-Alaq",
+                    "englishNameTranslation": "The Clot",
+                    "revelationType": "Meccan",
+                    "numberOfAyahs": 19
+                },
+                "numberInSurah": 19,
+                "juz": 30,
+                "manzil": 7,
+                "page": 597,
+                "ruku": 538,
+                "hizbQuarter": 239,
+                "sajda": {
+                    "id": 15,
+                    "recommended": false,
+                    "obligatory": true
+                }
+            }
+        ],
+        "edition": {
+            "identifier": "en.asad",
+            "language": "en",
+            "name": "Asad",
+            "englishName": "Muhammad Asad",
+            "format": "text",
+            "type": "translation",
+            "direction": "ltr"
+        }
+    
+}

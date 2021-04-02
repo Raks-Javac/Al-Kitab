@@ -1,0 +1,57 @@
+name: Al_Kitab
+description: An offline quran app.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+  clipboard: ^0.1.2+8
+  scoped_model: ^1.1.0
+  share: ^0.6.5+4
+  shimmer: ^1.1.2
+  flutter_staggered_animations: "^0.1.1"
+  url_launcher: 
+  http: ^0.12.1
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+  - assets/images/
+  - json/
+  - json/surah/
+  - json/sajda/
+
+  fonts:
+    - family: PBold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+    - family: PLight
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+    - family: PRegular
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+    - family: PMedium
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+    - family: RSR
+      fonts:
+        - asset: assets/fonts/RougeScript-Regular.ttf
+        
+        
+  
