@@ -123,30 +123,6 @@ class Juz extends StatelessWidget {
         ));
   }
 
-  // Widget infoInAppBar(BuildContext context) {
-  //   return Center(
-  //     child: Column(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: <Widget>[
-  //         Text("Starting Surah"),
-  //         FutureBuilder(
-  //           future: QuranAPI().getJuzz(juzIndex),
-  //           builder: (context, snapshot) {
-  //             if (snapshot.connectionState == ConnectionState.waiting) {
-  //               return Text('');
-  //             } else {
-  //               return Text("${snapshot.data.juzAyahs[juzIndex].surahName}",
-  //                   style: TextStyle(
-  //                       fontWeight: FontWeight.bold,
-  //                       fontSize: MediaQuery.of(context).size.height * 0.045));
-  //             }
-  //           },
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
   Widget infoInAppBar(BuildContext context) {
     return Center(
       child: Column(
@@ -154,7 +130,7 @@ class Juz extends StatelessWidget {
         children: <Widget>[
           Text(
             "Starting Surah",
-            style: TextStyle(fontFamily: 'PMedium', color: Colors.white),
+            style: TextStyle(color: Colors.white, fontFamily: 'PMedium'),
           ),
           FutureBuilder(
             future: QuranAPI().getJuzz(juzIndex),
@@ -162,16 +138,12 @@ class Juz extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Text('');
               } else {
-                return (snapshot.data.juzAyahs) == null
-                    ? Text("")
-                    : Text(
-                        "${snapshot.data.juzAyahs[juzIndex].surahName}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: MediaQuery.of(context).size.height * 0.045,
-                        ),
-                      );
+                return Text("${snapshot.data.juzAyahs[juzIndex].surahName}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: "PLight",
+                        fontSize: MediaQuery.of(context).size.height * 0.045));
               }
             },
           ),
@@ -179,6 +151,39 @@ class Juz extends StatelessWidget {
       ),
     );
   }
+
+  // Widget infoInAppBar(BuildContext context) {
+  //   return Center(
+  //     child: Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: <Widget>[
+  //         Text(
+  //           "Starting Surah",
+  //           style: TextStyle(fontFamily: 'PMedium', color: Colors.white),
+  //         ),
+  //         FutureBuilder(
+  //           future: QuranAPI().getJuzz(juzIndex),
+  //           builder: (context, snapshot) {
+  //             if (snapshot.connectionState == ConnectionState.waiting) {
+  //               return Text('');
+  //             } else {
+  //               return (snapshot.data.juzAyahs) == null
+  //                   ? Text("")
+  //                   : Text(
+  //                       "${snapshot.data.juzAyahs[juzIndex].surahName}",
+  //                       style: TextStyle(
+  //                         fontWeight: FontWeight.bold,
+  //                         color: Colors.white,
+  //                         fontSize: MediaQuery.of(context).size.height * 0.045,
+  //                       ),
+  //                     );
+  //             }
+  //           },
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   Widget quranImageAppBar(double height, BuildContext context) {
     return Opacity(
