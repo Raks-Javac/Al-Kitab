@@ -1,9 +1,9 @@
 import 'package:Al_Kitab/src/models/sajda/sajda.dart';
 import 'package:Al_Kitab/src/screens/stylesheet/splashScreenStyles.dart';
 import 'package:Al_Kitab/src/screens/stylesheet/surahIndexStyle.dart';
-import 'package:Al_Kitab/src/utils/functions.dart';
-import 'package:Al_Kitab/src/widgets/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/backHome.dart';
+import 'package:Al_Kitab/src/utils/reusables/functions.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 
 class SajdaIndex extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:Al_Kitab/src/models/juz/juz.dart';
-import 'package:Al_Kitab/src/widgets/backHome.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:Al_Kitab/src/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
 

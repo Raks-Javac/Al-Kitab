@@ -5,8 +5,8 @@ import 'package:Al_Kitab/src/screens/juz/juz.dart';
 import 'package:Al_Kitab/src/screens/sajda/sajda.dart';
 import 'package:Al_Kitab/src/screens/shareApp/shareApp.dart';
 import 'package:Al_Kitab/src/screens/stylesheet/AlKitabHomeStyle.dart';
-import 'package:Al_Kitab/src/screens/surah/SurahScreen.dart';
-import 'package:Al_Kitab/src/screens/surah/surahList.dart';
+import 'package:Al_Kitab/src/screens/surah/views/SurahScreen.dart';
+import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
 import 'package:Al_Kitab/src/widgets/drawerTile.dart';
 import 'package:flutter/material.dart';
 

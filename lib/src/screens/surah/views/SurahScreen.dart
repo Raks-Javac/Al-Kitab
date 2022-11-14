@@ -1,5 +1,5 @@
-import 'package:Al_Kitab/src/widgets/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/backHome.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

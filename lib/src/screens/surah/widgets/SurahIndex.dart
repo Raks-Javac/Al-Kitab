@@ -1,10 +1,9 @@
 import 'package:Al_Kitab/src/models/surah/ayah.dart';
 import 'package:Al_Kitab/src/models/surah/surah.dart';
 import 'package:Al_Kitab/src/screens/stylesheet/surahIndexStyle.dart';
-import 'package:Al_Kitab/src/utils/functions.dart';
-import 'package:Al_Kitab/src/widgets/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/backHome.dart';
-
+import 'package:Al_Kitab/src/utils/reusables/functions.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:Al_Kitab/src/widgets/ayahDetail.dart';
 import 'package:flutter/material.dart';
 

@@ -5,7 +5,6 @@ import 'package:Al_Kitab/src/screens/homeScreen/alKitabHome.dart';
 import 'package:Al_Kitab/src/screens/introduction/Introduction.dart';
 import 'package:Al_Kitab/src/screens/stylesheet/splashPreviewstyles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
 class AlKitabIntro extends StatefulWidget {
@@ -153,7 +152,7 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              FlatButton.icon(
+              ElevatedButton.icon(
                   onPressed: () {
                     print("prev");
                     _pageController.previousPage(

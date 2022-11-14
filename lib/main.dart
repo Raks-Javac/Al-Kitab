@@ -1,7 +1,7 @@
 import 'package:Al_Kitab/src/screens/juz/juz.dart';
 import 'package:Al_Kitab/src/screens/sajda/sajda.dart';
 import 'package:Al_Kitab/src/screens/splashScreen/splashScreen.dart';
-import 'package:Al_Kitab/src/screens/surah/surahList.dart';
+import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

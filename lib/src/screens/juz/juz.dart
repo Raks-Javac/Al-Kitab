@@ -1,9 +1,5 @@
 import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
 import 'package:Al_Kitab/src/screens/juz/juzIndex.dart';
-import 'package:Al_Kitab/src/widgets/appBarText.dart';
-
-import 'package:Al_Kitab/src/widgets/backHome.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:shimmer/shimmer.dart';

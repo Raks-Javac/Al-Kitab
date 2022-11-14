@@ -1,5 +1,5 @@
-import 'package:Al_Kitab/src/screens/surah/surahList.dart';
-import 'package:Al_Kitab/src/widgets/backHome.dart';
+import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
+import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatelessWidget {
