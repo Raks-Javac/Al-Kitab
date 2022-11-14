@@ -34,9 +34,10 @@ class JuzAyahs {
 
 class QuranAPI {
   Future<JuzModel> getJuzz(int index) async {
+    Uri urlParsed =
+        Uri.parse("http://api.alquran.cloud/v1/juz/$index/quran-uthmani");
     try {
-      final response = await http
-          .get("http://api.alquran.cloud/v1/juz/$index/quran-uthmani");
+      final response = await http.get(urlParsed);
       if (response.statusCode == 200) {
         return JuzModel.fromJSON(
           json.decode(

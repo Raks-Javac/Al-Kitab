@@ -10,14 +10,14 @@ class Launcher extends Model {
   void _launchInWeb(String url) async {
     final _url = Url(url: url);
     try {
-      if (await canLaunch(_url.url)) {
-        await launch(
-          _url.url,
-        );
-        notifyListeners();
-      } else {
-        throw 'Could not launch ${_url.url}';
-      }
+      // if (await canLaunch(_url.url)) {
+      //   await launch(
+      //     _url.url,
+      //   );
+      //   notifyListeners();
+      // } else {
+      //   throw 'Could not launch ${_url.url}';
+      // }
     } catch (e) {
       print('$e');
     }
