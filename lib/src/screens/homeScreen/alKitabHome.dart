@@ -129,6 +129,7 @@ class AppHomePreview extends StatelessWidget {
         preferredSize: Size(MediaQuery.of(context).size.width, 20),
         child: Container(
           child: Card(
+            
             elevation: 10,
             color: Theme.of(context).primaryColor,
             child: TabBar(
