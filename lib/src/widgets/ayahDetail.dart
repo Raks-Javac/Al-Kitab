@@ -24,6 +24,7 @@ class AyahDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: Theme.of(context).primaryColor,
       elevation: 0,
       automaticallyImplyLeading: false,
       expandedHeight: 300,

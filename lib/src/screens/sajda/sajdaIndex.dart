@@ -18,6 +18,7 @@ class SajdaIndex extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         toolbarHeight: 60,
         leading: BackWidget(),

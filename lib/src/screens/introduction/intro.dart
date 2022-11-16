@@ -143,16 +143,50 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
     ));
   }
 
-  Expanded previousButton() {
-    return Expanded(
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+  Widget previousButton() {
+    // return Expanded(
+    //   child: Align(
+    //     alignment: Alignment.bottomCenter,
+    //     child: Padding(
+    //       padding: const EdgeInsets.all(8.0),
+    //       child: Row(
+    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //         children: [
+    //           RawMaterialButton(
+    //               onPressed: () {
+    //                 print("prev");
+    //                 _pageController.previousPage(
+    //                   duration: Duration(milliseconds: 200),
+    //                   curve: Curves.easeInOut,
+    //                 );
+    //               },
+    //               icon: Icon(
+    //                 Icons.arrow_back_ios,
+    //                 color: Colors.white,
+    //               ),
+    //               label: Text(
+    //                 "Prev",
+    //                 style: prevButtonText,
+    //               )),
+    //           nextButton,
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 38,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ElevatedButton.icon(
+              Expanded(
+                child: RawMaterialButton(
+                  splashColor: Colors.transparent,
                   onPressed: () {
                     print("prev");
                     _pageController.previousPage(
@@ -160,19 +194,33 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
                       curve: Curves.easeInOut,
                     );
                   },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
+                  child: Row(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "Prev",
+                            style: prevButtonText,
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  label: Text(
-                    "Prev",
-                    style: prevButtonText,
-                  )),
+                ),
+              ),
               nextButton,
             ],
           ),
         ),
-      ),
+      ],
     );
   }
 

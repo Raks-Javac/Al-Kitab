@@ -11,6 +11,7 @@ class Guidelines extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         leading: BackWidget(),
         toolbarHeight: 70,

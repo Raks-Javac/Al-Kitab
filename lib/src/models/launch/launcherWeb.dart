@@ -1,5 +1,4 @@
 import 'package:scoped_model/scoped_model.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Url {
   final String url;

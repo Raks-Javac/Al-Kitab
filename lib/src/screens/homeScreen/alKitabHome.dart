@@ -61,6 +61,7 @@ class _AlKitabHomeState extends State<AlKitabHome>
 
   AppBar leadingIcon({VoidCallback onPressed}) {
     return AppBar(
+      backgroundColor: Theme.of(context).primaryColor,
       leading: IconButton(
         icon: ImageIcon(
           AssetImage("assets/images/menubar.png"),
@@ -98,6 +99,7 @@ class AppHomePreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: Theme.of(context).primaryColor,
       pinned: true,
       automaticallyImplyLeading: false,
       expandedHeight: 350,
@@ -129,7 +131,6 @@ class AppHomePreview extends StatelessWidget {
         preferredSize: Size(MediaQuery.of(context).size.width, 20),
         child: Container(
           child: Card(
-            
             elevation: 10,
             color: Theme.of(context).primaryColor,
             child: TabBar(
