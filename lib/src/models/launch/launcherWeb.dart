@@ -1,7 +1,7 @@
 import 'package:scoped_model/scoped_model.dart';
 
 class Url {
-  final String url;
+  final String? url;
   Url({this.url});
 }
 

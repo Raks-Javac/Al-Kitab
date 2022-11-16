@@ -9,7 +9,7 @@ class JuzList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _route({Widget screen}) {
+    _route({Widget? screen}) {
       return Navigator.push(
         context,
         PreviewSlideRoute(

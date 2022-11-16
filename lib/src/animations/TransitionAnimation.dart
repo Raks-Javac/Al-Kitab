@@ -2,12 +2,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 class PreviewSlideRoute extends PageRouteBuilder {
-  Widget preview;
+  Widget? preview;
   int duration;
-  PreviewSlideRoute({@required this.preview,@required this.duration})
+  PreviewSlideRoute({required this.preview,required this.duration})
       : super(
             pageBuilder: (context, animation, secondaryAnimation) {
-              return preview;
+              return preview!;
             },
             transitionDuration: Duration(milliseconds: duration),
             transitionsBuilder:

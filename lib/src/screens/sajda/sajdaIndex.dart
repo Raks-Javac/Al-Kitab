@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 
 class SajdaIndex extends StatelessWidget {
   final _function = new Functions();
-  final int index;
-  final List<Sajda> sajdaEnglish;
-  final List<Sajda> sajdaArabic;
+  final int? index;
+  final List<Sajda>? sajdaEnglish;
+  final List<Sajda>? sajdaArabic;
   SajdaIndex({this.sajdaEnglish, this.index, this.sajdaArabic});
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class SajdaIndex extends StatelessWidget {
         toolbarHeight: 60,
         leading: BackWidget(),
         title: BarText(
-          appBarText: '${sajdaEnglish[index].sajdaTransliterationName}',
+          appBarText: '${sajdaEnglish![index!].sajdaTransliterationName}',
         ),
       ),
       backgroundColor: Theme.of(context).primaryColor,
@@ -41,7 +41,7 @@ class SajdaIndex extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     _function.copy(
-                        '${sajdaArabic[index].sajdaText} \n ${sajdaEnglish[index].sajdaText}',
+                        '${sajdaArabic![index!].sajdaText} \n ${sajdaEnglish![index!].sajdaText}',
                         '',
                         '',
                         context);
@@ -56,7 +56,7 @@ class SajdaIndex extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8.0, left: 10),
                     child: Text(
-                      "${sajdaArabic[index].sajdaText}",
+                      "${sajdaArabic![index!].sajdaText}",
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           fontSize: 24,
@@ -77,7 +77,7 @@ class SajdaIndex extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      "${sajdaEnglish[index].sajdanumberInSurah}",
+                      "${sajdaEnglish![index!].sajdanumberInSurah}",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,
@@ -112,19 +112,19 @@ class SajdaIndex extends StatelessWidget {
                   ),
                   _spacer(),
                   Text(
-                    "Ayah :  ${sajdaEnglish[index].sajdanumberInSurah}",
+                    "Ayah :  ${sajdaEnglish![index!].sajdanumberInSurah}",
                     style: appSplashStyle.copyWith(
                         fontSize: 15, fontFamily: "PLight"),
                   ),
                   _spacer2(),
                   Text(
-                    "juz :  ${sajdaEnglish[index].sajdaJuzIndex}",
+                    "juz :  ${sajdaEnglish![index!].sajdaJuzIndex}",
                     style: appSplashStyle.copyWith(
                         fontSize: 15, fontFamily: "PLight"),
                   ),
                   _spacer2(),
                   Text(
-                    "ruku :  ${sajdaEnglish[index].sajdaRukuIndex}",
+                    "ruku :  ${sajdaEnglish![index!].sajdaRukuIndex}",
                     style: appSplashStyle.copyWith(
                         fontSize: 15, fontFamily: "PLight"),
                   ),
@@ -197,7 +197,7 @@ class SajdaIndex extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "${sajdaEnglish[index].sajdaText}",
+            "${sajdaEnglish![index!].sajdaText}",
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'PLight',
@@ -240,7 +240,7 @@ class SajdaIndex extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "${sajdaEnglish[index].sajdaArabicName}",
+                  "${sajdaEnglish![index!].sajdaArabicName}",
                   style: TextStyle(
                       fontSize: 36, fontFamily: "PLight", color: Colors.white),
                 ),
@@ -248,7 +248,7 @@ class SajdaIndex extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${sajdaEnglish[index].sajdaEnglishName}",
+                  "${sajdaEnglish![index!].sajdaEnglishName}",
                   style: TextStyle(
                       fontSize: 20,
                       fontFamily: "PRegular",
@@ -271,7 +271,7 @@ class SajdaIndex extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "${sajdaEnglish[index].revelationType}",
+                      "${sajdaEnglish![index!].revelationType}",
                       style: TextStyle(
                           fontSize: 23,
                           fontFamily: "PRegular",
@@ -290,7 +290,7 @@ class SajdaIndex extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "${sajdaEnglish[index].sajdanumberOfAyahs} VERSES",
+                      "${sajdaEnglish![index!].sajdanumberOfAyahs} VERSES",
                       style: TextStyle(
                           fontSize: 23,
                           fontFamily: "PRegular",

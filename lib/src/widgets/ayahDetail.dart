@@ -2,14 +2,14 @@ import 'package:Al_Kitab/src/screens/stylesheet/surahIndexStyle.dart';
 import 'package:flutter/material.dart';
 
 class AyahDetail extends StatelessWidget {
-  final Size size;
-  final String ayahTransliterationName;
-  final String ayahEnglishName;
-  final String ayahArabicName;
-  final String ayahName;
-  final int numberOfAyah;
-  final int ayahIndex;
-  final String revelationType;
+  final Size? size;
+  final String? ayahTransliterationName;
+  final String? ayahEnglishName;
+  final String? ayahArabicName;
+  final String? ayahName;
+  final int? numberOfAyah;
+  final int? ayahIndex;
+  final String? revelationType;
   const AyahDetail({
     this.size,
     this.ayahArabicName,
@@ -35,7 +35,7 @@ class AyahDetail extends StatelessWidget {
           children: [
             Container(
               height: 230,
-              width: size.width,
+              width: size!.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
@@ -47,13 +47,13 @@ class AyahDetail extends StatelessWidget {
             ),
             Container(
               height: 230,
-              width: size.width,
+              width: size!.width,
               decoration: BoxDecoration(
                   color: containerStyleColor,
                   borderRadius: BorderRadius.all(Radius.circular(20))),
             ),
             Container(
-              width: size.width,
+              width: size!.width,
               margin: EdgeInsets.only(left: 13, right: 13, top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,7 +79,7 @@ class AyahDetail extends StatelessWidget {
                     height: 18,
                   ),
                   SizedBox(
-                    width: size.width / 1.5,
+                    width: size!.width / 1.5,
                     child: Divider(
                       color: Colors.white,
                       thickness: 0.8,

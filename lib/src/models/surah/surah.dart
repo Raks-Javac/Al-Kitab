@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class Surah {
-  final int number;
-  final String arabicName;
-  final String englishTransliterationName;
-  final String englishName;
-  final String revelationType;
-  final List<Ayah> ayahs;
+  final int? number;
+  final String? arabicName;
+  final String? englishTransliterationName;
+  final String? englishName;
+  final String? revelationType;
+  final List<Ayah>? ayahs;
   Surah({
     this.arabicName,
     this.ayahs,
@@ -34,7 +34,7 @@ class Surah {
 }
 
 class SurahL {
-  List<Surah> surahs;
+  List<Surah>? surahs;
 
   SurahL({this.surahs});
 

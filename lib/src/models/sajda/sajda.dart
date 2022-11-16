@@ -3,17 +3,17 @@ import 'package:flutter/services.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class Sajda {
-  final String sajdaText;
-  final int sajdaNumber;
-  final String sajdaArabicName;
-  final String sajdaTransliterationName;
-  final String sajdaEnglishName;
-  final String revelationType;
-  final int sajdanumberOfAyahs;
-  final int sajdanumberInSurah;
-  final int sajdaJuzIndex;
-  final int sajdaRukuIndex;
-  final int sajdaManzilIndex;
+  final String? sajdaText;
+  final int? sajdaNumber;
+  final String? sajdaArabicName;
+  final String? sajdaTransliterationName;
+  final String? sajdaEnglishName;
+  final String? revelationType;
+  final int? sajdanumberOfAyahs;
+  final int? sajdanumberInSurah;
+  final int? sajdaJuzIndex;
+  final int? sajdaRukuIndex;
+  final int? sajdaManzilIndex;
   Sajda({
     this.revelationType,
     this.sajdaArabicName,
@@ -45,7 +45,7 @@ class Sajda {
 }
 
 class SajdaL {
-  List<Sajda> sajdas;
+  List<Sajda>? sajdas;
 
   SajdaL({this.sajdas});
 

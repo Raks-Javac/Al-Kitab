@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class DScreens extends StatefulWidget {
-  String screenName;
-  Widget lister;
-  DScreens({Key key, this.screenName, this.lister}) : super(key: key);
+  String? screenName;
+  Widget? lister;
+  DScreens({Key? key, this.screenName, this.lister}) : super(key: key);
   @override
   _DScreensState createState() => _DScreensState();
 }

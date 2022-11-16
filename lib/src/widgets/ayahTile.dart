@@ -2,13 +2,13 @@ import 'package:Al_Kitab/src/screens/stylesheet/AlKitabHomeStyle.dart';
 import 'package:flutter/material.dart';
 
 class AyahTile extends StatelessWidget {
-  final String ayahEnglishName;
-  final String ayahArabicName;
-  final String ayahName;
-  final int numberOfAyah;
-  final int ayahIndex;
-  final Function onTap;
-  final String revelationType;
+  final String? ayahEnglishName;
+  final String? ayahArabicName;
+  final String? ayahName;
+  final int? numberOfAyah;
+  final int? ayahIndex;
+  final Function? onTap;
+  final String? revelationType;
 
   const AyahTile({
     this.ayahArabicName,
@@ -29,7 +29,7 @@ class AyahTile extends StatelessWidget {
           child: Column(
             children: [
               ListTile(
-                onTap: onTap,
+                onTap: onTap as void Function()?,
                 leading: Container(
                   height: 43,
                   width: 43,

@@ -17,8 +17,8 @@ class AlKitabHome extends StatefulWidget {
 
 class _AlKitabHomeState extends State<AlKitabHome>
     with SingleTickerProviderStateMixin {
-  TabController _tabcontroller;
-  ScrollController _scrollcontroller;
+  TabController? _tabcontroller;
+  ScrollController? _scrollcontroller;
   @override
   void initState() {
     _tabcontroller = TabController(length: 2, vsync: this);
@@ -32,7 +32,7 @@ class _AlKitabHomeState extends State<AlKitabHome>
     return Scaffold(
         backgroundColor: Theme.of(context).primaryColor,
         appBar: leadingIcon(onPressed: () {
-          _scaffoldKey.currentState.openDrawer();
+          _scaffoldKey.currentState!.openDrawer();
         }),
         key: _scaffoldKey,
         drawer: AlKitabDrawer(
@@ -59,7 +59,7 @@ class _AlKitabHomeState extends State<AlKitabHome>
                 ))));
   }
 
-  AppBar leadingIcon({VoidCallback onPressed}) {
+  AppBar leadingIcon({VoidCallback? onPressed}) {
     return AppBar(
       backgroundColor: Theme.of(context).primaryColor,
       leading: IconButton(
@@ -81,20 +81,20 @@ class _AlKitabHomeState extends State<AlKitabHome>
 
   @override
   void dispose() {
-    _tabcontroller.dispose();
-    _scrollcontroller.dispose();
+    _tabcontroller!.dispose();
+    _scrollcontroller!.dispose();
     super.dispose();
   }
 }
 
 class AppHomePreview extends StatelessWidget {
   const AppHomePreview({
-    Key key,
-    @required TabController tabcontroller,
+    Key? key,
+    required TabController? tabcontroller,
   })  : _tabcontroller = tabcontroller,
         super(key: key);
 
-  final TabController _tabcontroller;
+  final TabController? _tabcontroller;
 
   @override
   Widget build(BuildContext context) {
@@ -192,7 +192,7 @@ class GreetingsWidget extends StatelessWidget {
     );
   }
 
-  Text greetingsText({String text, Color color}) {
+  Text greetingsText({String? text, Color? color}) {
     return Text(
       "$text",
       style: homeGreetingsTextStyle(color),

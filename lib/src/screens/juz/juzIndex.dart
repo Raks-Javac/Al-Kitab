@@ -4,7 +4,7 @@ import 'package:Al_Kitab/src/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
 
 class Juz extends StatelessWidget {
-  final int juzIndex;
+  final int? juzIndex;
   Juz({
     this.juzIndex,
   });
@@ -38,15 +38,14 @@ class Juz extends StatelessWidget {
   }
 
   Widget futureBuilderUsage(double height) {
-    return FutureBuilder(
+    return FutureBuilder<JuzModel?>(
       future: QuranAPI().getJuzz(juzIndex),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return ScreenLoader(
             screenName: "Loading Juz",
           );
-        } else if (snapshot.hasError ||
-            (snapshot.hasData == null || !snapshot.hasData)) {
+        } else if (snapshot.hasError || (!snapshot.hasData)) {
           return Center(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -59,12 +58,12 @@ class Juz extends StatelessWidget {
           ));
         } else {
           return ListView.builder(
-            itemCount: snapshot.data.juzAyahs.length,
+            itemCount: snapshot.data!.juzAyahs!.length,
             itemBuilder: (context, index) {
               return ListTile(
                 title: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(snapshot.data.juzAyahs[index].ayahsText,
+                  child: Text(snapshot.data!.juzAyahs![index].ayahsText.toString(),
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           fontSize: height * 0.03, color: Colors.white)),
@@ -75,7 +74,7 @@ class Juz extends StatelessWidget {
                   backgroundColor:
                       Theme.of(context).primaryColor.withOpacity(0.3),
                   child: Text(
-                    snapshot.data.juzAyahs[index].ayahNumber.toString(),
+                    snapshot.data!.juzAyahs![index].ayahNumber.toString(),
                     style: TextStyle(
                         fontSize: height * 0.0135,
                         color: Colors.black,
@@ -132,13 +131,13 @@ class Juz extends StatelessWidget {
             "Starting Surah",
             style: TextStyle(color: Colors.white, fontFamily: 'PMedium'),
           ),
-          FutureBuilder(
+          FutureBuilder<JuzModel?>(
             future: QuranAPI().getJuzz(juzIndex),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Text('');
               } else {
-                return Text("${snapshot.data.juzAyahs[juzIndex].surahName}",
+                return Text("${snapshot.data?.juzAyahs![juzIndex!].surahName}",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

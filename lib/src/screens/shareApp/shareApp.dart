@@ -84,7 +84,7 @@ class ShareApp extends StatelessWidget {
     );
   }
 
-  _route({Widget screen, BuildContext context}) {
+  _route({Widget? screen, required BuildContext context}) {
     return Navigator.push(
       context,
       PreviewSlideRoute(
@@ -94,9 +94,9 @@ class ShareApp extends StatelessWidget {
     );
   }
 
-  GestureDetector contain({String imgPath, String name, Function onPressed}) {
+  GestureDetector contain({String? imgPath, String? name, Function? onPressed}) {
     return GestureDetector(
-      onTap: onPressed,
+      onTap: onPressed as void Function()?,
       onDoubleTap: onPressed,
       onLongPress: onPressed,
       child: Container(

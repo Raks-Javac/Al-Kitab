@@ -1,6 +1,6 @@
 class Preview {
-  String imgDescription;
-  String descriptionText;
+  String? imgDescription;
+  String? descriptionText;
   Preview({this.imgDescription, this.descriptionText});
 }
 

@@ -13,9 +13,9 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class AlKitabDrawer extends StatelessWidget {
   GlobalKey<ScaffoldState> _scaffold = GlobalKey();
-  final BuildContext context;
-  Function onPressed;
-  AlKitabDrawer({Key key, this.context, this.onPressed}) : super(key: key);
+  final BuildContext? context;
+  Function? onPressed;
+  AlKitabDrawer({Key? key, this.context, this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class AlKitabDrawer extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: IconButton(
                       icon: Icon(Icons.menu),
-                      onPressed: onPressed,
+                      onPressed: onPressed as void Function()?,
                       iconSize: 30,
                       color: drawerAlignStyle,
                     ),
@@ -122,7 +122,7 @@ class AlKitabDrawer extends StatelessWidget {
     );
   }
 
-  Widget _otherTile({String tileName, String iconPath, Widget screen}) {
+  Widget _otherTile({String? tileName, required String iconPath, Widget? screen}) {
     return Column(
       children: [
         ListTile(
@@ -146,9 +146,9 @@ class AlKitabDrawer extends StatelessWidget {
     );
   }
 
-  _route({Widget screen}) {
+  _route({Widget? screen}) {
     return Navigator.push(
-      context,
+      context!,
       PreviewSlideRoute(
         duration: 200,
         preview: screen,

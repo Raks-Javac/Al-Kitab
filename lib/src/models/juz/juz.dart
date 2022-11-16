@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 
 class JuzModel {
-  final int juzNumber;
-  final List<JuzAyahs> juzAyahs;
+  final int? juzNumber;
+  final List<JuzAyahs>? juzAyahs;
 
   JuzModel({this.juzAyahs, this.juzNumber});
 
@@ -18,9 +18,9 @@ class JuzModel {
 }
 
 class JuzAyahs {
-  final String ayahsText;
-  final int ayahNumber;
-  final String surahName;
+  final String? ayahsText;
+  final int? ayahNumber;
+  final String? surahName;
 
   JuzAyahs({this.ayahsText, this.surahName, this.ayahNumber});
 
@@ -33,7 +33,7 @@ class JuzAyahs {
 }
 
 class QuranAPI {
-  Future<JuzModel> getJuzz(int index) async {
+  Future<JuzModel?>? getJuzz(int? index) async {
     Uri urlParsed =
         Uri.parse("http://api.alquran.cloud/v1/juz/$index/quran-uthmani");
     try {
@@ -44,13 +44,13 @@ class QuranAPI {
             response.body,
           ),
         );
-      } else {
-        throw Exception("Cant load");
       }
+      return null;
     } on Exception catch (SocketException) {
       print("Unknown exception $SocketException");
     } catch (e) {
-      return e;
+      print(e);
     }
+    return null;
   }
 }

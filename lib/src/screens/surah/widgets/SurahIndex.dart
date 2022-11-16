@@ -9,11 +9,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class SurahIndexScreen extends StatelessWidget {
-  final int index;
-  final List<Surah> surahs;
+  final int? index;
+  final List<Surah>? surahs;
   final _functions = new Functions();
-  final List<Ayah> ayahEnglishText;
-  final List<Ayah> ayahArabicText;
+  final List<Ayah>? ayahEnglishText;
+  final List<Ayah>? ayahArabicText;
 
   SurahIndexScreen(
       {this.ayahArabicText, this.surahs, this.index, this.ayahEnglishText});
@@ -31,7 +31,7 @@ class SurahIndexScreen extends StatelessWidget {
           toolbarHeight: 60,
           leading: BackWidget(),
           title: BarText(
-              appBarText: "${surahs[index].englishTransliterationName}"),
+              appBarText: "${surahs![index!].englishTransliterationName}"),
         ),
         body: Container(
             child: Container(
@@ -41,13 +41,13 @@ class SurahIndexScreen extends StatelessWidget {
                     return [
                       AyahDetail(
                         size: size,
-                        ayahEnglishName: surahs[index].englishName,
-                        ayahTransliterationName: surahs[index].englishName,
-                        ayahName: surahs[index].arabicName,
-                        ayahIndex: surahs[index].number,
-                        numberOfAyah: surahs[index].ayahs.length,
-                        revelationType: surahs[index].revelationType,
-                        ayahArabicName: surahs[index].arabicName,
+                        ayahEnglishName: surahs![index!].englishName,
+                        ayahTransliterationName: surahs![index!].englishName,
+                        ayahName: surahs![index!].arabicName,
+                        ayahIndex: surahs![index!].number,
+                        numberOfAyah: surahs![index!].ayahs!.length,
+                        revelationType: surahs![index!].revelationType,
+                        ayahArabicName: surahs![index!].arabicName,
                       )
                     ];
                   },
@@ -55,7 +55,7 @@ class SurahIndexScreen extends StatelessWidget {
                     child: Scrollbar(
                       controller: _sc,
                       child: ListView.builder(
-                          itemCount: ayahArabicText.length,
+                          itemCount: ayahArabicText!.length,
                           itemBuilder: (context, index) {
                             return Container(
                               margin: EdgeInsets.only(bottom: 30, top: 10),
@@ -86,7 +86,7 @@ class SurahIndexScreen extends StatelessWidget {
                                                     Color(0xFFBE96FF),
                                                 child: Center(
                                                   child: Text(
-                                                    "${ayahEnglishText[index].ayahIndex}",
+                                                    "${ayahEnglishText![index].ayahIndex}",
                                                     style: TextStyle(
                                                         color: Colors.white),
                                                   ),
@@ -107,17 +107,17 @@ class SurahIndexScreen extends StatelessWidget {
                                                         "assets/images/share.png",
                                                     onTap: () {
                                                       _functions.share(
-                                                          '${ayahArabicText[index].ayahText} \n ${ayahEnglishText[index].ayahText}',
+                                                          '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
                                                           'Quran ${index + 1}',
-                                                          'v${ayahEnglishText[index].ayahIndex}');
+                                                          'v${ayahEnglishText![index].ayahIndex}');
                                                       // _functions.showToast(context);
                                                     }),
                                                 GestureDetector(
                                                   onTap: () {
                                                     _functions.copy(
-                                                        '${ayahArabicText[index].ayahText} \n ${ayahEnglishText[index].ayahText}',
+                                                        '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
                                                         'Quran ${index + 1}',
-                                                        'v${ayahEnglishText[index].ayahIndex}',
+                                                        'v${ayahEnglishText![index].ayahIndex}',
                                                         context);
                                                   },
                                                   child: Icon(
@@ -141,7 +141,7 @@ class SurahIndexScreen extends StatelessWidget {
                                     padding:
                                         EdgeInsets.only(right: 9, left: 10),
                                     child: Text(
-                                      "ََ${ayahArabicText[index].ayahText}",
+                                      "ََ${ayahArabicText![index].ayahText}",
                                       textAlign: TextAlign.right,
                                       style: TextStyle(
                                           color: Colors.white,
@@ -184,7 +184,7 @@ class SurahIndexScreen extends StatelessWidget {
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Text(
-                                          "${ayahEnglishText[index].ayahText}",
+                                          "${ayahEnglishText![index].ayahText}",
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontFamily: 'PLight',
@@ -203,9 +203,9 @@ class SurahIndexScreen extends StatelessWidget {
                 ))));
   }
 
-  GestureDetector icons({String imgPath, Function onTap}) {
+  GestureDetector icons({String? imgPath, Function? onTap}) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Padding(
         padding: const EdgeInsets.only(right: 10.0),
         child: ImageIcon(

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class IntroWidget extends StatelessWidget {
   PreviewClassifier preview = PreviewClassifier();
-  int index;
+  int? index;
   IntroWidget({this.index});
 
   @override
@@ -16,14 +16,14 @@ class IntroWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            "${preview.previewList[index].imgDescription}",
+            "${preview.previewList[index!].imgDescription}",
             height: 220,
           ),
           Container(
             margin: EdgeInsets.only(top: 30),
             width: MediaQuery.of(context).size.width / 1.4,
             child: Text(
-              "${preview.previewList[index].descriptionText}",
+              "${preview.previewList[index!].descriptionText}",
               textAlign: TextAlign.center,
               style: decriptionText,
             ),

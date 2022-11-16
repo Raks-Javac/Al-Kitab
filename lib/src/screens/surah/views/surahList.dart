@@ -13,8 +13,8 @@ class SurahList extends StatefulWidget {
 }
 
 class SurahListState extends State<SurahList> {
-  Future _ftArabic;
-  Future _ftEnglish;
+  Future? _ftArabic;
+  Future? _ftEnglish;
   final surahLoader = new SurahModel();
   final sr = new Surah();
 
@@ -27,12 +27,12 @@ class SurahListState extends State<SurahList> {
 
   Widget futureWidget() {
     return new FutureBuilder<SurahL>(
-      future: _ftArabic,
+      future: _ftArabic!.then((value) => value as SurahL),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return AnimationLimiter(
             child: ListView.builder(
-                itemCount: snapshot.data.surahs.length,
+                itemCount: snapshot.data!.surahs!.length,
                 itemBuilder: (context, index) {
                   return AnimationConfiguration.staggeredList(
                     position: index + 3,
@@ -41,37 +41,37 @@ class SurahListState extends State<SurahList> {
                       horizontalOffset: 50.0,
                       child: FadeInAnimation(
                         child: AyahTile(
-                          ayahIndex: snapshot.data.surahs[index].number,
+                          ayahIndex: snapshot.data!.surahs![index].number,
                           ayahEnglishName: snapshot
-                              .data.surahs[index].englishTransliterationName,
+                              .data!.surahs![index].englishTransliterationName,
                           ayahArabicName:
-                              snapshot.data.surahs[index].arabicName,
+                              snapshot.data!.surahs![index].arabicName,
                           revelationType:
-                              snapshot.data.surahs[index].revelationType,
+                              snapshot.data!.surahs![index].revelationType,
                           numberOfAyah:
-                              snapshot.data.surahs[index].ayahs.length,
+                              snapshot.data!.surahs![index].ayahs!.length,
                           onTap: () {
                             _route(
                               screen: FutureBuilder<SurahL>(
-                                  future: _ftEnglish,
+                                  future: _ftEnglish!.then((value) => value as SurahL),
                                   builder: (context, snapshotEnglish) {
                                     if (snapshotEnglish.hasData) {
                                       return SurahIndexScreen(
                                         index: index,
-                                        surahs: snapshot.data.surahs,
+                                        surahs: snapshot.data!.surahs,
                                         ayahArabicText:
-                                            snapshot.data.surahs[index].ayahs,
+                                            snapshot.data!.surahs![index].ayahs,
                                         ayahEnglishText: snapshotEnglish
-                                            .data.surahs[index].ayahs,
+                                            .data!.surahs![index].ayahs,
                                       );
                                     } else if (snapshot.hasError) {
                                       return ScreenLoader(
                                           screenName:
-                                              "${snapshotEnglish.data.surahs[index].englishTransliterationName} is loading..");
+                                              "${snapshotEnglish.data!.surahs![index].englishTransliterationName} is loading..");
                                     } else {
                                       return ScreenLoader(
                                           screenName:
-                                              "${snapshotEnglish.data.surahs[index].englishTransliterationName} is loading..");
+                                              "${snapshotEnglish.data!.surahs![index].englishTransliterationName} is loading..");
                                     }
                                   }),
                             );
@@ -96,7 +96,7 @@ class SurahListState extends State<SurahList> {
     return futureWidget();
   }
 
-  _route({Widget screen}) {
+  _route({Widget? screen}) {
     return Navigator.push(
       context,
       PreviewSlideRoute(

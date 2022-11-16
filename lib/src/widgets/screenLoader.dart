@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ScreenLoader extends StatelessWidget {
-  final String screenName;
+  final String? screenName;
   const ScreenLoader({this.screenName});
 
   @override

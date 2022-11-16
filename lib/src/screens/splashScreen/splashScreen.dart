@@ -7,7 +7,7 @@ import 'package:Al_Kitab/src/screens/stylesheet/splashScreenStyles.dart';
 import 'package:flutter/material.dart';
 
 class AlKitabSplashScreen extends StatefulWidget {
-  AlKitabSplashScreen({Key key}) : super(key: key);
+  AlKitabSplashScreen({Key? key}) : super(key: key);
 
   @override
   _AlKitabSplashScreenState createState() => _AlKitabSplashScreenState();

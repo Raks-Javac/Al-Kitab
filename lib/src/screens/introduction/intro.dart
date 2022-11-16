@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AlKitabIntro extends StatefulWidget {
-  AlKitabIntro({Key key}) : super(key: key);
+  AlKitabIntro({Key? key}) : super(key: key);
   @override
   _AlKitabIntroState createState() => _AlKitabIntroState();
 }
@@ -17,7 +17,7 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
   PageController _pageController = PageController(initialPage: 0);
   int currentPage = 0;
   int numberOfPages = 3;
-  PreviewClassifier pp;
+  PreviewClassifier? pp;
   List<Widget> _buildIndicator() {
     List<Widget> list = [];
     for (int i = 0; i < numberOfPages; i++) {

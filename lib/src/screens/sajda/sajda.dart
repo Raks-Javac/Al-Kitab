@@ -15,8 +15,8 @@ class SajdaList extends StatefulWidget {
 
 class _SajdaListState extends State<SajdaList> {
   final _sajda = SajdaModel();
-  Future _future;
-  Future _futureArabic;
+  Future? _future;
+  Future? _futureArabic;
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _SajdaListState extends State<SajdaList> {
     return futureWidget();
   }
 
-  _route({Widget screen}) {
+  _route({Widget? screen}) {
     return Navigator.push(
       context,
       PreviewSlideRoute(
@@ -42,12 +42,12 @@ class _SajdaListState extends State<SajdaList> {
 
   FutureBuilder<SajdaL> futureWidget() {
     return FutureBuilder<SajdaL>(
-        future: _future,
+        future: _future!.then((value) => value as SajdaL),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return AnimationLimiter(
               child: ListView.builder(
-                  itemCount: snapshot.data.sajdas.length,
+                  itemCount: snapshot.data!.sajdas!.length,
                   itemBuilder: (context, index) {
                     return AnimationConfiguration.staggeredList(
                       position: index + 3,
@@ -57,35 +57,35 @@ class _SajdaListState extends State<SajdaList> {
                         child: FadeInAnimation(
                           child: AyahTile(
                             ayahArabicName:
-                                snapshot.data.sajdas[index].sajdaArabicName,
+                                snapshot.data!.sajdas![index].sajdaArabicName,
                             ayahEnglishName: snapshot
-                                .data.sajdas[index].sajdaTransliterationName,
-                            ayahIndex: snapshot.data.sajdas[index].sajdaNumber,
+                                .data!.sajdas![index].sajdaTransliterationName,
+                            ayahIndex: snapshot.data!.sajdas![index].sajdaNumber,
                             revelationType:
-                                snapshot.data.sajdas[index].revelationType,
+                                snapshot.data!.sajdas![index].revelationType,
                             numberOfAyah:
-                                snapshot.data.sajdas[index].sajdanumberInSurah,
+                                snapshot.data!.sajdas![index].sajdanumberInSurah,
                             onTap: () {
                               _route(
                                   screen: FutureBuilder<SajdaL>(
-                                      future: _futureArabic,
+                                      future: _futureArabic!.then((value) => value as SajdaL),
                                       builder: (context, snapshotArabic) {
                                         if (snapshotArabic.hasData) {
                                           return SajdaIndex(
                                             index: index,
-                                            sajdaEnglish: snapshot.data.sajdas,
+                                            sajdaEnglish: snapshot.data!.sajdas,
                                             sajdaArabic:
-                                                snapshotArabic.data.sajdas,
+                                                snapshotArabic.data!.sajdas,
                                           );
                                         } else if (!snapshot.hasData) {
                                           return ScreenLoader(
                                             screenName:
-                                                "${snapshot.data.sajdas[index].sajdaTransliterationName} is loading",
+                                                "${snapshot.data!.sajdas![index].sajdaTransliterationName} is loading",
                                           );
                                         } else {
                                           return ScreenLoader(
                                             screenName:
-                                                "${snapshot.data.sajdas[index].sajdaTransliterationName} is loading",
+                                                "${snapshot.data!.sajdas![index].sajdaTransliterationName} is loading",
                                           );
                                         }
                                       }));

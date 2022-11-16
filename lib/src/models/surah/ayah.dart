@@ -1,6 +1,6 @@
 class Ayah {
-  int ayahIndex;
-  String ayahText;
+  int? ayahIndex;
+  String? ayahText;
   Ayah({this.ayahIndex, this.ayahText});
 
   factory Ayah.fromJSON(Map<String, dynamic> ayahJson) {

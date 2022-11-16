@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AyahLoader extends StatelessWidget {
-  const AyahLoader({Key key}) : super(key: key);
+  const AyahLoader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

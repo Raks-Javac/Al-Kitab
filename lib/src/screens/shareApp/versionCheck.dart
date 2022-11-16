@@ -4,7 +4,7 @@ import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 
 class VersionCheck extends StatelessWidget {
-  final String currentVersion;
+  final String? currentVersion;
   const VersionCheck({this.currentVersion});
 
   @override

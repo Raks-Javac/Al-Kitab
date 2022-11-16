@@ -14,7 +14,7 @@ var customLastRead = TextStyle(
 );
 var arabicHomeColor = Color(0xFFBE96FF);
 var homeAppBarTextStyle = TextStyle(fontSize: 27, fontFamily: "PBold");
-TextStyle homeGreetingsTextStyle(Color color) {
+TextStyle homeGreetingsTextStyle(Color? color) {
   return TextStyle(fontSize: 23, color: color, fontFamily: "PRegular");
 }
 

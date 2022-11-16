@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BackWidget extends StatelessWidget {
   const BackWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

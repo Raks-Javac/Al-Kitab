@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DrawerTile extends StatelessWidget {
-  final Function onPressed;
-  final String tileName;
-  final String iconPath;
-  final String analysisNumber;
+  final Function? onPressed;
+  final String? tileName;
+  final String? iconPath;
+  final String? analysisNumber;
 
   const DrawerTile({
-    Key key,
+    Key? key,
     this.onPressed,
     this.analysisNumber,
     this.iconPath,
@@ -19,7 +19,7 @@ class DrawerTile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          onTap: onPressed,
+          onTap: onPressed as void Function()?,
           leading: ImageIcon(
             AssetImage("$iconPath"),
             color: Colors.grey,

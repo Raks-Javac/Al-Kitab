@@ -68,7 +68,7 @@ class Guidelines extends StatelessWidget {
         .toList();
   }
 
-  Widget _guideTile({int index, String guideTitle, String guideText}) {
+  Widget _guideTile({int? index, String? guideTitle, String? guideText}) {
     return Container(
       margin: EdgeInsets.only(left: 15, top: 20, right: 30),
       child: Column(

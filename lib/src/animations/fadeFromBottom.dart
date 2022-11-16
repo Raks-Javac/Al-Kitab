@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class FadeFromButtom extends StatefulWidget {
-  Widget bottomwidget;
+  Widget? bottomwidget;
   FadeFromButtom({this.bottomwidget});
 
   @override

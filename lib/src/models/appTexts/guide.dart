@@ -1,7 +1,7 @@
 class Guide {
-  int guideIndex;
-  String guideTitle;
-  String guideText;
+  int? guideIndex;
+  String? guideTitle;
+  String? guideText;
   Guide({this.guideIndex, this.guideText, this.guideTitle});
 }
 
