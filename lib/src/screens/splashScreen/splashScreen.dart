@@ -1,10 +1,11 @@
 import 'dart:async';
-import 'package:Al_Kitab/src/animations/FadeInAnimation.dart';
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/screens/homeScreen/alKitabHome.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/splashScreenStyles.dart';
 
 import 'package:flutter/material.dart';
+
+import '../../animations/FadeInAnimation.dart';
+import '../../animations/TransitionAnimation.dart';
+import '../homeScreen/alKitabHome.dart';
+import '../stylesheet/splashScreenStyles.dart';
 
 class AlKitabSplashScreen extends StatefulWidget {
   AlKitabSplashScreen({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _AlKitabSplashScreenState extends State<AlKitabSplashScreen> {
   double seconds = 3;
   @override
   void initState() {
-    super.initState();
+    // super.initState();
     splashTimer();
   }
 

@@ -43,8 +43,8 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
         applicationId "com.rj.al_kitab"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 2
-        versionName "2.0.2"
+        // versionCode 2
+        // versionName "2.0.2"
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
