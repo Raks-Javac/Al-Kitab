@@ -7,7 +7,7 @@ import 'package:Al_Kitab/src/screens/shareApp/shareApp.dart';
 import 'package:Al_Kitab/src/screens/stylesheet/AlKitabHomeStyle.dart';
 import 'package:Al_Kitab/src/screens/surah/views/SurahScreen.dart';
 import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
-import 'package:Al_Kitab/src/widgets/drawerTile.dart';
+import 'package:Al_Kitab/src/shared/widgets/drawerTile.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

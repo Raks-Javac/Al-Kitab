@@ -1,6 +1,6 @@
 import 'package:Al_Kitab/src/models/appTexts/guide.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
+import 'package:Al_Kitab/src/shared/widgets/app_bar/appBarText.dart';
+import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 

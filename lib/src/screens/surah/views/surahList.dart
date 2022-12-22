@@ -1,9 +1,9 @@
 import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
 import 'package:Al_Kitab/src/models/surah/surah.dart';
 import 'package:Al_Kitab/src/screens/surah/widgets/SurahIndex.dart';
-import 'package:Al_Kitab/src/widgets/ayahTile.dart';
-import 'package:Al_Kitab/src/widgets/listLoader.dart';
-import 'package:Al_Kitab/src/widgets/screenLoader.dart';
+import 'package:Al_Kitab/src/shared/widgets/ayahTile.dart';
+import 'package:Al_Kitab/src/shared/widgets/listLoader.dart';
+import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 

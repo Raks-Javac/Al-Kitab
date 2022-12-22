@@ -1,14 +1,15 @@
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/models/launch/launcherWeb.dart';
-import 'package:Al_Kitab/src/screens/shareApp/versionCheck.dart';
-import 'package:Al_Kitab/src/utils/reusables/functions.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
+
+import '../../animations/TransitionAnimation.dart';
+import '../../core/utils/functions.dart';
+import '../../models/launch/launcherWeb.dart';
+import '../../shared/widgets/app_bar/appBarText.dart';
+import '../../shared/widgets/app_bar/backHome.dart';
+import 'versionCheck.dart';
 
 class ShareApp extends StatelessWidget {
   final _laucher = Launcher();
-  final _functions = Functions();
+
   final String _playstoreLink = '';
 
   @override
@@ -61,7 +62,7 @@ class ShareApp extends StatelessWidget {
                     imgPath: 'assets/images/bi_share.png',
                     name: 'Share App',
                     onPressed: () {
-                      _functions.share(
+                      KFunctions.share(
                           'Dont have an offline quran reading app yet? ,\n Download Al-Kitab from the goggle playstore  ',
                           '$_playstoreLink',
                           '');
@@ -94,7 +95,8 @@ class ShareApp extends StatelessWidget {
     );
   }
 
-  GestureDetector contain({String? imgPath, String? name, Function? onPressed}) {
+  GestureDetector contain(
+      {String? imgPath, String? name, Function? onPressed}) {
     return GestureDetector(
       onTap: onPressed as void Function()?,
       onDoubleTap: onPressed,

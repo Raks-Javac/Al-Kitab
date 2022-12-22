@@ -1,13 +1,14 @@
-import 'package:Al_Kitab/src/models/sajda/sajda.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/splashScreenStyles.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/surahIndexStyle.dart';
-import 'package:Al_Kitab/src/utils/reusables/functions.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/utils/functions.dart';
+import '../../models/sajda/sajda.dart';
+import '../../shared/widgets/app_bar/appBarText.dart';
+import '../../shared/widgets/app_bar/backHome.dart';
+import '../stylesheet/splashScreenStyles.dart';
+import '../stylesheet/surahIndexStyle.dart';
+
 class SajdaIndex extends StatelessWidget {
-  final _function = new Functions();
+  final _function = new KFunctions();
   final int? index;
   final List<Sajda>? sajdaEnglish;
   final List<Sajda>? sajdaArabic;
@@ -40,7 +41,7 @@ class SajdaIndex extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    _function.copy(
+                    KFunctions.copy(
                         '${sajdaArabic![index!].sajdaText} \n ${sajdaEnglish![index!].sajdaText}',
                         '',
                         '',

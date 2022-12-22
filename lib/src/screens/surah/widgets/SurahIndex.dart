@@ -1,17 +1,17 @@
-import 'package:Al_Kitab/src/models/surah/ayah.dart';
-import 'package:Al_Kitab/src/models/surah/surah.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/surahIndexStyle.dart';
-import 'package:Al_Kitab/src/utils/reusables/functions.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/appBarText.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
-import 'package:Al_Kitab/src/widgets/ayahDetail.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/utils/functions.dart';
+import '../../../models/surah/ayah.dart';
+import '../../../models/surah/surah.dart';
+import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/app_bar/backHome.dart';
+import '../../../shared/widgets/ayahDetail.dart';
+import '../../stylesheet/surahIndexStyle.dart';
 
 // ignore: must_be_immutable
 class SurahIndexScreen extends StatelessWidget {
   final int? index;
   final List<Surah>? surahs;
-  final _functions = new Functions();
   final List<Ayah>? ayahEnglishText;
   final List<Ayah>? ayahArabicText;
 
@@ -106,7 +106,7 @@ class SurahIndexScreen extends StatelessWidget {
                                                     imgPath:
                                                         "assets/images/share.png",
                                                     onTap: () {
-                                                      _functions.share(
+                                                      KFunctions.share(
                                                           '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
                                                           'Quran ${index + 1}',
                                                           'v${ayahEnglishText![index].ayahIndex}');
@@ -114,7 +114,7 @@ class SurahIndexScreen extends StatelessWidget {
                                                     }),
                                                 GestureDetector(
                                                   onTap: () {
-                                                    _functions.copy(
+                                                    KFunctions.copy(
                                                         '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
                                                         'Quran ${index + 1}',
                                                         'v${ayahEnglishText![index].ayahIndex}',

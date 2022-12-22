@@ -1,6 +1,6 @@
 import 'package:Al_Kitab/src/models/juz/juz.dart';
-import 'package:Al_Kitab/src/widgets/app_bar/backHome.dart';
-import 'package:Al_Kitab/src/widgets/screenLoader.dart';
+import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
+import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
 
 class Juz extends StatelessWidget {
