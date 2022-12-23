@@ -1,5 +1,3 @@
-
-import 'package:Al_Kitab/src/shared/res/stylesheet/AlKitabHomeStyle.dart';
 import 'package:flutter/material.dart';
 
 class BarText extends StatelessWidget {
@@ -13,7 +11,7 @@ class BarText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       appBarText!,
-      style: homeAppBarTextStyle,
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(),
     );
   }
 }

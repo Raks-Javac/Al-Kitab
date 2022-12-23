@@ -39,6 +39,7 @@ flutter:
   - json/
   - json/surah/
   - json/sajda/
+  - assets/icons/
 
   fonts:
     - family: PBold

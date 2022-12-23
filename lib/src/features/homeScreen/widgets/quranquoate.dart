@@ -1,7 +1,8 @@
-import 'package:Al_Kitab/src/models/appTexts/quote.dart';
-import 'package:Al_Kitab/src/shared/res/stylesheet/AlKitabHomeStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+
+import '../../../models/appTexts/quote.dart';
+import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 
 class Quranqoute extends StatelessWidget {
   @override

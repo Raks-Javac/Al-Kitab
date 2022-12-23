@@ -4,10 +4,10 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/utils/enums.dart';
+import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/res.dart';
-import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 import '../../../shared/res/theme/theme_provider.dart';
-import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 import '../../../shared/widgets/custom_paint/TabPaint.dart';
 import '../../sajda/sajda.dart';
 import '../../surah/views/surahList.dart';
@@ -36,9 +36,20 @@ class _AlKitabHomeState extends State<AlKitabHome>
     GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
     return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        appBar: leadingIcon(onPressed: () {
-          _scaffoldKey.currentState!.openDrawer();
-        }),
+        appBar: KWidgetsCustomAppBar(
+          leadingIcon: IconButton(
+            icon: RenderSvg(
+              svgPath: KIcons.menuIcon,
+              color: Theme.of(context).textTheme.bodyMedium!.color,
+              svgHeight: 16,
+              svgWidth: 13,
+            ),
+            onPressed: () {
+              _scaffoldKey.currentState!.openDrawer();
+            },
+          ),
+          title: "Al-Kitab",
+        ),
         key: _scaffoldKey,
         drawer: AlKitabDrawer(
           context: context,
@@ -64,26 +75,6 @@ class _AlKitabHomeState extends State<AlKitabHome>
                 ))));
   }
 
-  AppBar leadingIcon({VoidCallback? onPressed}) {
-    return AppBar(
-      backgroundColor: Theme.of(context).primaryColor,
-      leading: IconButton(
-        icon: ImageIcon(
-          AssetImage("assets/images/menubar.png"),
-          color: menuColor,
-        ),
-        onPressed: onPressed,
-      ),
-      title: BarText(appBarText: "Al-Kitab"),
-      actions: [
-        // SearchWidget(),
-      ],
-      centerTitle: true,
-      toolbarHeight: 60,
-      elevation: 0,
-    );
-  }
-
   @override
   void dispose() {
     _tabcontroller!.dispose();
@@ -105,7 +96,7 @@ class AppHomePreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      pinned: true,
+      pinned: false,
       automaticallyImplyLeading: false,
       expandedHeight: 350,
       flexibleSpace: FlexibleSpaceBar(
@@ -180,4 +171,3 @@ class AppHomePreview extends StatelessWidget {
     );
   }
 }
-
