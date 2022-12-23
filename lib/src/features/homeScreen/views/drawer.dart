@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../../../animations/TransitionAnimation.dart';
 import '../../../core/utils/enums.dart';
-import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 import '../../../shared/res/theme/theme_provider.dart';
 import '../../../shared/widgets/drawerTile.dart';
 import '../../guidelines/guidelines.dart';
@@ -39,7 +38,7 @@ class AlKitabDrawer extends StatelessWidget {
                       icon: Icon(Icons.menu),
                       onPressed: onPressed as void Function()?,
                       iconSize: 30,
-                      color: drawerAlignStyle,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
                     ),
                   ),
                   Image.asset(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import '../../../models/appTexts/quote.dart';
-import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
+import '../../../shared/res/res.dart';
 
 class Quranqoute extends StatelessWidget {
   @override
@@ -39,7 +39,7 @@ class Quranqoute extends StatelessWidget {
                           children: [
                             ImageIcon(
                               AssetImage("assets/images/lastReadIcon.png"),
-                              color: quoteReadColor,
+                              color: KColors.grey,
                               size: 20,
                             ),
                             SizedBox(
@@ -47,7 +47,7 @@ class Quranqoute extends StatelessWidget {
                             ),
                             Text(
                               "${model.quoteSurah}",
-                              style: customLastRead,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             )
                           ],
                         ),
@@ -56,20 +56,24 @@ class Quranqoute extends StatelessWidget {
                         ),
                         Container(
                           width: 170,
-                          child: Text("${model.quoteText}",
-                              textAlign: TextAlign.start,
-                              style: lastReadTextStyle.copyWith(
-                                fontSize: 11.5,
-                              )),
+                          child: Text(
+                            "${model.quoteText}",
+                            textAlign: TextAlign.start,
+                            style:
+                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                                      fontSize: 11.5,
+                                    ),
+                          ),
                         ),
                         SizedBox(
                           height: 14,
                         ),
                         Text("${model.getquoteReference}",
                             textAlign: TextAlign.start,
-                            style: lastReadTextStyle.copyWith(
-                              fontSize: 12,
-                            )),
+                            style:
+                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                                      fontSize: 12,
+                                    )),
                       ],
                     ),
                   ),

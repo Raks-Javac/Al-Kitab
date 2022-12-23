@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import '../../../models/appTexts/greetings.dart';
-import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 
 class GreetingsWidget extends StatelessWidget {
   @override
@@ -16,13 +15,17 @@ class GreetingsWidget extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              greetingsText(
+              greetingsText(context,
                   text: "${model.greeting}",
                   color: Colors.white.withOpacity(0.6)),
               SizedBox(
                 height: 16,
               ),
-              greetingsText(text: "${model.peopleGreeted}", color: Colors.white)
+              greetingsText(
+                context,
+                text: "${model.peopleGreeted}",
+                color: Colors.white,
+              )
             ],
           );
         }),
@@ -30,10 +33,10 @@ class GreetingsWidget extends StatelessWidget {
     );
   }
 
-  Text greetingsText({String? text, Color? color}) {
+  Text greetingsText(BuildContext context, {String? text, Color? color}) {
     return Text(
       "$text",
-      style: homeGreetingsTextStyle(color),
+      style: Theme.of(context).textTheme.bodyMedium,
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../res/stylesheet/AlKitabHomeStyle.dart';
 import '../res/res.dart';
 
 class AyahTile extends StatelessWidget {
@@ -70,9 +69,10 @@ class AyahTile extends StatelessWidget {
                 trailing: Text(
                   "‎$ayahArabicName‎",
                   style: TextStyle(
-                      fontSize: 25,
-                      color: arabicHomeColor,
-                      fontFamily: "PBold"),
+                    fontSize: 25,
+                    color: Theme.of(context).textTheme.bodyMedium!.color,
+                    fontFamily: KTypography.boldFontFamilyName,
+                  ),
                 ),
               ),
               SizedBox(
