@@ -71,7 +71,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                       Container(
                         decoration: BoxDecoration(
                           color: activeIndex == 0
-                              ? KColors.primaryColor
+                              ? Theme.of(context).primaryColor
                               : KColors.whiteColor,
                           borderRadius: BorderRadius.circular(200),
                         ),
@@ -82,7 +82,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                       Container(
                         decoration: BoxDecoration(
                           color: activeIndex == 1
-                              ? KColors.primaryColor
+                              ? Theme.of(context).primaryColor
                               : KColors.whiteColor,
                           borderRadius: BorderRadius.circular(200),
                         ),
@@ -93,7 +93,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                       Container(
                         decoration: BoxDecoration(
                           color: activeIndex == 2
-                              ? KColors.primaryColor
+                              ? Theme.of(context).primaryColor
                               : KColors.whiteColor,
                           borderRadius: BorderRadius.circular(200),
                         ),
