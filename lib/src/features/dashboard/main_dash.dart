@@ -40,13 +40,21 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
               Container(
                 margin: EdgeInsets.all(30),
                 decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(-1, 1),
+                      blurRadius: 20,
+                      spreadRadius: 0,
+                      color: KColors.grey.withOpacity(0.4),
+                    )
+                  ],
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20),
                   ),
-                  color: KColors.semiWhite,
+                  color: KColors.whiteColor,
                 ),
                 padding: EdgeInsets.all(10),
                 height: 70,
@@ -55,6 +63,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                       changeActiveIndexstate(value);
                     },
                     unselectedLabelColor: Theme.of(context).primaryColor,
+                    labelColor: KColors.whiteColor,
                     splashFactory: NoSplash.splashFactory,
                     indicatorWeight: 0.02,
                     controller: _tabController,
@@ -63,7 +72,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         decoration: BoxDecoration(
                           color: activeIndex == 0
                               ? KColors.primaryColor
-                              : KColors.semiWhite,
+                              : KColors.whiteColor,
                           borderRadius: BorderRadius.circular(200),
                         ),
                         width: 80,
@@ -74,7 +83,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         decoration: BoxDecoration(
                           color: activeIndex == 1
                               ? KColors.primaryColor
-                              : KColors.semiWhite,
+                              : KColors.whiteColor,
                           borderRadius: BorderRadius.circular(200),
                         ),
                         width: 80,
@@ -85,7 +94,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         decoration: BoxDecoration(
                           color: activeIndex == 2
                               ? KColors.primaryColor
-                              : KColors.semiWhite,
+                              : KColors.whiteColor,
                           borderRadius: BorderRadius.circular(200),
                         ),
                         width: 80,
