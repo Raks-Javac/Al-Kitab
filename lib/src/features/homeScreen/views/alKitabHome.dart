@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
-import 'package:scoped_model/scoped_model.dart';
 
 import '../../../core/utils/enums.dart';
-import '../../../models/appTexts/greetings.dart';
 import '../../../shared/res/res.dart';
 import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 import '../../../shared/res/theme/theme_provider.dart';
@@ -13,6 +11,7 @@ import '../../../shared/widgets/app_bar/appBarText.dart';
 import '../../../shared/widgets/custom_paint/TabPaint.dart';
 import '../../sajda/sajda.dart';
 import '../../surah/views/surahList.dart';
+import '../widgets/greeting_widget.dart';
 import '../widgets/quranquoate.dart';
 import 'drawer.dart';
 
@@ -182,36 +181,3 @@ class AppHomePreview extends StatelessWidget {
   }
 }
 
-class GreetingsWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ScopedModel<GreetingsModel>(
-      model: new GreetingsModel(),
-      child: Container(
-        padding: const EdgeInsets.only(top: 20.0, left: 20),
-        child: ScopedModelDescendant<GreetingsModel>(
-            builder: (context, child, model) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              greetingsText(
-                  text: "${model.greeting}",
-                  color: Colors.white.withOpacity(0.6)),
-              SizedBox(
-                height: 16,
-              ),
-              greetingsText(text: "${model.peopleGreeted}", color: Colors.white)
-            ],
-          );
-        }),
-      ),
-    );
-  }
-
-  Text greetingsText({String? text, Color? color}) {
-    return Text(
-      "$text",
-      style: homeGreetingsTextStyle(color),
-    );
-  }
-}
