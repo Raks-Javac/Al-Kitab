@@ -7,7 +7,7 @@ class AyahLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: ListView.builder(
         itemBuilder: (context, index) => Container(
           width: MediaQuery.of(context).size.width,
