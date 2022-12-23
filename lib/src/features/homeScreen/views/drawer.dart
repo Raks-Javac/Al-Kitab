@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../animations/TransitionAnimation.dart';
-import '../../core/utils/enums.dart';
-import '../../shared/res/theme/theme_provider.dart';
-import '../../shared/widgets/drawerTile.dart';
-import '../guidelines/guidelines.dart';
-import '../introduction/intro.dart';
-import '../juz/juz.dart';
-import '../sajda/sajda.dart';
-import '../shareApp/shareApp.dart';
-import '../../shared/res/stylesheet/AlKitabHomeStyle.dart';
-import '../surah/views/SurahScreen.dart';
-import '../surah/views/surahList.dart';
+import '../../../animations/TransitionAnimation.dart';
+import '../../../core/utils/enums.dart';
+import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
+import '../../../shared/res/theme/theme_provider.dart';
+import '../../../shared/widgets/drawerTile.dart';
+import '../../guidelines/guidelines.dart';
+import '../../introduction/intro.dart';
+import '../../juz/juz.dart';
+import '../../sajda/sajda.dart';
+import '../../shareApp/shareApp.dart';
+import '../../surah/views/SurahScreen.dart';
+import '../../surah/views/surahList.dart';
 
 // ignore: must_be_immutable
 class AlKitabDrawer extends StatelessWidget {

@@ -4,17 +4,17 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import '../../core/utils/enums.dart';
-import '../../models/appTexts/greetings.dart';
-import '../../shared/res/res.dart';
-import '../../shared/res/theme/theme_provider.dart';
-import '../../shared/widgets/app_bar/appBarText.dart';
-import '../../shared/widgets/custom_paint/TabPaint.dart';
-import '../sajda/sajda.dart';
-import '../../shared/res/stylesheet/AlKitabHomeStyle.dart';
-import '../surah/views/surahList.dart';
+import '../../../core/utils/enums.dart';
+import '../../../models/appTexts/greetings.dart';
+import '../../../shared/res/res.dart';
+import '../../../shared/res/stylesheet/AlKitabHomeStyle.dart';
+import '../../../shared/res/theme/theme_provider.dart';
+import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/custom_paint/TabPaint.dart';
+import '../../sajda/sajda.dart';
+import '../../surah/views/surahList.dart';
+import '../widgets/quranquoate.dart';
 import 'drawer.dart';
-import 'quranquoate.dart';
 
 class AlKitabHome extends StatefulWidget {
   @override
