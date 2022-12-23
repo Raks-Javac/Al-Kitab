@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../animations/FadeInAnimation.dart';
 import '../../animations/TransitionAnimation.dart';
-import '../homeScreen/views/alKitabHome.dart';
 import '../../shared/res/stylesheet/splashScreenStyles.dart';
+import '../dashboard/main_dash.dart';
 
 class AlKitabSplashScreen extends StatefulWidget {
   AlKitabSplashScreen({Key? key}) : super(key: key);
@@ -26,7 +26,7 @@ class _AlKitabSplashScreenState extends State<AlKitabSplashScreen> {
     return Timer(
         Duration(seconds: seconds.toInt()),
         () => Navigator.of(context).pushReplacement(
-            PreviewSlideRoute(preview: AlKitabHome(), duration: 1000)));
+            PreviewSlideRoute(preview: MainDashBoardView(), duration: 1000)));
   }
 
   @override

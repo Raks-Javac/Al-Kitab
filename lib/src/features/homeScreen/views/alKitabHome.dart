@@ -15,12 +15,12 @@ import '../widgets/greeting_widget.dart';
 import '../widgets/quranquoate.dart';
 import 'drawer.dart';
 
-class AlKitabHome extends StatefulWidget {
+class AlKitabHomeView extends StatefulWidget {
   @override
-  _AlKitabHomeState createState() => _AlKitabHomeState();
+  _AlKitabHomeViewState createState() => _AlKitabHomeViewState();
 }
 
-class _AlKitabHomeState extends State<AlKitabHome>
+class _AlKitabHomeViewState extends State<AlKitabHomeView>
     with SingleTickerProviderStateMixin {
   TabController? _tabcontroller;
   ScrollController? _scrollcontroller;

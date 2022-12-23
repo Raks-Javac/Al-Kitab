@@ -358,7 +358,7 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
 
   homeNavigator() {
     return Navigator.pushReplacement(
-        context, PreviewSlideRoute(preview: AlKitabHome(), duration: 500));
+        context, PreviewSlideRoute(preview: AlKitabHomeView(), duration: 500));
   }
 
   @override
