@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/functions.dart';
 import '../../shared/res/res.dart';
 import '../homeScreen/views/alKitabHome.dart';
 
@@ -18,7 +17,12 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
     super.initState();
   }
 
-  bool active = false;
+  int activeIndex = 0;
+  changeActiveIndexstate(int index) {
+    setState(() {
+      activeIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
         height: 70,
         child: TabBar(
             onTap: (value) {
-              logConsole(value);
+              changeActiveIndexstate(value);
             },
             unselectedLabelColor: Theme.of(context).primaryColor,
             splashFactory: NoSplash.splashFactory,
@@ -52,7 +56,9 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
             tabs: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: activeIndex == 0
+                      ? KColors.primaryColor
+                      : KColors.semiWhite,
                   borderRadius: BorderRadius.circular(200),
                 ),
                 width: 80,
@@ -61,7 +67,9 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: activeIndex == 1
+                      ? KColors.primaryColor
+                      : KColors.semiWhite,
                   borderRadius: BorderRadius.circular(200),
                 ),
                 width: 80,
@@ -70,7 +78,9 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: activeIndex == 2
+                      ? KColors.primaryColor
+                      : KColors.semiWhite,
                   borderRadius: BorderRadius.circular(200),
                 ),
                 width: 80,
