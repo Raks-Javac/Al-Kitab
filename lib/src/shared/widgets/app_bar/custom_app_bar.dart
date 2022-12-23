@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'appBarText.dart';
+import 'backHome.dart';
 
 class KWidgetsCustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final Widget? leadingIcon;
@@ -12,7 +13,7 @@ class KWidgetsCustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      leading: Container(margin: EdgeInsets.only(left: 15), child: leadingIcon),
+      leading:  Container(margin: EdgeInsets.only(left: 15), child: leadingIcon == null ? BackButtonWidget(): leadingIcon),
       title: BarText(appBarText: title),
       actions: [
         if (trailing != null) ...trailing!,

@@ -20,7 +20,7 @@ class _DScreensState extends State<DScreens> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         automaticallyImplyLeading: false,
-        leading: BackWidget(),
+        leading: BackButtonWidget(),
         title: BarText(
           appBarText: widget.screenName,
         ),

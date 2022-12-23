@@ -12,7 +12,7 @@ class VersionCheck extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        leading: BackWidget(),
+        leading: BackButtonWidget(),
         automaticallyImplyLeading: false,
         toolbarHeight: 60,
         title: BarText(

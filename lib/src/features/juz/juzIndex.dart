@@ -1,7 +1,8 @@
-import 'package:Al_Kitab/src/models/juz/juz.dart';
-import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
-import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
+
+import '../../models/juz/juz.dart';
+import '../../shared/widgets/app_bar/backHome.dart';
+import '../../shared/widgets/screenLoader.dart';
 
 class Juz extends StatelessWidget {
   final int? juzIndex;
@@ -20,7 +21,7 @@ class Juz extends StatelessWidget {
           slivers: <Widget>[
             SliverAppBar(
               automaticallyImplyLeading: false,
-              leading: BackWidget(),
+              leading: BackButtonWidget(),
               backgroundColor: Colors.grey[850],
               pinned: false,
               expandedHeight: _height * 0.27,
@@ -63,7 +64,8 @@ class Juz extends StatelessWidget {
               return ListTile(
                 title: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(snapshot.data!.juzAyahs![index].ayahsText.toString(),
+                  child: Text(
+                      snapshot.data!.juzAyahs![index].ayahsText.toString(),
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           fontSize: height * 0.03, color: Colors.white)),

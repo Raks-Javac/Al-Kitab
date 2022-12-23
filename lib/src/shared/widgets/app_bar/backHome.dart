@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BackWidget extends StatelessWidget {
-  const BackWidget({
+class BackButtonWidget extends StatelessWidget {
+  const BackButtonWidget({
     Key? key,
   }) : super(key: key);
 
@@ -11,7 +11,7 @@ class BackWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: IconButton(
           icon: Icon(Icons.arrow_back_ios),
-          color: Colors.white,
+          color: Theme.of(context).textTheme.displayLarge!.color,
           onPressed: () {
             Navigator.pop(context);
           }),

@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/functions.dart';
 import '../../../models/surah/ayah.dart';
 import '../../../models/surah/surah.dart';
-import '../../../shared/widgets/app_bar/appBarText.dart';
-import '../../../shared/widgets/app_bar/backHome.dart';
-import '../../../shared/widgets/ayahDetail.dart';
 import '../../../shared/res/stylesheet/surahIndexStyle.dart';
+import '../../../shared/widgets/app_bar/custom_app_bar.dart';
+import '../../../shared/widgets/ayahDetail.dart';
 
 // ignore: must_be_immutable
 class SurahIndexScreen extends StatelessWidget {
@@ -25,13 +24,8 @@ class SurahIndexScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).primaryColor,
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
-          elevation: 0,
-          toolbarHeight: 60,
-          leading: BackWidget(),
-          title: BarText(
-              appBarText: "${surahs![index!].englishTransliterationName}"),
+        appBar: KWidgetsCustomAppBar(
+          title: "${surahs![index!].englishTransliterationName}",
         ),
         body: Container(
             child: Container(

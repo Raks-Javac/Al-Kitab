@@ -19,7 +19,7 @@ class ShareApp extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         automaticallyImplyLeading: false,
-        leading: BackWidget(),
+        leading: BackButtonWidget(),
         toolbarHeight: 70,
         elevation: 0,
         title: BarText(
