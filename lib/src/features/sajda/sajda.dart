@@ -1,7 +1,7 @@
 import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
 import 'package:Al_Kitab/src/models/sajda/sajda.dart';
 
-import 'package:Al_Kitab/src/screens/sajda/sajdaIndex.dart';
+import 'package:Al_Kitab/src/features/sajda/sajdaIndex.dart';
 import 'package:Al_Kitab/src/shared/widgets/ayahTile.dart';
 import 'package:Al_Kitab/src/shared/widgets/listLoader.dart';
 import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';

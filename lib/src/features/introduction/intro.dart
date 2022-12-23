@@ -1,9 +1,9 @@
 import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
 import 'package:Al_Kitab/src/animations/fadeFromBottom.dart';
 import 'package:Al_Kitab/src/models/appTexts/preview.dart';
-import 'package:Al_Kitab/src/screens/homeScreen/alKitabHome.dart';
-import 'package:Al_Kitab/src/screens/introduction/Introduction.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/splashPreviewstyles.dart';
+import 'package:Al_Kitab/src/features/homeScreen/alKitabHome.dart';
+import 'package:Al_Kitab/src/features/introduction/Introduction.dart';
+import 'package:Al_Kitab/src/features/stylesheet/splashPreviewstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

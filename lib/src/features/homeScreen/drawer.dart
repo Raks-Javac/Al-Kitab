@@ -1,14 +1,18 @@
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/screens/guidelines/guidelines.dart';
-import 'package:Al_Kitab/src/screens/introduction/intro.dart';
-import 'package:Al_Kitab/src/screens/juz/juz.dart';
-import 'package:Al_Kitab/src/screens/sajda/sajda.dart';
-import 'package:Al_Kitab/src/screens/shareApp/shareApp.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/AlKitabHomeStyle.dart';
-import 'package:Al_Kitab/src/screens/surah/views/SurahScreen.dart';
-import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
-import 'package:Al_Kitab/src/shared/widgets/drawerTile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../animations/TransitionAnimation.dart';
+import '../../core/utils/enums.dart';
+import '../../shared/res/theme/theme_provider.dart';
+import '../../shared/widgets/drawerTile.dart';
+import '../guidelines/guidelines.dart';
+import '../introduction/intro.dart';
+import '../juz/juz.dart';
+import '../sajda/sajda.dart';
+import '../shareApp/shareApp.dart';
+import '../stylesheet/AlKitabHomeStyle.dart';
+import '../surah/views/SurahScreen.dart';
+import '../surah/views/surahList.dart';
 
 // ignore: must_be_immutable
 class AlKitabDrawer extends StatelessWidget {
@@ -116,13 +120,28 @@ class AlKitabDrawer extends StatelessWidget {
                 tileName: "Help & Guidelines",
                 iconPath: "assets/images/rename.png",
                 screen: Guidelines()),
+            Consumer<ThemeProvider>(builder: (context, viewModel, _) {
+              return Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MaterialButton(
+                        child: Text("Dark Mode"),
+                        onPressed: () {
+                          viewModel.changeAppTheme(AppThemeEnum.whiteMode);
+                        }),
+                  ],
+                ),
+              );
+            }),
           ],
         ),
       ),
     );
   }
 
-  Widget _otherTile({String? tileName, required String iconPath, Widget? screen}) {
+  Widget _otherTile(
+      {String? tileName, required String iconPath, Widget? screen}) {
     return Column(
       children: [
         ListTile(

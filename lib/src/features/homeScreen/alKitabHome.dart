@@ -1,14 +1,15 @@
-import 'package:Al_Kitab/src/models/appTexts/greetings.dart';
-import 'package:Al_Kitab/src/screens/homeScreen/drawer.dart';
-import 'package:Al_Kitab/src/screens/homeScreen/quranquoate.dart';
-import 'package:Al_Kitab/src/screens/sajda/sajda.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/AlKitabHomeStyle.dart';
-import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
-import 'package:Al_Kitab/src/shared/widgets/custom_paint/TabPaint.dart';
-import 'package:Al_Kitab/src/shared/widgets/app_bar/appBarText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:scoped_model/scoped_model.dart';
+
+import '../../models/appTexts/greetings.dart';
+import '../../shared/widgets/app_bar/appBarText.dart';
+import '../../shared/widgets/custom_paint/TabPaint.dart';
+import '../sajda/sajda.dart';
+import '../stylesheet/AlKitabHomeStyle.dart';
+import '../surah/views/surahList.dart';
+import 'drawer.dart';
+import 'quranquoate.dart';
 
 class AlKitabHome extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _AlKitabHomeState extends State<AlKitabHome>
   Widget build(BuildContext context) {
     GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: leadingIcon(onPressed: () {
           _scaffoldKey.currentState!.openDrawer();
         }),
@@ -99,7 +100,7 @@ class AppHomePreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       pinned: true,
       automaticallyImplyLeading: false,
       expandedHeight: 350,
@@ -132,7 +133,7 @@ class AppHomePreview extends StatelessWidget {
         child: Container(
           child: Card(
             elevation: 10,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             child: TabBar(
               indicator: CircleTabIndicator(color: Colors.white, radius: 3),
               unselectedLabelStyle: unSelectedTabStyle,
@@ -141,8 +142,8 @@ class AppHomePreview extends StatelessWidget {
               indicatorColor: Colors.white,
               indicatorSize: TabBarIndicatorSize.label,
               tabs: [
-                tabBarText('Surah'),
-                tabBarText('Sajda'),
+                tabBarText('Surah', context),
+                tabBarText('Sajda', context),
                 // tabBarText('Juz'),
               ],
               controller: _tabcontroller,
@@ -153,14 +154,12 @@ class AppHomePreview extends StatelessWidget {
     );
   }
 
-  Padding tabBarText(String tabText) {
+  Padding tabBarText(String tabText, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0, bottom: 20),
       child: Text(
         '$tabText',
-        style: TextStyle(
-          fontFamily: "PRegular",
-        ),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }

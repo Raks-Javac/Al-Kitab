@@ -1,6 +1,6 @@
 import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
 import 'package:Al_Kitab/src/models/surah/surah.dart';
-import 'package:Al_Kitab/src/screens/surah/widgets/SurahIndex.dart';
+import 'package:Al_Kitab/src/features/surah/widgets/SurahIndex.dart';
 import 'package:Al_Kitab/src/shared/widgets/ayahTile.dart';
 import 'package:Al_Kitab/src/shared/widgets/listLoader.dart';
 import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';

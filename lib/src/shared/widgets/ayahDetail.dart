@@ -1,4 +1,4 @@
-import 'package:Al_Kitab/src/screens/stylesheet/surahIndexStyle.dart';
+import 'package:Al_Kitab/src/features/stylesheet/surahIndexStyle.dart';
 import 'package:flutter/material.dart';
 
 class AyahDetail extends StatelessWidget {

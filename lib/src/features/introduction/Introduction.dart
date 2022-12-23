@@ -1,5 +1,5 @@
 import 'package:Al_Kitab/src/models/appTexts/preview.dart';
-import 'package:Al_Kitab/src/screens/stylesheet/splashPreviewstyles.dart';
+import 'package:Al_Kitab/src/features/stylesheet/splashPreviewstyles.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

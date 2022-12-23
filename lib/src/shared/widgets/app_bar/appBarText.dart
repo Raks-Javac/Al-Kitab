@@ -1,5 +1,5 @@
 
-import 'package:Al_Kitab/src/screens/stylesheet/AlKitabHomeStyle.dart';
+import 'package:Al_Kitab/src/features/stylesheet/AlKitabHomeStyle.dart';
 import 'package:flutter/material.dart';
 
 class BarText extends StatelessWidget {

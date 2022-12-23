@@ -1,8 +1,9 @@
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/screens/juz/juzIndex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:shimmer/shimmer.dart';
+
+import '../../animations/TransitionAnimation.dart';
+import 'juzIndex.dart';
 
 class JuzList extends StatelessWidget {
   final int columnCount = 3;

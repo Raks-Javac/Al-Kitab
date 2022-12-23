@@ -1,36 +1,52 @@
-import 'package:Al_Kitab/src/screens/juz/juz.dart';
-import 'package:Al_Kitab/src/screens/sajda/sajda.dart';
-import 'package:Al_Kitab/src/screens/splashScreen/splashScreen.dart';
-import 'package:Al_Kitab/src/screens/surah/views/surahList.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+import 'locator.dart';
+import 'src/features/juz/juz.dart';
+import 'src/features/sajda/sajda.dart';
+import 'src/features/splashScreen/splashScreen.dart';
+import 'src/features/surah/views/surahList.dart';
+import 'src/shared/res/res.dart';
+import 'src/shared/res/theme/theme_provider.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ScreenUtil.ensureScreenSize();
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
+  );
   runApp(AlKitabApp());
 }
 
 //This returns a moterial App
 class AlKitabApp extends StatelessWidget {
-  final Color _themeColor = Color(0xFF210F3F);
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Al-Kitab',
-      theme: ThemeData(
-        primaryColor: _themeColor,
-        indicatorColor: _themeColor,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: AlKitabSplashScreen(),
-      routes: {
-        '/surah': (context) => SurahList(),
-        '/sajdah': (context) => SajdaList(),
-        '/juz': (context) => JuzList(),
-      },
-    );
+    return ScreenUtilInit(
+        useInheritedMediaQuery: true,
+        builder: (_, context) {
+          return MultiProvider(
+            providers: appProviders,
+            child: Builder(builder: (context) {
+              Provider.of<ThemeProvider>(context, listen: true);
+
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Al-Kitab',
+                theme: KThemes.returnThemeBasedOnMode(
+                    context.watch<ThemeProvider>().getAppTheme),
+                themeMode: ThemeMode.system,
+                home: AlKitabSplashScreen(),
+                routes: {
+                  '/surah': (context) => SurahList(),
+                  '/sajdah': (context) => SajdaList(),
+                  '/juz': (context) => JuzList(),
+                },
+              );
+            }),
+          );
+        });
   }
 }

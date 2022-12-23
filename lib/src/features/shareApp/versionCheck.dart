@@ -1,4 +1,4 @@
-import 'package:Al_Kitab/src/screens/stylesheet/splashPreviewstyles.dart';
+import 'package:Al_Kitab/src/features/stylesheet/splashPreviewstyles.dart';
 import 'package:Al_Kitab/src/shared/widgets/app_bar/appBarText.dart';
 import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
