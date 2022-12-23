@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:provider/provider.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+import '../../core/utils/enums.dart';
 import '../../models/appTexts/greetings.dart';
+import '../../shared/res/res.dart';
+import '../../shared/res/theme/theme_provider.dart';
 import '../../shared/widgets/app_bar/appBarText.dart';
 import '../../shared/widgets/custom_paint/TabPaint.dart';
 import '../sajda/sajda.dart';
@@ -130,26 +134,33 @@ class AppHomePreview extends StatelessWidget {
       ),
       bottom: PreferredSize(
         preferredSize: Size(MediaQuery.of(context).size.width, 20),
-        child: Container(
-          child: Card(
-            elevation: 10,
-            color: Theme.of(context).scaffoldBackgroundColor,
-            child: TabBar(
-              indicator: CircleTabIndicator(color: Colors.white, radius: 3),
-              unselectedLabelStyle: unSelectedTabStyle,
-              labelStyle: TextStyle(fontSize: 14),
-              labelColor: Colors.white,
-              indicatorColor: Colors.white,
-              indicatorSize: TabBarIndicatorSize.label,
-              tabs: [
-                tabBarText('Surah', context),
-                tabBarText('Sajda', context),
-                // tabBarText('Juz'),
-              ],
-              controller: _tabcontroller,
+        child: Consumer<ThemeProvider>(builder: (context, viewModel, _) {
+          return Container(
+            child: Card(
+              elevation:
+                  viewModel.getAppTheme == AppThemeEnum.primaryMode ? 10 : 3,
+              color: Theme.of(context).scaffoldBackgroundColor,
+              child: TabBar(
+                indicator: CircleTabIndicator(
+                    color: viewModel.getAppTheme == AppThemeEnum.primaryMode
+                        ? KColors.whiteColor
+                        : KColors.primaryColor,
+                    radius: 3),
+                unselectedLabelStyle: unSelectedTabStyle,
+                labelStyle: TextStyle(fontSize: 14),
+                labelColor: Colors.white,
+                indicatorColor: Colors.white,
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: [
+                  tabBarText('Surah', context),
+                  tabBarText('Sajda', context),
+                  // tabBarText('Juz'),
+                ],
+                controller: _tabcontroller,
+              ),
             ),
-          ),
-        ),
+          );
+        }),
       ),
     );
   }
