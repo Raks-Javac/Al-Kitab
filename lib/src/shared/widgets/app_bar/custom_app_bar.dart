@@ -13,7 +13,9 @@ class KWidgetsCustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      leading:  Container(margin: EdgeInsets.only(left: 15), child: leadingIcon == null ? BackButtonWidget(): leadingIcon),
+      leading: Container(
+          margin: EdgeInsets.only(left: 10),
+          child: leadingIcon == null ? BackButtonWidget() : leadingIcon),
       title: BarText(appBarText: title),
       actions: [
         if (trailing != null) ...trailing!,

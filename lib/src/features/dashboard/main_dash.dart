@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/render/render_svg.dart';
 import '../../shared/res/res.dart';
 import '../homeScreen/views/alKitabHome.dart';
 
@@ -77,7 +78,17 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         ),
                         width: 80,
                         height: 80,
-                        child: Icon(Icons.home),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: RenderSvg(
+                            svgPath: KIcons.homeIcon,
+                            color: activeIndex == 0
+                                ? KColors.whiteColor
+                                : Theme.of(context).primaryColor,
+                            svgHeight: 15,
+                            svgWidth: 15,
+                          ),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
@@ -88,7 +99,17 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         ),
                         width: 80,
                         height: 80,
-                        child: Icon(Icons.home),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: RenderSvg(
+                            svgPath: KIcons.readIcon,
+                            color: activeIndex == 1
+                                ? KColors.whiteColor
+                                : Theme.of(context).primaryColor,
+                            svgHeight: 15,
+                            svgWidth: 15,
+                          ),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
@@ -99,7 +120,17 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         ),
                         width: 80,
                         height: 80,
-                        child: Icon(Icons.home),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: RenderSvg(
+                            svgPath: KIcons.settingsIcon,
+                            color: activeIndex == 2
+                                ? KColors.whiteColor
+                                : Theme.of(context).primaryColor,
+                            svgHeight: 15,
+                            svgWidth: 15,
+                          ),
+                        ),
                       ),
                     ]),
               ),

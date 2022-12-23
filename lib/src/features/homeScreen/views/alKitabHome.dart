@@ -41,8 +41,8 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView>
             icon: RenderSvg(
               svgPath: KIcons.menuIcon,
               color: Theme.of(context).textTheme.bodyMedium!.color,
-              svgHeight: 16,
-              svgWidth: 13,
+              svgHeight: 50,
+              svgWidth: 50,
             ),
             onPressed: () {
               _scaffoldKey.currentState!.openDrawer();

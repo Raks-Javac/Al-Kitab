@@ -25,6 +25,8 @@ class AlKitabApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+        minTextAdapt: true,
+        splitScreenMode: true,
         useInheritedMediaQuery: true,
         builder: (_, context) {
           return MultiProvider(
