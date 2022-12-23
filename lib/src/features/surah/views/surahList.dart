@@ -1,11 +1,12 @@
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/models/surah/surah.dart';
-import 'package:Al_Kitab/src/features/surah/widgets/SurahIndex.dart';
-import 'package:Al_Kitab/src/shared/widgets/ayahTile.dart';
-import 'package:Al_Kitab/src/shared/widgets/listLoader.dart';
-import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+
+import '../../../animations/TransitionAnimation.dart';
+import '../../../models/surah/surah.dart';
+import '../../../shared/widgets/ayahTile.dart';
+import '../../../shared/widgets/listLoader.dart';
+import '../../../shared/widgets/screenLoader.dart';
+import '../widgets/SurahIndex.dart';
 
 class SurahList extends StatefulWidget {
   @override
@@ -53,7 +54,8 @@ class SurahListState extends State<SurahList> {
                           onTap: () {
                             _route(
                               screen: FutureBuilder<SurahL>(
-                                  future: _ftEnglish!.then((value) => value as SurahL),
+                                  future: _ftEnglish!
+                                      .then((value) => value as SurahL),
                                   builder: (context, snapshotEnglish) {
                                     if (snapshotEnglish.hasData) {
                                       return SurahIndexScreen(
