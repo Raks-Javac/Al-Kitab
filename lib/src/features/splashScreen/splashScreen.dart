@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../animations/FadeInAnimation.dart';
 import '../../animations/TransitionAnimation.dart';
 import '../homeScreen/alKitabHome.dart';
-import '../stylesheet/splashScreenStyles.dart';
+import '../../shared/res/stylesheet/splashScreenStyles.dart';
 
 class AlKitabSplashScreen extends StatefulWidget {
   AlKitabSplashScreen({Key? key}) : super(key: key);

@@ -11,7 +11,7 @@ import '../../shared/res/theme/theme_provider.dart';
 import '../../shared/widgets/app_bar/appBarText.dart';
 import '../../shared/widgets/custom_paint/TabPaint.dart';
 import '../sajda/sajda.dart';
-import '../stylesheet/AlKitabHomeStyle.dart';
+import '../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 import '../surah/views/surahList.dart';
 import 'drawer.dart';
 import 'quranquoate.dart';

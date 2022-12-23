@@ -1,4 +1,4 @@
-import 'package:Al_Kitab/src/features/stylesheet/splashPreviewstyles.dart';
+import 'package:Al_Kitab/src/shared/res/stylesheet/splashPreviewstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 

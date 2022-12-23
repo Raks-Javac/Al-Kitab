@@ -10,7 +10,7 @@ import '../introduction/intro.dart';
 import '../juz/juz.dart';
 import '../sajda/sajda.dart';
 import '../shareApp/shareApp.dart';
-import '../stylesheet/AlKitabHomeStyle.dart';
+import '../../shared/res/stylesheet/AlKitabHomeStyle.dart';
 import '../surah/views/SurahScreen.dart';
 import '../surah/views/surahList.dart';
 

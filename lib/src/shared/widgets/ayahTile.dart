@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../features/stylesheet/AlKitabHomeStyle.dart';
+import '../res/stylesheet/AlKitabHomeStyle.dart';
 import '../res/res.dart';
 
 class AyahTile extends StatelessWidget {
