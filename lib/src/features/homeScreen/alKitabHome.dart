@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -146,7 +147,11 @@ class AppHomePreview extends StatelessWidget {
                         ? KColors.whiteColor
                         : KColors.primaryColor,
                     radius: 3),
-                unselectedLabelStyle: unSelectedTabStyle,
+                unselectedLabelStyle:
+                    Theme.of(context).textTheme.displayMedium!.copyWith(
+                          fontSize: 10.sp,
+                        ),
+                onTap: (value) {},
                 labelStyle: TextStyle(fontSize: 14),
                 labelColor: Colors.white,
                 indicatorColor: Colors.white,
@@ -154,6 +159,7 @@ class AppHomePreview extends StatelessWidget {
                 tabs: [
                   tabBarText('Surah', context),
                   tabBarText('Sajda', context),
+
                   // tabBarText('Juz'),
                 ],
                 controller: _tabcontroller,

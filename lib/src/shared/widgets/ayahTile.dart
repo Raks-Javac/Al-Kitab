@@ -1,5 +1,8 @@
-import 'package:Al_Kitab/src/features/stylesheet/AlKitabHomeStyle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../features/stylesheet/AlKitabHomeStyle.dart';
+import '../res/res.dart';
 
 class AyahTile extends StatelessWidget {
   final String? ayahEnglishName;
@@ -52,10 +55,10 @@ class AyahTile extends StatelessWidget {
                 ),
                 title: Text(
                   "$ayahEnglishName",
-                  style: TextStyle(
-                      fontFamily: "PRegular",
-                      fontSize: 17,
-                      color: Colors.white),
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontFamily: KTypography.regularFontFamilyName,
+                        fontSize: 14.sp,
+                      ),
                 ),
                 subtitle: Text(
                   "$revelationType . $numberOfAyah VERSES",
