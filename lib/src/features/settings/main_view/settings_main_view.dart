@@ -25,6 +25,15 @@ class SettingsMainView extends StatelessWidget {
                   title: e.tileTitle!,
                   iconPathInSvg: e.iconPath!,
                   onTap: e.onTap!,
+                  trailingIcon: e.trailingText != null
+                      ? Text(
+                          e.trailingText!,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(letterSpacing: 1.5),
+                        )
+                      : SizedBox.shrink(),
                 );
               })
             ],
@@ -40,6 +49,7 @@ class KWidgetsSettingsCustomTile extends StatelessWidget {
   final String iconPathInSvg;
   final Function() onTap;
   final Widget? trailingIcon;
+
   const KWidgetsSettingsCustomTile({
     required this.iconPathInSvg,
     required this.onTap,
@@ -82,30 +92,40 @@ class SettingsTitleObject {
   final String? tileTitle;
   final String? iconPath;
   final Function()? onTap;
-  SettingsTitleObject({this.iconPath, this.tileTitle, this.onTap});
+  final String? trailingText;
+  SettingsTitleObject(
+      {this.iconPath, this.tileTitle, this.onTap, this.trailingText});
 
   static List<SettingsTitleObject> setingsOptions() {
     return [
       SettingsTitleObject(
-          tileTitle: "Theme", iconPath: KIcons.copyIcon, onTap: () {}),
+          tileTitle: "Theme", iconPath: KIcons.themeIcon, onTap: () {}),
       SettingsTitleObject(
           tileTitle: "Share Al - kitab to a Friend",
-          iconPath: KIcons.copyIcon,
+          iconPath: KIcons.shareIcon,
           onTap: () {}),
       SettingsTitleObject(
-          tileTitle: "Leave a Review", iconPath: KIcons.copyIcon, onTap: () {}),
+          tileTitle: "Leave a Review",
+          iconPath: KIcons.leaveReviewIcon,
+          onTap: () {}),
       SettingsTitleObject(
-          tileTitle: "Contact Us", iconPath: KIcons.copyIcon, onTap: () {}),
+          tileTitle: "Contact Us", iconPath: KIcons.phoneIcon, onTap: () {}),
       SettingsTitleObject(
-          tileTitle: "Meet The Team", iconPath: KIcons.copyIcon, onTap: () {}),
+          tileTitle: "Meet The Team",
+          iconPath: KIcons.meetTeamIcon,
+          onTap: () {}),
       SettingsTitleObject(
           tileTitle: "Help & Guildlines",
-          iconPath: KIcons.copyIcon,
+          iconPath: KIcons.helpGuideLineIcon,
           onTap: () {
             KNavigator.navigateToRoute(HelpGuidelinesView());
           }),
       SettingsTitleObject(
-          tileTitle: "Share App", iconPath: KIcons.copyIcon, onTap: () {}),
+        tileTitle: "Version",
+        iconPath: KIcons.versionCheck,
+        onTap: () {},
+        trailingText: KStrings.appVersion,
+      ),
     ];
   }
 }

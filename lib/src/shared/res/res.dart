@@ -6,5 +6,6 @@ import '../../core/utils/enums.dart';
 part 'color.dart';
 part 'gap.dart';
 part 'icons.dart';
+part 'strings.dart';
 part 'theme/themes.dart';
 part 'typography.dart';
