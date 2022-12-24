@@ -13,7 +13,9 @@ class SettingsMainView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            
+          ],
         ),
       ),
     );
