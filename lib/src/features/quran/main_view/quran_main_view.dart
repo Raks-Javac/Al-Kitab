@@ -18,11 +18,10 @@ class QuranMainView extends StatefulWidget {
 class _QuranMainViewState extends State<QuranMainView>
     with SingleTickerProviderStateMixin {
   TabController? _tabcontroller;
-  ScrollController? _scrollcontroller;
+
   @override
   void initState() {
     _tabcontroller = TabController(length: 2, vsync: this);
-    _scrollcontroller = ScrollController();
     super.initState();
   }
 
