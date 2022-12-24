@@ -50,26 +50,29 @@ class KWidgetsSettingsCustomTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Theme.of(context).cardColor,
-      ),
-      child: Row(
-        children: [
-          NormalRenderSvg(
-            svgPath: iconPathInSvg,
-          ),
-          addHorizontalSpacing(15),
-          Expanded(
-            child: Text(
-              title,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Theme.of(context).cardColor,
+        ),
+        child: Row(
+          children: [
+            NormalRenderSvg(
+              svgPath: iconPathInSvg,
             ),
-          ),
-          if (trailingIcon != null) trailingIcon!,
-        ],
+            addHorizontalSpacing(15),
+            Expanded(
+              child: Text(
+                title,
+              ),
+            ),
+            if (trailingIcon != null) trailingIcon!,
+          ],
+        ),
       ),
     );
   }
