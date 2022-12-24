@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../shared/render/render_svg.dart';
 import '../../shared/res/res.dart';
 import '../homeScreen/views/alKitabHome.dart';
+import '../quran/main_view/quran_main_view.dart';
 import '../settings/main_view/settings_main_view.dart';
 
 class MainDashBoardView extends StatefulWidget {
@@ -36,7 +37,9 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
             controller: _tabController,
             children: [
               AlKitabHomeView(),
-              Container(),
+              QuranMainView(
+                
+              ),
               SettingsMainView(),
             ]),
         Column(

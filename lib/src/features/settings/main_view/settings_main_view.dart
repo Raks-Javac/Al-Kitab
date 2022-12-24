@@ -31,10 +31,10 @@ class SettingsMainView extends StatelessWidget {
                   trailingIcon: e.trailingText != null
                       ? Text(
                           e.trailingText!,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(letterSpacing: 1.5),
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    color: KColors.whiteColor,
+                                  ),
                         )
                       : SizedBox.shrink(),
                 );
