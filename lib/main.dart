@@ -10,7 +10,7 @@ import 'src/features/quran/sajda/sajda.dart';
 import 'src/features/quran/surah/views/surahList.dart';
 import 'src/features/splashScreen/splashScreen.dart';
 import 'src/shared/res/res.dart';
-import 'src/shared/res/theme/theme_provider.dart';
+import 'src/features/settings/theme/provider/theme_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

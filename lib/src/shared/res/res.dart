@@ -7,5 +7,5 @@ part 'color.dart';
 part 'gap.dart';
 part 'icons.dart';
 part 'strings.dart';
-part 'theme/themes.dart';
+part 'themes.dart';
 part 'typography.dart';

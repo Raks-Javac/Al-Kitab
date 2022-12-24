@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '../../../core/utils/enums.dart';
 import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/res.dart';
-import '../../../shared/res/theme/theme_provider.dart';
+import '../../settings/theme/provider/theme_provider.dart';
 import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 import '../../../shared/widgets/custom_paint/TabPaint.dart';
 import '../../quran/sajda/sajda.dart';

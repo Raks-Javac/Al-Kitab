@@ -1,4 +1,4 @@
-part of '../res.dart';
+part of 'res.dart';
 
 abstract class KThemes {
   KThemes._();

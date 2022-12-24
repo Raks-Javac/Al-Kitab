@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../animations/TransitionAnimation.dart';
 import '../../../core/utils/enums.dart';
-import '../../../shared/res/theme/theme_provider.dart';
+import '../../settings/theme/provider/theme_provider.dart';
 import '../../../shared/widgets/drawerTile.dart';
 import '../../introduction/intro.dart';
 import '../../quran/juz/juz.dart';
