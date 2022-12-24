@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../../models/appTexts/guide.dart';
-import '../../../shared/widgets/app_bar/appBarText.dart';
-import '../../../shared/widgets/app_bar/backHome.dart';
+import '../../../shared/res/res.dart';
+import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 
 class HelpGuidelinesView extends StatelessWidget {
   final guideClass = GuideList();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        automaticallyImplyLeading: false,
-        leading: KwidgetBackButton(),
-        toolbarHeight: 70,
-        elevation: 0,
-        title: BarText(
-          appBarText: "Help & Guidelines",
-        ),
+      appBar: KWidgetsCustomAppBar(
+        title: "Help & Guidelines",
       ),
       body: Container(
           margin: EdgeInsets.only(top: 10, bottom: 20),
@@ -27,7 +20,7 @@ class HelpGuidelinesView extends StatelessWidget {
             children: [
               Center(
                 child: Opacity(
-                  opacity: 0.4,
+                  opacity: 0.2,
                   child: Image.asset(
                     'assets/images/logo.png',
                     width: 150,
@@ -46,7 +39,7 @@ class HelpGuidelinesView extends StatelessWidget {
                           child: widget,
                         ),
                       ),
-                      children: _tileList(),
+                      children: _tileList(context),
                     ),
                   ),
                 ),
@@ -56,11 +49,12 @@ class HelpGuidelinesView extends StatelessWidget {
     );
   }
 
-  List<Widget> _tileList() {
+  List<Widget> _tileList(BuildContext context) {
     return guideClass
         .guideList()
         .map(
           (e) => _guideTile(
+            context,
             guideText: e.guideText,
             guideTitle: e.guideTitle,
             index: e.guideIndex,
@@ -69,33 +63,28 @@ class HelpGuidelinesView extends StatelessWidget {
         .toList();
   }
 
-  Widget _guideTile({int? index, String? guideTitle, String? guideText}) {
+  Widget _guideTile(BuildContext context,
+      {int? index, String? guideTitle, String? guideText}) {
     return Container(
       margin: EdgeInsets.only(left: 15, top: 20, right: 30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "$index.  $guideTitle",
-            style: TextStyle(
-              fontWeight: FontWeight.w400,
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: "PMedium",
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
+          Text("$index.  $guideTitle",
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: KTypography.boldFontFamilyName,
+                  )),
+          addVerticalSpaing(10),
           Text(
             "$guideText",
             textAlign: TextAlign.start,
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.white.withOpacity(0.9),
-              fontFamily: "PLight",
-            ),
+            style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                  fontSize: 13.5.sp,
+                  fontFamily: KTypography.normalFontFamilyName,
+                ),
           ),
         ],
       ),

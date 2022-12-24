@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/functions.dart';
 import '../../shared/render/render_svg.dart';
 import '../../shared/res/res.dart';
 import '../homeScreen/views/alKitabHome.dart';
@@ -16,10 +15,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
   late TabController _tabController;
   @override
   void initState() {
-    _tabController = TabController(length: 3, vsync: this)
-      ..addListener(() {
-        logConsole(_tabController.index);
-      });
+    _tabController = TabController(length: 3, vsync: this)..addListener(() {});
     super.initState();
   }
 

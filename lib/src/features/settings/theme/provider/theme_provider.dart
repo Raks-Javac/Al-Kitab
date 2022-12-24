@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/enums.dart';
-import '../../../../core/utils/functions.dart';
 
 class ThemeProvider extends ChangeNotifier {
   static AppThemeEnum themeStatus = AppThemeEnum.primaryMode;
@@ -12,6 +11,5 @@ class ThemeProvider extends ChangeNotifier {
     themeStatus = status;
     KAppConstants.appThemeEnum = status;
     notifyListeners();
-    logConsole(themeStatus);
   }
 }
