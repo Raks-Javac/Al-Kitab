@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/navigation/navigation_1.0.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/enums.dart';
 import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/res.dart';
 import '../../../shared/widgets/app_bar/custom_app_bar.dart';
@@ -63,11 +65,13 @@ class KWidgetsSettingsCustomTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Theme.of(context).cardColor,
+          color: KAppConstants.appThemeEnum == AppThemeEnum.whiteMode
+              ? Theme.of(context).primaryColor
+              : Theme.of(context).cardColor,
         ),
         child: Row(
           children: [
@@ -78,6 +82,9 @@ class KWidgetsSettingsCustomTile extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: KColors.whiteColor,
+                    ),
               ),
             ),
             if (trailingIcon != null) trailingIcon!,
