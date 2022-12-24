@@ -118,7 +118,7 @@ class AlKitabDrawer extends StatelessWidget {
             _otherTile(
                 tileName: "Help & Guidelines",
                 iconPath: "assets/images/rename.png",
-                screen: Guidelines()),
+                screen: HelpGuidelinesView()),
             Consumer<ThemeProvider>(builder: (context, viewModel, _) {
               return Center(
                 child: Row(

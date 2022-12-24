@@ -4,6 +4,7 @@ abstract class KColors {
   KColors._();
   static const Color primaryColor = Color(0xFF210F3F);
   static const Color primaryColor2 = Color(0xFFBE96FF);
+  static const Color primaryTileColor = Color(0xFF53397C);
   static const Color whiteColor = Colors.white;
   static const Color black = Colors.black;
   static const Color grey = Color(0xFF959595);

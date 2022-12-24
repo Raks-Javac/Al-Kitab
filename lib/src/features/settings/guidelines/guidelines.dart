@@ -1,10 +1,11 @@
-import 'package:Al_Kitab/src/models/appTexts/guide.dart';
-import 'package:Al_Kitab/src/shared/widgets/app_bar/appBarText.dart';
-import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-class Guidelines extends StatelessWidget {
+import '../../../models/appTexts/guide.dart';
+import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/app_bar/backHome.dart';
+
+class HelpGuidelinesView extends StatelessWidget {
   final guideClass = GuideList();
   @override
   Widget build(BuildContext context) {

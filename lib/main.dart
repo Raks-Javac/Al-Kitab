@@ -4,10 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import 'locator.dart';
+import 'src/core/navigation/navigation_1.0.dart';
 import 'src/features/quran/juz/juz.dart';
 import 'src/features/quran/sajda/sajda.dart';
-import 'src/features/splashScreen/splashScreen.dart';
 import 'src/features/quran/surah/views/surahList.dart';
+import 'src/features/splashScreen/splashScreen.dart';
 import 'src/shared/res/res.dart';
 import 'src/shared/res/theme/theme_provider.dart';
 
@@ -36,6 +37,8 @@ class AlKitabApp extends StatelessWidget {
 
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
+                navigatorKey: KNavigator.navigatorKey,
+                scaffoldMessengerKey: KNavigator.scaffoldMessengerKey,
                 title: 'Al-Kitab',
                 theme: KThemes.returnThemeBasedOnMode(
                     context.watch<ThemeProvider>().getAppTheme),

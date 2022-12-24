@@ -8,6 +8,7 @@ abstract class KThemes {
         primaryColor: KColors.primaryColor,
         indicatorColor: KColors.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        cardColor: KColors.primaryTileColor,
         primaryTextTheme: TextTheme(
           bodySmall: KTypography.smallTextLight,
           bodyMedium: KTypography.bodyTextLight,
