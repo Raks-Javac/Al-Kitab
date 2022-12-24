@@ -21,7 +21,7 @@ class Juz extends StatelessWidget {
           slivers: <Widget>[
             SliverAppBar(
               automaticallyImplyLeading: false,
-              leading: BackButtonWidget(),
+              leading: KwidgetBackButton(),
               backgroundColor: Colors.grey[850],
               pinned: false,
               expandedHeight: _height * 0.27,

@@ -18,7 +18,7 @@ class SearchScreen extends StatelessWidget {
               Container(
                   child: Row(
                 children: [
-                  BackButtonWidget(),
+                  KwidgetBackButton(),
                   Expanded(
                     child: Container(
                       height: 40,

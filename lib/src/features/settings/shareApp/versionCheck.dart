@@ -1,7 +1,8 @@
-import 'package:Al_Kitab/src/shared/res/stylesheet/splashPreviewstyles.dart';
-import 'package:Al_Kitab/src/shared/widgets/app_bar/appBarText.dart';
-import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
+
+import '../../../shared/res/stylesheet/splashPreviewstyles.dart';
+import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/app_bar/backHome.dart';
 
 class VersionCheck extends StatelessWidget {
   final String? currentVersion;
@@ -12,7 +13,7 @@ class VersionCheck extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        leading: BackButtonWidget(),
+        leading: KwidgetBackButton(),
         automaticallyImplyLeading: false,
         toolbarHeight: 60,
         title: BarText(

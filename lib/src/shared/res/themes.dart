@@ -32,6 +32,7 @@ abstract class KThemes {
         scaffoldBackgroundColor: KColors.whiteColor,
         primaryColor: KColors.primaryColor,
         indicatorColor: KColors.primaryColor,
+        cardColor: KColors.primaryTileColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primaryTextTheme: TextTheme(
           bodySmall: KTypography.smallTextLight.copyWith(color: KColors.black),

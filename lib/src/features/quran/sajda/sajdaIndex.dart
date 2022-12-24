@@ -22,7 +22,7 @@ class SajdaIndex extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         toolbarHeight: 60,
-        leading: BackButtonWidget(),
+        leading: KwidgetBackButton(),
         title: BarText(
           appBarText: '${sajdaEnglish![index!].sajdaTransliterationName}',
         ),

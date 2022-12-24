@@ -7,6 +7,7 @@ import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/res.dart';
 import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 import '../guidelines/guidelines.dart';
+import '../theme/views/theme_view.dart';
 
 class SettingsMainView extends StatelessWidget {
   @override
@@ -106,7 +107,11 @@ class SettingsTitleObject {
   static List<SettingsTitleObject> setingsOptions() {
     return [
       SettingsTitleObject(
-          tileTitle: "Theme", iconPath: KIcons.themeIcon, onTap: () {}),
+          tileTitle: "Theme",
+          iconPath: KIcons.themeIcon,
+          onTap: () {
+            KNavigator.navigateToRoute(ThemeSettingsView());
+          }),
       SettingsTitleObject(
           tileTitle: "Share Al - kitab to a Friend",
           iconPath: KIcons.shareIcon,
