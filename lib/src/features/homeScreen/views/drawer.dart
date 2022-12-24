@@ -9,7 +9,7 @@ import '../../guidelines/guidelines.dart';
 import '../../introduction/intro.dart';
 import '../../juz/juz.dart';
 import '../../sajda/sajda.dart';
-import '../../shareApp/shareApp.dart';
+import '../../settings/shareApp/shareApp.dart';
 import '../../surah/views/SurahScreen.dart';
 import '../../surah/views/surahList.dart';
 

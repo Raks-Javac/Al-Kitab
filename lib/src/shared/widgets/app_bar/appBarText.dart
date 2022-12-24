@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BarText extends StatelessWidget {
   final String? appBarText;
@@ -11,7 +12,9 @@ class BarText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       appBarText!,
-      style: Theme.of(context).textTheme.bodyLarge!.copyWith(),
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+            fontSize: 22.sp,
+          ),
     );
   }
 }

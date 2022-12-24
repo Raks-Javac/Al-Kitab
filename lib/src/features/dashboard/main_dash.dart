@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../shared/render/render_svg.dart';
 import '../../shared/res/res.dart';
 import '../homeScreen/views/alKitabHome.dart';
+import '../settings/main_view/settings_main_view.dart';
 
 class MainDashBoardView extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
           TabBarView(controller: _tabController, children: [
             AlKitabHomeView(),
             Container(),
-            Container(),
+            SettingsMainView(),
           ]),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,

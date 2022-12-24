@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../animations/TransitionAnimation.dart';
-import '../../core/utils/functions.dart';
-import '../../models/launch/launcherWeb.dart';
-import '../../shared/widgets/app_bar/appBarText.dart';
-import '../../shared/widgets/app_bar/backHome.dart';
+import '../../../animations/TransitionAnimation.dart';
+import '../../../core/utils/functions.dart';
+import '../../../models/launch/launcherWeb.dart';
+import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/app_bar/backHome.dart';
 import 'versionCheck.dart';
 
 class ShareApp extends StatelessWidget {
