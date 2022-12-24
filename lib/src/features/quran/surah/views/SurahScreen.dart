@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/widgets/app_bar/appBarText.dart';
-import '../../../shared/widgets/app_bar/backHome.dart';
+import '../../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../../shared/widgets/app_bar/backHome.dart';
 
 // ignore: must_be_immutable
 class DScreens extends StatefulWidget {

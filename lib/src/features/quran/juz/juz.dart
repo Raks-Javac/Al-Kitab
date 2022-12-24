@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../animations/TransitionAnimation.dart';
+import '../../../animations/TransitionAnimation.dart';
 import 'juzIndex.dart';
 
 class JuzList extends StatelessWidget {

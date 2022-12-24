@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/functions.dart';
-import '../../../models/surah/ayah.dart';
-import '../../../models/surah/surah.dart';
-import '../../../shared/res/stylesheet/surahIndexStyle.dart';
-import '../../../shared/widgets/app_bar/custom_app_bar.dart';
-import '../../../shared/widgets/ayahDetail.dart';
+import '../../../../core/utils/functions.dart';
+import '../../../../models/surah/ayah.dart';
+import '../../../../models/surah/surah.dart';
+import '../../../../shared/res/stylesheet/surahIndexStyle.dart';
+import '../../../../shared/widgets/app_bar/custom_app_bar.dart';
+import '../../../../shared/widgets/ayahDetail.dart';
 
 // ignore: must_be_immutable
 class SurahIndexScreen extends StatelessWidget {

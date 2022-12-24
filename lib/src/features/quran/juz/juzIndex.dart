@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../models/juz/juz.dart';
-import '../../shared/widgets/app_bar/backHome.dart';
-import '../../shared/widgets/screenLoader.dart';
+import '../../../models/juz/juz.dart';
+import '../../../shared/widgets/app_bar/backHome.dart';
+import '../../../shared/widgets/screenLoader.dart';
 
 class Juz extends StatelessWidget {
   final int? juzIndex;

@@ -1,4 +1,4 @@
-import 'package:Al_Kitab/src/features/surah/views/surahList.dart';
+import 'package:Al_Kitab/src/features/quran/surah/views/surahList.dart';
 import 'package:Al_Kitab/src/shared/widgets/app_bar/backHome.dart';
 import 'package:flutter/material.dart';
 

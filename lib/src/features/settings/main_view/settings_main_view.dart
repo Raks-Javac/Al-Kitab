@@ -13,11 +13,32 @@ class SettingsMainView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            
-          ],
+          children: [],
         ),
       ),
     );
+  }
+}
+
+class SettingsTitleObject {
+  final String? tileTitle;
+  final String? iconPath;
+  final Function()? onTap;
+  SettingsTitleObject({this.iconPath, this.tileTitle, this.onTap});
+
+  List<SettingsTitleObject> setingsOptions() {
+    return [
+      SettingsTitleObject(tileTitle: "Theme", iconPath: "", onTap: () {}),
+      SettingsTitleObject(
+          tileTitle: "Share Al - kitab to a Friend",
+          iconPath: "",
+          onTap: () {}),
+      SettingsTitleObject(
+          tileTitle: "Leave a Review", iconPath: "", onTap: () {}),
+      SettingsTitleObject(tileTitle: "Conatct Us", iconPath: "", onTap: () {}),
+      SettingsTitleObject(
+          tileTitle: "Meet The Team", iconPath: "", onTap: () {}),
+      SettingsTitleObject(tileTitle: "", iconPath: "", onTap: () {}),
+    ];
   }
 }

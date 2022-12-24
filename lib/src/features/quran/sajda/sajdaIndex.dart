@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/functions.dart';
-import '../../models/sajda/sajda.dart';
-import '../../shared/res/stylesheet/splashScreenStyles.dart';
-import '../../shared/res/stylesheet/surahIndexStyle.dart';
-import '../../shared/widgets/app_bar/appBarText.dart';
-import '../../shared/widgets/app_bar/backHome.dart';
+import '../../../core/utils/functions.dart';
+import '../../../models/sajda/sajda.dart';
+import '../../../shared/res/stylesheet/splashScreenStyles.dart';
+import '../../../shared/res/stylesheet/surahIndexStyle.dart';
+import '../../../shared/widgets/app_bar/appBarText.dart';
+import '../../../shared/widgets/app_bar/backHome.dart';
 
 class SajdaIndex extends StatelessWidget {
   final _function = new KFunctions();

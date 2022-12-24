@@ -1,12 +1,12 @@
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/models/sajda/sajda.dart';
-
-import 'package:Al_Kitab/src/features/sajda/sajdaIndex.dart';
-import 'package:Al_Kitab/src/shared/widgets/ayahTile.dart';
-import 'package:Al_Kitab/src/shared/widgets/listLoader.dart';
-import 'package:Al_Kitab/src/shared/widgets/screenLoader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+
+import '../../../animations/TransitionAnimation.dart';
+import '../../../models/sajda/sajda.dart';
+import '../../../shared/widgets/ayahTile.dart';
+import '../../../shared/widgets/listLoader.dart';
+import '../../../shared/widgets/screenLoader.dart';
+import 'sajdaIndex.dart';
 
 class SajdaList extends StatefulWidget {
   @override

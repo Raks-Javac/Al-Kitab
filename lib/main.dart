@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import 'locator.dart';
-import 'src/features/juz/juz.dart';
-import 'src/features/sajda/sajda.dart';
+import 'src/features/quran/juz/juz.dart';
+import 'src/features/quran/sajda/sajda.dart';
 import 'src/features/splashScreen/splashScreen.dart';
-import 'src/features/surah/views/surahList.dart';
+import 'src/features/quran/surah/views/surahList.dart';
 import 'src/shared/res/res.dart';
 import 'src/shared/res/theme/theme_provider.dart';
 

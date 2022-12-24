@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import '../../../animations/TransitionAnimation.dart';
-import '../../../models/surah/surah.dart';
-import '../../../shared/widgets/ayahTile.dart';
-import '../../../shared/widgets/listLoader.dart';
-import '../../../shared/widgets/screenLoader.dart';
+import '../../../../animations/TransitionAnimation.dart';
+import '../../../../models/surah/surah.dart';
+import '../../../../shared/widgets/ayahTile.dart';
+import '../../../../shared/widgets/listLoader.dart';
+import '../../../../shared/widgets/screenLoader.dart';
 import '../widgets/SurahIndex.dart';
 
 class SurahList extends StatefulWidget {
