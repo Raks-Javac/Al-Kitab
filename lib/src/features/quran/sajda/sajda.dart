@@ -46,7 +46,7 @@ class _SajdaListState extends State<SajdaList> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Container(
-              padding: EdgeInsets.only(bottom: 50),
+              padding: EdgeInsets.only(bottom: 10),
               child: AnimationLimiter(
                 child: ListView.builder(
                     itemCount: snapshot.data!.sajdas!.length,

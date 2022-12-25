@@ -32,7 +32,7 @@ class SurahListState extends State<SurahList> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Container(
-            margin: EdgeInsets.only(bottom: 50),
+            margin: EdgeInsets.only(bottom: 10),
             child: AnimationLimiter(
               child: ListView.builder(
                   itemCount: snapshot.data!.surahs!.length,
