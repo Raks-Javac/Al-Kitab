@@ -61,10 +61,15 @@ class AyahTile extends StatelessWidget {
                 ),
                 subtitle: Text(
                   "$revelationType . $numberOfAyah VERSES",
-                  style: TextStyle(
-                      fontFamily: "PRegular",
-                      fontSize: 12,
-                      color: Colors.white.withOpacity(0.5)),
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontFamily: KTypography.regularFontFamilyName,
+                        fontSize: 12,
+                        color: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .color!
+                            .withOpacity(0.5),
+                      ),
                 ),
                 trailing: Text(
                   "‎$ayahArabicName‎",

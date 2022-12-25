@@ -31,58 +31,61 @@ class SurahListState extends State<SurahList> {
       future: _ftArabic!.then((value) => value as SurahL),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return AnimationLimiter(
-            child: ListView.builder(
-                itemCount: snapshot.data!.surahs!.length,
-                itemBuilder: (context, index) {
-                  return AnimationConfiguration.staggeredList(
-                    position: index + 3,
-                    duration: const Duration(milliseconds: 500),
-                    child: SlideAnimation(
-                      horizontalOffset: 50.0,
-                      child: FadeInAnimation(
-                        child: AyahTile(
-                          ayahIndex: snapshot.data!.surahs![index].number,
-                          ayahEnglishName: snapshot
-                              .data!.surahs![index].englishTransliterationName,
-                          ayahArabicName:
-                              snapshot.data!.surahs![index].arabicName,
-                          revelationType:
-                              snapshot.data!.surahs![index].revelationType,
-                          numberOfAyah:
-                              snapshot.data!.surahs![index].ayahs!.length,
-                          onTap: () {
-                            _route(
-                              screen: FutureBuilder<SurahL>(
-                                  future: _ftEnglish!
-                                      .then((value) => value as SurahL),
-                                  builder: (context, snapshotEnglish) {
-                                    if (snapshotEnglish.hasData) {
-                                      return SurahIndexScreen(
-                                        index: index,
-                                        surahs: snapshot.data!.surahs,
-                                        ayahArabicText:
-                                            snapshot.data!.surahs![index].ayahs,
-                                        ayahEnglishText: snapshotEnglish
-                                            .data!.surahs![index].ayahs,
-                                      );
-                                    } else if (snapshot.hasError) {
-                                      return ScreenLoader(
-                                          screenName:
-                                              "${snapshotEnglish.data!.surahs![index].englishTransliterationName} is loading..");
-                                    } else {
-                                      return ScreenLoader(
-                                          screenName:
-                                              "${snapshotEnglish.data!.surahs![index].englishTransliterationName} is loading..");
-                                    }
-                                  }),
-                            );
-                          },
+          return Container(
+            margin: EdgeInsets.only(bottom: 50),
+            child: AnimationLimiter(
+              child: ListView.builder(
+                  itemCount: snapshot.data!.surahs!.length,
+                  itemBuilder: (context, index) {
+                    return AnimationConfiguration.staggeredList(
+                      position: index + 3,
+                      duration: const Duration(milliseconds: 500),
+                      child: SlideAnimation(
+                        horizontalOffset: 50.0,
+                        child: FadeInAnimation(
+                          child: AyahTile(
+                            ayahIndex: snapshot.data!.surahs![index].number,
+                            ayahEnglishName: snapshot.data!.surahs![index]
+                                .englishTransliterationName,
+                            ayahArabicName:
+                                snapshot.data!.surahs![index].arabicName,
+                            revelationType:
+                                snapshot.data!.surahs![index].revelationType,
+                            numberOfAyah:
+                                snapshot.data!.surahs![index].ayahs!.length,
+                            onTap: () {
+                              _route(
+                                screen: FutureBuilder<SurahL>(
+                                    future: _ftEnglish!
+                                        .then((value) => value as SurahL),
+                                    builder: (context, snapshotEnglish) {
+                                      if (snapshotEnglish.hasData) {
+                                        return SurahIndexScreen(
+                                          index: index,
+                                          surahs: snapshot.data!.surahs,
+                                          ayahArabicText: snapshot
+                                              .data!.surahs![index].ayahs,
+                                          ayahEnglishText: snapshotEnglish
+                                              .data!.surahs![index].ayahs,
+                                        );
+                                      } else if (snapshot.hasError) {
+                                        return ScreenLoader(
+                                            screenName:
+                                                "${snapshotEnglish.data!.surahs![index].englishTransliterationName} is loading..");
+                                      } else {
+                                        return ScreenLoader(
+                                            screenName:
+                                                "${snapshotEnglish.data!.surahs![index].englishTransliterationName} is loading..");
+                                      }
+                                    }),
+                              );
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                }),
+                    );
+                  }),
+            ),
           );
         } else if (snapshot.hasError) {
           return new AyahLoader();

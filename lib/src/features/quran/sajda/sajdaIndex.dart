@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/utils/functions.dart';
 import '../../../models/sajda/sajda.dart';
+import '../../../shared/res/res.dart';
 import '../../../shared/res/stylesheet/splashScreenStyles.dart';
 import '../../../shared/res/stylesheet/surahIndexStyle.dart';
-import '../../../shared/widgets/app_bar/appBarText.dart';
-import '../../../shared/widgets/app_bar/backHome.dart';
+import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 
 class SajdaIndex extends StatelessWidget {
-  final _function = new KFunctions();
+  final function = new KFunctions();
   final int? index;
   final List<Sajda>? sajdaEnglish;
   final List<Sajda>? sajdaArabic;
@@ -18,22 +19,14 @@ class SajdaIndex extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        elevation: 0,
-        toolbarHeight: 60,
-        leading: KwidgetBackButton(),
-        title: BarText(
-          appBarText: '${sajdaEnglish![index!].sajdaTransliterationName}',
-        ),
+      appBar: KWidgetsCustomAppBar(
+        title: '${sajdaEnglish![index!].sajdaTransliterationName}',
       ),
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: ListView(
         children: [
           _ayahDetail(size),
-          SizedBox(
-            height: 20,
-          ),
+          addVerticalSpaing(20),
           Container(
             width: MediaQuery.of(context).size.width,
             margin: EdgeInsets.only(left: 13, right: 13, top: 20),
@@ -59,10 +52,10 @@ class SajdaIndex extends StatelessWidget {
                     child: Text(
                       "${sajdaArabic![index!].sajdaText}",
                       textAlign: TextAlign.start,
-                      style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.white,
-                          fontFamily: "PLight"),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontSize: 24,
+                            fontFamily: KTypography.lightFontfamilyName,
+                          ),
                     ),
                   ),
                 ),
@@ -77,21 +70,19 @@ class SajdaIndex extends StatelessWidget {
                         fit: BoxFit.cover),
                   ),
                   child: Center(
-                    child: Text(
-                      "${sajdaEnglish![index!].sajdanumberInSurah}",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontFamily: 'PBold'),
-                    ),
+                    child: Text("${sajdaEnglish![index!].sajdanumberInSurah}",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: Colors.black,
+                            fontSize: 10.sp,
+                            fontFamily: KTypography.boldFontFamilyName)),
                   ),
                 ),
               ],
             ),
           ),
-          _spacer(),
-          expansionTile(),
-          _spacer(),
+          addVerticalSpaing(20),
+          expansionTile(context),
+          addVerticalSpaing(20),
           Center(
             child: Container(
               // width: MediaQuery.of(context).size.width,
@@ -167,20 +158,17 @@ class SajdaIndex extends StatelessWidget {
     );
   }
 
-  ExpansionTile expansionTile() {
+  ExpansionTile expansionTile(BuildContext context) {
     return ExpansionTile(
       childrenPadding: EdgeInsets.only(left: 20, right: 10),
       trailing: Text(""),
       title: Row(
         children: [
-          Text(
-            "Sajda verse translation",
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
-              fontFamily: 'PMedium',
-              fontSize: 17,
-            ),
-          ),
+          Text("Sajda verse translation",
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontFamily: KTypography.regularFontFamilyName,
+                    fontSize: 14.sp,
+                  )),
           RotatedBox(
             quarterTurns: 3,
             child: Padding(
@@ -188,7 +176,7 @@ class SajdaIndex extends StatelessWidget {
               child: Icon(
                 Icons.arrow_back_ios,
                 size: 15,
-                color: Colors.white.withOpacity(0.5),
+                color: Theme.of(context).textTheme.bodyMedium!.color,
               ),
             ),
           )
@@ -197,14 +185,11 @@ class SajdaIndex extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(
-            "${sajdaEnglish![index!].sajdaText}",
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: 'PLight',
-              fontSize: 15,
-            ),
-          ),
+          child: Text("${sajdaEnglish![index!].sajdaText}",
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontFamily: KTypography.lightFontfamilyName,
+                    fontSize: 13.sp,
+                  )),
         )
       ],
     );

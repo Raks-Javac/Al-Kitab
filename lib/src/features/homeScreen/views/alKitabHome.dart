@@ -10,30 +10,40 @@ class AlKitabHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        appBar: KWidgetsCustomAppBar(
-          leadingIcon: IconButton(
-            icon: RenderSvg(
-              svgPath: KIcons.menuIcon,
-              color: Theme.of(context).textTheme.bodyMedium!.color,
-              svgHeight: 50,
-              svgWidth: 50,
-            ),
-            onPressed: () {
-              _scaffoldKey.currentState!.openDrawer();
-            },
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: KWidgetsCustomAppBar(
+        leadingIcon: IconButton(
+          icon: RenderSvg(
+            svgPath: KIcons.menuIcon,
+            color: Theme.of(context).textTheme.bodyMedium!.color,
+            svgHeight: 50,
+            svgWidth: 50,
           ),
-          title: "Al-Kitab",
-        ),
-        key: _scaffoldKey,
-        drawer: AlKitabDrawer(
-          context: context,
           onPressed: () {
-            Navigator.pop(context);
+            _scaffoldKey.currentState!.openDrawer();
           },
         ),
-        body: Container(
-            child: Container(
-                margin: EdgeInsets.only(top: 15), child: Container())));
+        title: "Al-Kitab",
+      ),
+      key: _scaffoldKey,
+      drawer: AlKitabDrawer(
+        context: context,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      body: Container(
+        child: Container(
+          margin: EdgeInsets.only(top: 15),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -1,5 +1,6 @@
-import 'package:Al_Kitab/src/shared/res/stylesheet/surahIndexStyle.dart';
 import 'package:flutter/material.dart';
+
+import '../res/stylesheet/surahIndexStyle.dart';
 
 class AyahDetail extends StatelessWidget {
   final Size? size;
@@ -24,13 +25,13 @@ class AyahDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       elevation: 0,
       automaticallyImplyLeading: false,
-      expandedHeight: 300,
+      expandedHeight: 270,
       flexibleSpace: FlexibleSpaceBar(
           background: Container(
-        margin: EdgeInsets.only(left: 13, right: 13, top: 20),
+        margin: EdgeInsets.only(left: 13, right: 13, top: 10),
         child: Stack(
           children: [
             Container(
