@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../../animations/FadeInAnimation.dart';
 import '../../animations/TransitionAnimation.dart';
-import '../../shared/res/stylesheet/splashScreenStyles.dart';
 import '../dashboard/main_dash.dart';
 
 class AlKitabSplashScreen extends StatefulWidget {
@@ -47,7 +46,12 @@ class _AlKitabSplashScreenState extends State<AlKitabSplashScreen> {
         alignment: Alignment.bottomCenter,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Text("Al-Kitab", style: appSplashStyle),
+          child: Text(
+            "Al-Kitab",
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontSize: 33,
+                ),
+          ),
         ),
       ),
     );

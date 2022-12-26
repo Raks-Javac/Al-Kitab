@@ -4,8 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/utils/functions.dart';
 import '../../../models/sajda/sajda.dart';
 import '../../../shared/res/res.dart';
-import '../../../shared/res/stylesheet/splashScreenStyles.dart';
-import '../../../shared/res/stylesheet/surahIndexStyle.dart';
 import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 
 class SajdaIndex extends StatelessWidget {
@@ -95,8 +93,10 @@ class SajdaIndex extends StatelessWidget {
                       _width(),
                       Text(
                         "Sajda Info",
-                        style: appSplashStyle.copyWith(
-                            fontSize: 18, fontFamily: "PBold"),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(fontSize: 18, fontFamily: "PBold"),
                       ),
                       _width(),
                       _divider(),
@@ -105,20 +105,26 @@ class SajdaIndex extends StatelessWidget {
                   _spacer(),
                   Text(
                     "Ayah :  ${sajdaEnglish![index!].sajdanumberInSurah}",
-                    style: appSplashStyle.copyWith(
-                        fontSize: 15, fontFamily: "PLight"),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontSize: 15, fontFamily: "PLight"),
                   ),
                   _spacer2(),
                   Text(
                     "juz :  ${sajdaEnglish![index!].sajdaJuzIndex}",
-                    style: appSplashStyle.copyWith(
-                        fontSize: 15, fontFamily: "PLight"),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontSize: 15, fontFamily: "PLight"),
                   ),
                   _spacer2(),
                   Text(
                     "ruku :  ${sajdaEnglish![index!].sajdaRukuIndex}",
-                    style: appSplashStyle.copyWith(
-                        fontSize: 15, fontFamily: "PLight"),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontSize: 15, fontFamily: "PLight"),
                   ),
                 ],
               ),
@@ -216,7 +222,7 @@ class SajdaIndex extends StatelessWidget {
             height: 230,
             width: size.width,
             decoration: BoxDecoration(
-                color: containerStyleColor,
+                color: KColors.primaryColor2,
                 borderRadius: BorderRadius.all(Radius.circular(20))),
           ),
           Container(

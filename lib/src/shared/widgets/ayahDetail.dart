@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../res/stylesheet/surahIndexStyle.dart';
+import '../res/res.dart';
 
 class AyahDetail extends StatelessWidget {
   final Size? size;
@@ -50,7 +50,7 @@ class AyahDetail extends StatelessWidget {
               height: 230,
               width: size!.width,
               decoration: BoxDecoration(
-                  color: containerStyleColor,
+                  color: KColors.primaryColor2,
                   borderRadius: BorderRadius.all(Radius.circular(20))),
             ),
             Container(
