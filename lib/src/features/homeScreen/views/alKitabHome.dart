@@ -49,7 +49,7 @@ class AlKitabHomeView extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(17),
                 ),
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).primaryColorDark,
                 elevation: 5,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
