@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DrawerTile extends StatelessWidget {
   final Function? onPressed;
@@ -27,22 +28,22 @@ class DrawerTile extends StatelessWidget {
           ),
           title: Text(
             "$tileName",
-            style: TextStyle(
-                fontFamily: "PLight",
-                fontSize: 17,
-                color: Colors.white.withOpacity(0.8)),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontFamily: "PLight",
+                  fontSize: 15.sp,
+                ),
           ),
           trailing: Container(
             width: 25,
             height: 25,
             decoration: BoxDecoration(
                 color: Color(0xFF53397C),
-                borderRadius: BorderRadius.all(Radius.circular(10))),
+                borderRadius: BorderRadius.all(Radius.circular(100))),
             child: Center(
               child: Text(
                 "$analysisNumber",
                 style: TextStyle(
-                    fontSize: 20, fontFamily: "RSR", color: Colors.white),
+                    fontSize: 17.sp, fontFamily: "RSR", color: Colors.white),
               ),
             ),
           ),

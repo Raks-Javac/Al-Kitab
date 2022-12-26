@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../animations/TransitionAnimation.dart';
-import '../../../core/utils/enums.dart';
-import '../../settings/theme/provider/theme_provider.dart';
 import '../../../shared/widgets/drawerTile.dart';
 import '../../introduction/intro.dart';
 import '../../quran/juz/juz.dart';
 import '../../quran/sajda/sajda.dart';
-import '../../settings/guidelines/guidelines.dart';
-import '../../settings/shareApp/shareApp.dart';
 import '../../quran/surah/views/SurahScreen.dart';
 import '../../quran/surah/views/surahList.dart';
+import '../../settings/guidelines/guidelines.dart';
+import '../../settings/shareApp/shareApp.dart';
 
 // ignore: must_be_immutable
 class AlKitabDrawer extends StatelessWidget {
@@ -25,7 +23,7 @@ class AlKitabDrawer extends StatelessWidget {
     return Drawer(
       key: _scaffold,
       child: Container(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: ListView(
           children: [
             Container(
@@ -38,34 +36,29 @@ class AlKitabDrawer extends StatelessWidget {
                       icon: Icon(Icons.menu),
                       onPressed: onPressed as void Function()?,
                       iconSize: 30,
-                      color: Theme.of(context).textTheme.bodyLarge!.color,
+                      color: Theme.of(context).textTheme.bodyMedium!.color,
                     ),
                   ),
                   Image.asset(
                     "assets/images/logo.png",
-                    height: 100,
-                    width: 110,
+                    height: 60,
+                    width: 60,
                   ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    "Al-Kitab",
-                    style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: "PMedium",
-                        color: Colors.white),
-                  ),
+                  // Text(
+                  //   "Al-Kitab",
+                  //   style: TextStyle(
+                  //       fontSize: 25,
+                  //       fontFamily: "PMedium",
+                  //       color: Colors.white),
+                  // ),
                   SizedBox(
                     height: 9,
                   ),
-                  Text(
-                    "The Holy Qur’an",
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: "RSR",
-                        color: Colors.grey.withOpacity(0.9)),
-                  ),
+                  Text("The Holy Qur’an",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 30,
+                          fontFamily: "RSR",
+                          color: Colors.grey.withOpacity(0.9))),
                 ],
               ),
             ),
@@ -107,39 +100,26 @@ class AlKitabDrawer extends StatelessWidget {
               },
             ),
             _otherTile(
+              context,
               tileName: "Introduction",
               iconPath: "assets/images/introduction.png",
               screen: AlKitabIntro(),
             ),
-            _otherTile(
+            _otherTile(context,
                 tileName: "Share App",
                 iconPath: 'assets/images/bi_share.png',
                 screen: ShareApp()),
-            _otherTile(
+            _otherTile(context,
                 tileName: "Help & Guidelines",
                 iconPath: "assets/images/rename.png",
                 screen: HelpGuidelinesView()),
-            Consumer<ThemeProvider>(builder: (context, viewModel, _) {
-              return Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    MaterialButton(
-                        child: Text("Dark Mode"),
-                        onPressed: () {
-                          viewModel.changeAppTheme(AppThemeEnum.whiteMode);
-                        }),
-                  ],
-                ),
-              );
-            }),
           ],
         ),
       ),
     );
   }
 
-  Widget _otherTile(
+  Widget _otherTile(BuildContext context,
       {String? tileName, required String iconPath, Widget? screen}) {
     return Column(
       children: [
@@ -149,15 +129,16 @@ class AlKitabDrawer extends StatelessWidget {
           },
           leading: ImageIcon(
             AssetImage(iconPath),
-            color: Colors.grey,
+            color:
+                Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.5),
             size: 20,
           ),
           title: Text(
             "$tileName",
-            style: TextStyle(
-                fontFamily: "PLight",
-                fontSize: 17,
-                color: Colors.white.withOpacity(0.8)),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontFamily: "PLight",
+                  fontSize: 15.sp,
+                ),
           ),
         ),
       ],

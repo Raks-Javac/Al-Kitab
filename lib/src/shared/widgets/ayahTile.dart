@@ -24,17 +24,19 @@ class AyahTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.only(left: 5, right: 5, bottom: 20),
-          child: Column(
+    return Container(
+      margin: EdgeInsets.only(left: 5, right: 5, bottom: 0),
+      child: Column(
+        children: [
+          Column(
             children: [
               ListTile(
                 onTap: onTap as void Function()?,
                 leading: Container(
-                  height: 43,
-                  width: 43,
+                  margin: EdgeInsets.only(top: 10),
+                  alignment: Alignment.bottomCenter,
+                  height: 35,
+                  width: 35,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
@@ -47,7 +49,7 @@ class AyahTile extends StatelessWidget {
                       "$ayahIndex",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 17,
+                          fontSize: 14,
                           fontFamily: 'PBold'),
                     ),
                   ),
@@ -83,13 +85,14 @@ class AyahTile extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width / 1.15,
                 child: Divider(
-                  color: Colors.white.withOpacity(0.5),
+                  thickness: 0.5,
+                  color: Theme.of(context).textTheme.bodyMedium!.color,
                 ),
               )
             ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
