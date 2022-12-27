@@ -1,4 +1,5 @@
-enum AppThemeEnum{
+enum AppThemeEnum {
   primaryMode,
   whiteMode,
+  blackMode,
 }

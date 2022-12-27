@@ -72,6 +72,26 @@ class ThemeSettingsView extends StatelessWidget {
                               : SizedBox.shrink()),
                     ),
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      context
+                          .read<ThemeProvider>()
+                          .changeAppTheme(AppThemeEnum.blackMode);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                          backgroundColor: KColors.blackPrimaryColor,
+                          radius: 40,
+                          child: KAppConstants.appThemeEnum ==
+                                  AppThemeEnum.blackMode
+                              ? RenderSvg(
+                                  svgPath: KIcons.checkIcon,
+                                  color: KColors.whiteColor,
+                                )
+                              : SizedBox.shrink()),
+                    ),
+                  ),
                 ],
               ),
             ),

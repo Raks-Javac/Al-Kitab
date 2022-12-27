@@ -60,10 +60,40 @@ abstract class KThemes {
         ));
   }
 
+  static ThemeData get blackMode {
+    return ThemeData(
+        scaffoldBackgroundColor: KColors.blackPrimaryColor,
+        primaryColor: KColors.blackPrimaryColor,
+        indicatorColor: KColors.blackPrimaryColor,
+        primaryColorDark: KColors.blackPrimaryColor,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        cardColor: KColors.blackCardColor,
+        primaryTextTheme: TextTheme(
+          bodySmall: KTypography.smallTextLight,
+          bodyMedium: KTypography.bodyTextLight,
+          bodyLarge: KTypography.largeTextLight,
+          displayMedium: KTypography.bodyTextLight,
+          displayLarge: KTypography.largeTextLight,
+          displaySmall: KTypography.smallTextLight,
+        ),
+        textTheme: TextTheme(
+          bodySmall: KTypography.smallTextLight,
+          bodyMedium: KTypography.bodyTextLight,
+          bodyLarge: KTypography.largeTextLight,
+          displayMedium: KTypography.bodyTextLight,
+          displayLarge: KTypography.largeTextLight,
+          displaySmall: KTypography.smallTextLight,
+        ));
+  }
+
   static ThemeData returnThemeBasedOnMode(AppThemeEnum status) {
     if (status == AppThemeEnum.whiteMode) {
       return whiteMode;
     }
+    if (status == AppThemeEnum.blackMode) {
+      return blackMode;
+    }
+
     return primaryMode;
   }
 }

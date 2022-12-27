@@ -10,4 +10,6 @@ abstract class KColors {
   static const Color black = Colors.black;
   static const Color grey = Color(0xFF959595);
   static const Color semiWhite = Color(0xFFE5E5E5);
+  static const Color blackPrimaryColor = Color(0xFF000000);
+  static const Color blackCardColor = Color(0xFF121213);
 }
