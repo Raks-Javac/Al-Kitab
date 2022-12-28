@@ -16,6 +16,7 @@ abstract class KIcons {
   static const String leaveReviewIcon = "assets/icons/leave_review.svg";
   static const String homeIcon = "assets/icons/home_icon.svg";
   static const String themeIcon = 'assets/icons/theme_icon.svg';
-  static const helpGuideLineIcon = 'assets/icons/guilde_icon.svg';
-  static const versionCheck = 'assets/icons/version_check.svg';
+  static const String helpGuideLineIcon = 'assets/icons/guilde_icon.svg';
+  static const String versionCheck = 'assets/icons/version_check.svg';
+  static const String threeDots = 'assets/icons/three_dots_icon.svg';
 }

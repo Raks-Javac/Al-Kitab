@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class KNavigator {
   KNavigator._();
 
-  KNavigator instance = KNavigator._();
+ static KNavigator instance = KNavigator._();
   static GlobalKey<NavigatorState>? navigatorKey = GlobalKey<NavigatorState>();
   static GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey =
       GlobalKey<ScaffoldMessengerState>();

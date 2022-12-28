@@ -6,9 +6,12 @@ import '../../../../core/utils/enums.dart';
 import '../../../../core/utils/functions.dart';
 import '../../../../models/surah/ayah.dart';
 import '../../../../models/surah/surah.dart';
+import '../../../../shared/render/render_svg.dart';
 import '../../../../shared/res/res.dart';
 import '../../../../shared/widgets/app_bar/custom_app_bar.dart';
 import '../../../../shared/widgets/ayahDetail.dart';
+import '../../../../shared/widgets/bottom_sheet.dart/reusable_bottom.dart';
+import 'translation_mode_toggle.dart';
 
 // ignore: must_be_immutable
 class SurahIndexScreen extends StatelessWidget {
@@ -61,13 +64,28 @@ class SurahIndexScreen extends StatelessWidget {
                                   margin: EdgeInsets.only(left: 15, right: 15),
                                   height: 40,
                                   width: size.width,
-                                  decoration: BoxDecoration(
-                                      color: KAppConstants.appThemeEnum ==
-                                              AppThemeEnum.whiteMode
-                                          ? Theme.of(context).primaryColor
-                                          : Theme.of(context).cardColor,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(100))),
+                                  decoration: KAppConstants.appThemeEnum ==
+                                          AppThemeEnum.whiteMode
+                                      ? BoxDecoration(
+                                          color: Theme.of(context)
+                                              .scaffoldBackgroundColor,
+                                          border: KAppConstants.appThemeEnum ==
+                                                  AppThemeEnum.whiteMode
+                                              ? Border.all(
+                                                  color: KColors.primaryColor,
+                                                )
+                                              : Border.all(),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(100)),
+                                        )
+                                      : BoxDecoration(
+                                          color: KAppConstants.appThemeEnum ==
+                                                  AppThemeEnum.whiteMode
+                                              ? Theme.of(context)
+                                                  .scaffoldBackgroundColor
+                                              : Theme.of(context).cardColor,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(100))),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -78,8 +96,12 @@ class SurahIndexScreen extends StatelessWidget {
                                             alignment: Alignment.centerLeft,
                                             child: CircleAvatar(
                                               radius: 12,
-                                              backgroundColor: Theme.of(context)
-                                                  .primaryColor,
+                                              backgroundColor:
+                                                  KAppConstants.appThemeEnum ==
+                                                          AppThemeEnum.whiteMode
+                                                      ? KColors.primaryColor
+                                                      : Theme.of(context)
+                                                          .primaryColor,
                                               child: Center(
                                                 child: Text(
                                                   "${ayahEnglishText![index].ayahIndex}",
@@ -90,6 +112,8 @@ class SurahIndexScreen extends StatelessWidget {
                                                         fontFamily: KTypography
                                                             .regularFontFamilyName,
                                                         fontSize: 12.sp,
+                                                        color:
+                                                            KColors.whiteColor,
                                                       ),
                                                 ),
                                               ),
@@ -104,16 +128,7 @@ class SurahIndexScreen extends StatelessWidget {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               icons(
-                                                  imgPath:
-                                                      "assets/images/share.png",
-                                                  onTap: () {
-                                                    KFunctions.share(
-                                                        '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
-                                                        'Quran ${index + 1}',
-                                                        'v${ayahEnglishText![index].ayahIndex}');
-                                                    // _functions.showToast(context);
-                                                  }),
-                                              GestureDetector(
+                                                imgPath: KIcons.copyIcon,
                                                 onTap: () {
                                                   KFunctions.copy(
                                                       '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
@@ -121,12 +136,32 @@ class SurahIndexScreen extends StatelessWidget {
                                                       'v${ayahEnglishText![index].ayahIndex}',
                                                       context);
                                                 },
-                                                child: Icon(
-                                                  Icons.copy_outlined,
-                                                  color: KColors.whiteColor,
-                                                  size: 21,
-                                                ),
-                                              )
+                                              ),
+                                              icons(
+                                                  imgPath: KIcons.shareIcon,
+                                                  onTap: () {
+                                                    KFunctions.share(
+                                                        '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
+                                                        'Quran ${index + 1}',
+                                                        'v${ayahEnglishText![index].ayahIndex}');
+                                                    // _functions.showToast(context);
+                                                  }),
+                                              icons(
+                                                  imgPath: KIcons.threeDots,
+                                                  onTap: () {
+                                                    kWidgetsBottomSheet(
+                                                      context,
+                                                      Container(
+                                                        height: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .height /
+                                                            2,
+                                                        child:
+                                                            TranslationBottomSheet(),
+                                                      ),
+                                                    );
+                                                  }),
                                             ],
                                           ),
                                         ),
@@ -212,17 +247,16 @@ class SurahIndexScreen extends StatelessWidget {
                 ))));
   }
 
-  GestureDetector icons({String? imgPath, Function? onTap}) {
+  GestureDetector icons({required String? imgPath, Function? onTap}) {
     return GestureDetector(
       onTap: onTap as void Function()?,
       child: Padding(
-        padding: const EdgeInsets.only(right: 10.0),
-        child: ImageIcon(
-          AssetImage(
-            "$imgPath",
-          ),
-          color: KColors.whiteColor,
-          size: 30,
+        padding: const EdgeInsets.symmetric(horizontal: 14.0),
+        child: RenderSvg(
+          svgPath: imgPath!,
+          color: KAppConstants.appThemeEnum == AppThemeEnum.whiteMode
+              ? KColors.black
+              : KColors.whiteColor,
         ),
       ),
     );
