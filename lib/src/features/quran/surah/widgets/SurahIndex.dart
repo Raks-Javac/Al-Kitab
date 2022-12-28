@@ -48,6 +48,7 @@ class SurahIndexScreen extends StatelessWidget {
                   },
                   body: Container(
                     child: ListView.builder(
+                        physics: BouncingScrollPhysics(),
                         itemCount: ayahArabicText!.length,
                         itemBuilder: (context, index) {
                           return Container(

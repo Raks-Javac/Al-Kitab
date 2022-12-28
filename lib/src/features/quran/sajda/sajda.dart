@@ -5,7 +5,7 @@ import '../../../core/navigation/navigation_1.0.dart';
 import '../../../core/utils/constants.dart';
 import '../../../models/sajda/sajda.dart';
 import '../../../shared/widgets/ayahTile.dart';
-import 'sajdaIndex.dart';
+import 'widget/sajdaIndex.dart';
 
 class SajdaList extends StatefulWidget {
   @override

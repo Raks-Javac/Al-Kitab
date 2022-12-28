@@ -36,6 +36,7 @@ class SurahListState extends State<SurahList> {
       margin: EdgeInsets.only(bottom: 10),
       child: AnimationLimiter(
         child: ListView.builder(
+            physics: BouncingScrollPhysics(),
             itemCount: KAppConstants.surahArabicList!.surahs!.length,
             itemBuilder: (context, index) {
               return AnimationConfiguration.staggeredList(
