@@ -1,8 +1,7 @@
-import '../../../core/navigation/navigation_1.0.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import '../../../animations/TransitionAnimation.dart';
+import '../../../core/navigation/navigation_1.0.dart';
 import '../../../core/utils/constants.dart';
 import '../../../models/sajda/sajda.dart';
 import '../../../shared/widgets/ayahTile.dart';
@@ -35,16 +34,6 @@ class _SajdaListState extends State<SajdaList> {
   @override
   Widget build(BuildContext context) {
     return futureWidget();
-  }
-
-  _route({Widget? screen}) {
-    return Navigator.push(
-      context,
-      PreviewSlideRoute(
-        duration: 200,
-        preview: screen,
-      ),
-    );
   }
 
   Widget futureWidget() {
