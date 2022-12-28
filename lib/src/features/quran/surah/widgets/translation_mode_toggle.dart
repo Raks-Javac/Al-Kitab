@@ -1,62 +1,79 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/enums.dart';
 import '../../../../shared/res/assets.dart';
 import '../../../../shared/res/res.dart';
+import '../controller/controller.dart';
 
 class TranslationBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
+      child: Builder(builder: (context) {
+        Provider.of<SurahProvider>(context, listen: false);
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Align(
               alignment: Alignment.center,
-              height: 2,
-              width: 59,
-              color: KAppConstants.appThemeEnum == AppThemeEnum.whiteMode
-                  ? KColors.primaryColor
-                  : KColors.whiteColor,
+              child: Container(
+                alignment: Alignment.center,
+                height: 2,
+                width: 59,
+                color: KAppConstants.appThemeEnum == AppThemeEnum.whiteMode
+                    ? KColors.primaryColor
+                    : KColors.whiteColor,
+              ),
             ),
-          ),
-          addVerticalSpaing(20),
-          Text(
-            "Reading View",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 15.sp,
-                  fontFamily: KTypography.boldFontFamilyName,
-                ),
-          ),
-          addVerticalSpaing(13),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OptionWidget(
-                  isActive: true,
-                  optionTitle: "Arabic and Translation",
-                  onTap: () {},
-                  optionPreviewImage: KAssets.withTransaltionPicture,
-                ),
-                addHorizontalSpacing(40),
-                OptionWidget(
-                  isActive: false,
-                  optionTitle: "Arabic",
-                  optionPreviewImage: KAssets.arabicOnlyPicture,
-                  onTap: () {},
-                ),
-              ],
+            addVerticalSpaing(20),
+            Text(
+              "Reading View",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontSize: 15.sp,
+                    fontFamily: KTypography.boldFontFamilyName,
+                  ),
             ),
-          )
-        ],
-      ),
+            addVerticalSpaing(13),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OptionWidget(
+                    isActive:
+                        context.watch<SurahProvider>().getTranslationMode ==
+                            true,
+                    optionTitle: "Arabic and Translation",
+                    onTap: () {
+                      context
+                          .read<SurahProvider>()
+                          .changeTranslationState(true);
+                    },
+                    optionPreviewImage: KAssets.withTransaltionPicture,
+                  ),
+                  addHorizontalSpacing(40),
+                  OptionWidget(
+                    isActive:
+                        context.watch<SurahProvider>().getTranslationMode ==
+                            false,
+                    optionTitle: "Arabic",
+                    optionPreviewImage: KAssets.arabicOnlyPicture,
+                    onTap: () {
+                      context
+                          .read<SurahProvider>()
+                          .changeTranslationState(false);
+                    },
+                  ),
+                ],
+              ),
+            )
+          ],
+        );
+      }),
     );
   }
 }
