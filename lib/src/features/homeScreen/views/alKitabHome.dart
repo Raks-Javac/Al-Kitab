@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/enums.dart';
 import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/assets.dart';
 import '../../../shared/res/res.dart';
@@ -49,7 +51,9 @@ class AlKitabHomeView extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(17),
                 ),
-                color: Theme.of(context).primaryColorDark,
+                color: KAppConstants.appThemeEnum == AppThemeEnum.blackMode
+                    ? KColors.primaryColor3
+                    : Theme.of(context).primaryColorDark,
                 elevation: 5,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
