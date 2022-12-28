@@ -66,7 +66,7 @@ class SurahIndexScreen extends StatelessWidget {
                                           ? Theme.of(context).primaryColor
                                           : Theme.of(context).cardColor,
                                       borderRadius: BorderRadius.all(
-                                          Radius.circular(10))),
+                                          Radius.circular(100))),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -77,8 +77,8 @@ class SurahIndexScreen extends StatelessWidget {
                                             alignment: Alignment.centerLeft,
                                             child: CircleAvatar(
                                               radius: 12,
-                                              backgroundColor:
-                                                  Color(0xFFBE96FF),
+                                              backgroundColor: Theme.of(context)
+                                                  .primaryColor,
                                               child: Center(
                                                 child: Text(
                                                   "${ayahEnglishText![index].ayahIndex}",
@@ -122,7 +122,7 @@ class SurahIndexScreen extends StatelessWidget {
                                                 },
                                                 child: Icon(
                                                   Icons.copy_outlined,
-                                                  color: Colors.grey,
+                                                  color: KColors.whiteColor,
                                                   size: 21,
                                                 ),
                                               )
@@ -220,7 +220,7 @@ class SurahIndexScreen extends StatelessWidget {
           AssetImage(
             "$imgPath",
           ),
-          color: Colors.white,
+          color: KColors.whiteColor,
           size: 30,
         ),
       ),

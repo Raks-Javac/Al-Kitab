@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../res/assets.dart';
 import '../res/res.dart';
 
 class AyahDetail extends StatelessWidget {
@@ -28,104 +30,103 @@ class AyahDetail extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       elevation: 0,
       automaticallyImplyLeading: false,
-      expandedHeight: 270,
+      expandedHeight: 140,
       flexibleSpace: FlexibleSpaceBar(
           background: Container(
-        margin: EdgeInsets.only(left: 13, right: 13, top: 10),
-        child: Stack(
-          children: [
-            Container(
-              height: 230,
-              width: size!.width,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      "assets/images/quran.jpg",
-                    ),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-            ),
-            Container(
-              height: 230,
-              width: size!.width,
-              decoration: BoxDecoration(
-                  color: KColors.primaryColor2,
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-            ),
-            Container(
-              width: size!.width,
-              margin: EdgeInsets.only(left: 13, right: 13, top: 20),
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(KAssets.ayahPreviewBackgroundImage),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 17),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "$ayahArabicName",
-                    style: TextStyle(
-                        fontSize: 36,
-                        fontFamily: "PLight",
-                        color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    "$ayahEnglishName",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: "PRegular",
-                        color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  SizedBox(
-                    width: size!.width / 1.5,
-                    child: Divider(
-                      color: Colors.white,
-                      thickness: 0.8,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "$revelationType",
-                        style: TextStyle(
-                            fontSize: 23,
-                            fontFamily: "PRegular",
-                            color: Colors.white),
-                      ),
-                      Padding(
+                      Expanded(
+                          child: Padding(
                         padding: const EdgeInsets.only(
-                            bottom: 5.0, left: 10, right: 5),
-                        child: Text(
-                          ".",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "PRegular",
-                            color: Colors.white,
-                          ),
+                          left: 15,
                         ),
-                      ),
-                      Text(
-                        "$numberOfAyah VERSES",
-                        style: TextStyle(
-                            fontSize: 23,
-                            fontFamily: "PRegular",
-                            color: Colors.white),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "$ayahEnglishName",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontSize: 17.sp,
+                                    fontFamily:
+                                        KTypography.regularFontFamilyName,
+                                    color: Colors.white,
+                                  ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "$revelationType",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                        fontSize: 12.sp,
+                                        fontFamily:
+                                            KTypography.regularFontFamilyName,
+                                        color: Colors.white,
+                                      ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 8.0, left: 5, right: 5),
+                                  child: Text(
+                                    ".",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontFamily: "PRegular",
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  "$numberOfAyah VERSES",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                        fontSize: 14.sp,
+                                        fontFamily:
+                                            KTypography.regularFontFamilyName,
+                                        color: Colors.white,
+                                      ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "$ayahArabicName",
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    fontFamily: KTypography.lightFontfamilyName,
+                                    color: KColors.primaryColor2,
+                                    fontSize: 23.sp,
+                                  ),
+                        ),
                       ),
                     ],
                   )
                 ],
-              ),
-            )
-          ],
-        ),
-      )),
+              ))),
     );
   }
 }
