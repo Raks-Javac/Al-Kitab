@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../animations/TransitionAnimation.dart';
-import '../../animations/fadeFromBottom.dart';
+import '../../core/navigation/navigation_1.0.dart';
 import '../../models/appTexts/preview.dart';
 import '../../shared/res/res.dart';
 import '../../shared/res/stylesheet/splashPreviewstyles.dart';
@@ -78,43 +77,37 @@ class _AlKitabIntroViewState extends State<AlKitabIntroView> {
   }
 
   lastPageGStartedButton(BuildContext context) {
-    return Expanded(
-        child: InkWell(
+    return GestureDetector(
       onTap: () {
         homeNavigator();
       },
       onDoubleTap: () {
         homeNavigator();
       },
-      child: FadeFromButtom(
-        bottomwidget: Container(
-          color: Theme.of(context).primaryColor,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                ),
-              ),
-              height: 75,
-              child: Center(
-                child: Text(
-                  "Get Started",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: KColors.black,
-                        fontSize: 22.sp,
-                      ),
-                ),
-              ),
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: Container(
+          margin: EdgeInsets.only(bottom: 5),
+          decoration: BoxDecoration(
+              color: KColors.whiteColor,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  topLeft: Radius.circular(30))),
+          width: 166,
+          height: 52,
+          child: Center(
+            child: Text(
+              "Get Started",
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: KColors.black,
+                    fontSize: 17.sp,
+                    fontFamily: KTypography.regularFontFamilyName,
+                  ),
             ),
           ),
         ),
       ),
-    ));
+    );
   }
 
   Expanded firstPageNextButton() {
@@ -290,28 +283,6 @@ class _AlKitabIntroViewState extends State<AlKitabIntroView> {
                                   ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Container(
-                          margin: EdgeInsets.only(bottom: 15),
-                          decoration: BoxDecoration(
-                              color: alignColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(30),
-                                  topLeft: Radius.circular(30))),
-                          width: 166,
-                          height: 52,
-                          child: Center(
-                            child: Text(
-                              "Get Started",
-                              style: getStarted.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontFamily: "Plight"),
-                            ),
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),
@@ -367,8 +338,7 @@ class _AlKitabIntroViewState extends State<AlKitabIntroView> {
   }
 
   homeNavigator() {
-    return Navigator.pushReplacement(context,
-        PreviewSlideRoute(preview: MainDashBoardView(), duration: 500));
+    KNavigator.navigateAndRemoveUntilRoute(MainDashBoardView());
   }
 
   @override

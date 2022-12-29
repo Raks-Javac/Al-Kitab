@@ -32,7 +32,7 @@ class AlKitabDrawer extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
-                      icon: Icon(Icons.menu),
+                      icon: Icon(Icons.cancel),
                       onPressed: onPressed as void Function()?,
                       iconSize: 30,
                       color: Theme.of(context).textTheme.bodyMedium!.color,
