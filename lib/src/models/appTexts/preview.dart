@@ -8,7 +8,7 @@ class PreviewClassifier {
   List<Preview> previewList = [
     Preview(
       imgDescription: "assets/images/fistPreview.png",
-      descriptionText: "Learn  Quran and Recite once everyday",
+      descriptionText: "Learn  Quran and Recite everyday",
     ),
     Preview(
       imgDescription: "assets/images/secondPreview.png",
