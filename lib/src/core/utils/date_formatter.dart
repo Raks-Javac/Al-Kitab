@@ -1,4 +1,5 @@
 import 'package:hijri/hijri_calendar.dart';
+import 'package:intl/intl.dart';
 
 class KDateFormatter {
   KDateFormatter._();
@@ -6,5 +7,9 @@ class KDateFormatter {
   var format = HijriCalendar.now();
   String returnIslamicCurrentDate() {
     return format.fullDate();
+  }
+
+  static String returnEnglishDateTimeNowOndashBoard() {
+    return DateFormat.yMMMMEEEEd().format(DateTime.now());
   }
 }

@@ -1,6 +1,8 @@
-import 'package:Al_Kitab/src/models/appTexts/preview.dart';
-import 'package:Al_Kitab/src/shared/res/stylesheet/splashPreviewstyles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../models/appTexts/preview.dart';
+import '../../shared/res/res.dart';
 
 // ignore: must_be_immutable
 class IntroWidget extends StatelessWidget {
@@ -25,7 +27,10 @@ class IntroWidget extends StatelessWidget {
             child: Text(
               "${preview.previewList[index!].descriptionText}",
               textAlign: TextAlign.center,
-              style: decriptionText,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: KColors.black,
+                    fontSize: 17.sp,
+                  ),
             ),
           ),
         ],

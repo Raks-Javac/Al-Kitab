@@ -106,7 +106,7 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                       ),
                       addVerticalSpaing(2),
                       Text(
-                        "Saturday 5th November 2022",
+                        KDateFormatter.returnEnglishDateTimeNowOndashBoard(),
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: KColors.semiWhite.withOpacity(0.5),
                             ),

@@ -1,10 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../animations/FadeInAnimation.dart';
-import '../../animations/TransitionAnimation.dart';
+import '../../core/navigation/navigation_1.0.dart';
 import '../dashboard/main_dash.dart';
+import '../introduction/intro.dart';
+
+const String checkForOnBoardKey = 'onBoardKey';
 
 class AlKitabSplashScreen extends StatefulWidget {
   AlKitabSplashScreen({Key? key}) : super(key: key);
@@ -17,15 +21,28 @@ class _AlKitabSplashScreenState extends State<AlKitabSplashScreen> {
   double seconds = 3;
   @override
   void initState() {
-    // super.initState();
+    super.initState();
     splashTimer();
   }
 
+  checkForOnBoard() async {
+    // Obtain shared preferences.
+    final prefs = await SharedPreferences.getInstance();
+
+    final bool? onBoarded = prefs.getBool(checkForOnBoardKey);
+    if (onBoarded == true) {
+      KNavigator.navigateAndRemoveUntilRoute(MainDashBoardView());
+    } else {
+      KNavigator.navigateAndRemoveUntilRoute(AlKitabIntroView());
+    }
+    // Save an boolean value to []' key.
+    await prefs.setBool(checkForOnBoardKey, true);
+  }
+
   Timer splashTimer() {
-    return Timer(
-        Duration(seconds: seconds.toInt()),
-        () => Navigator.of(context).pushReplacement(
-            PreviewSlideRoute(preview: MainDashBoardView(), duration: 1000)));
+    return Timer(Duration(seconds: seconds.toInt()), () {
+      checkForOnBoard();
+    });
   }
 
   @override

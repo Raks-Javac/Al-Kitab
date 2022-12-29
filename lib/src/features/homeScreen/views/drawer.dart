@@ -9,7 +9,6 @@ import '../../quran/sajda/sajda.dart';
 import '../../quran/surah/views/SurahScreen.dart';
 import '../../quran/surah/views/surahList.dart';
 import '../../settings/guidelines/guidelines.dart';
-import '../../settings/shareApp/shareApp.dart';
 
 // ignore: must_be_immutable
 class AlKitabDrawer extends StatelessWidget {
@@ -103,12 +102,12 @@ class AlKitabDrawer extends StatelessWidget {
               context,
               tileName: "Introduction",
               iconPath: "assets/images/introduction.png",
-              screen: AlKitabIntro(),
+              screen: AlKitabIntroView(),
             ),
-            _otherTile(context,
-                tileName: "Share App",
-                iconPath: 'assets/images/bi_share.png',
-                screen: ShareApp()),
+            // _otherTile(context,
+            //     tileName: "Share App",
+            //     iconPath: 'assets/images/bi_share.png',
+            //     screen: ShareApp()),
             _otherTile(context,
                 tileName: "Help & Guidelines",
                 iconPath: "assets/images/rename.png",

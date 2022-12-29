@@ -137,7 +137,9 @@ class SettingsTitleObject {
       SettingsTitleObject(
           tileTitle: "Meet The Team",
           iconPath: KIcons.meetTeamIcon,
-          onTap: () {}),
+          onTap: () {
+            KFunctions().showSnack("Coming soon...");
+          }),
       SettingsTitleObject(
           tileTitle: "Help & Guildlines",
           iconPath: KIcons.helpGuideLineIcon,

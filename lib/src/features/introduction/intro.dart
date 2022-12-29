@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../animations/TransitionAnimation.dart';
 import '../../animations/fadeFromBottom.dart';
 import '../../models/appTexts/preview.dart';
+import '../../shared/res/res.dart';
 import '../../shared/res/stylesheet/splashPreviewstyles.dart';
 import '../dashboard/main_dash.dart';
 import 'Introduction.dart';
 
-class AlKitabIntro extends StatefulWidget {
-  AlKitabIntro({Key? key}) : super(key: key);
+class AlKitabIntroView extends StatefulWidget {
+  AlKitabIntroView({Key? key}) : super(key: key);
   @override
-  _AlKitabIntroState createState() => _AlKitabIntroState();
+  _AlKitabIntroViewState createState() => _AlKitabIntroViewState();
 }
 
-class _AlKitabIntroState extends State<AlKitabIntro> {
+class _AlKitabIntroViewState extends State<AlKitabIntroView> {
   PageController _pageController = PageController(initialPage: 0);
   int currentPage = 0;
   int numberOfPages = 3;
@@ -102,7 +104,10 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
               child: Center(
                 child: Text(
                   "Get Started",
-                  style: getStarted,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: KColors.black,
+                        fontSize: 22.sp,
+                      ),
                 ),
               ),
             ),
@@ -275,10 +280,14 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
                       ),
                       Positioned(
                         top: 60,
-                        left: 10,
+                        left: 15,
                         child: Text(
                           "Al-Kitab",
-                          style: getStarted.copyWith(fontSize: 30),
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    color: KColors.black,
+                                    fontSize: 25.sp,
+                                  ),
                         ),
                       ),
                       Align(
