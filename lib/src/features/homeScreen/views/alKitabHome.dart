@@ -1,17 +1,44 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
+import '../../../core/navigation/navigation_1.0.dart';
 import '../../../core/utils/constants.dart';
+import '../../../core/utils/date_formatter.dart';
 import '../../../core/utils/enums.dart';
+import '../../../models/surah/surah.dart';
 import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/assets.dart';
 import '../../../shared/res/res.dart';
 import '../../../shared/widgets/app_bar/custom_app_bar.dart';
 import '../../../shared/widgets/ayahTile.dart';
+import '../../quran/surah/widgets/SurahIndex.dart';
+import '../model/daily_reminder.dart';
+import '../provider/home_provider.dart';
 import 'drawer.dart';
 
-class AlKitabHomeView extends StatelessWidget {
+final dailyRemainderObjectList = DailyReminderObject().dailyReminderList();
+final randomIndexForDailyRemainder =
+    Random().nextInt(dailyRemainderObjectList.length);
+
+class AlKitabHomeView extends StatefulWidget {
+  @override
+  State<AlKitabHomeView> createState() => _AlKitabHomeViewState();
+}
+
+class _AlKitabHomeViewState extends State<AlKitabHomeView> {
+  final surahLoader = new SurahModel();
+  @override
+  void initState() {
+    context.read<HomeProvider>().loadInitState();
+
+    super.initState();
+  }
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,10 +98,10 @@ class AlKitabHomeView extends StatelessWidget {
                       ),
                       addVerticalSpaing(8),
                       Text(
-                        "Rabil al-thani 11, 1444 A.H",
+                        KDateFormatter.instance.returnIslamicCurrentDate(),
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: KColors.whiteColor,
-                              fontSize: 15.sp,
+                              fontSize: 14.sp,
                             ),
                       ),
                       addVerticalSpaing(2),
@@ -90,137 +117,177 @@ class AlKitabHomeView extends StatelessWidget {
                 ),
               ),
               addVerticalSpaing(5),
-              Container(
-                margin: EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 15,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Daily verse:",
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontSize: 16.sp,
-                            fontFamily: KTypography.normalFontFamilyName,
-                            color: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .color!
-                                .withOpacity(0.5),
-                          ),
-                    ),
-                    addVerticalSpaing(10),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage(
-                            KAssets.dailyVerseBackground,
-                          ),
-                          fit: BoxFit.cover,
-                        ),
+              if (KAppConstants.surahArabicList != null ||
+                  KAppConstants.surahEnglishList != null)
+                Container(
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 15,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Daily verse:",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontSize: 16.sp,
+                              fontFamily: KTypography.normalFontFamilyName,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .color!
+                                  .withOpacity(0.5),
+                            ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(17.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      addVerticalSpaing(10),
+                      Consumer<HomeProvider>(builder: (context, vModel, _) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(16),
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage(
+                                KAssets.dailyVerseBackground,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(17.0),
+                            child: Column(
                               children: [
-                                Text(
-                                  "Suratul Al-faatiha",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .copyWith(
-                                        color: KColors.whiteColor,
-                                        fontSize: 15.sp,
-                                      ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      KAppConstants
+                                          .surahEnglishList!
+                                          .surahs![vModel.savedSurahIndex!]
+                                          .englishTransliterationName!,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                            color: KColors.whiteColor,
+                                            fontSize: 15.sp,
+                                          ),
+                                    ),
+                                    Text(
+                                      "Verse ${KAppConstants.surahEnglishList!.surahs![vModel.savedSurahIndex!].ayahs![vModel.savedSurahIndex!].ayahIndex}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                            color: KColors.whiteColor,
+                                            fontSize: 15.sp,
+                                          ),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  "Verse 2",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .copyWith(
-                                        color: KColors.whiteColor,
-                                        fontSize: 15.sp,
-                                      ),
+                                addVerticalSpaing(12),
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    "َ${KAppConstants.surahArabicList!.surahs![vModel.savedSurahIndex!].ayahs![vModel.savedSurahIndex!].ayahText}",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .copyWith(
+                                          color: KColors.whiteColor,
+                                          fontSize: 17.sp,
+                                        ),
+                                  ),
+                                ),
+                                addVerticalSpaing(15),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "َ${KAppConstants.surahEnglishList!.surahs![vModel.savedSurahIndex!].ayahs![vModel.savedSurahIndex!].ayahText}",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .copyWith(
+                                          color: KColors.whiteColor,
+                                          fontSize: 15.sp,
+                                        ),
+                                  ),
                                 ),
                               ],
                             ),
-                            addVerticalSpaing(12),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                "َﻦﻳِمَلاَعْلا ِّبَر ِهّﻞﻟ ُدْمَحْلا",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                      color: KColors.whiteColor,
-                                      fontSize: 17.sp,
-                                    ),
-                              ),
+                          ),
+                        );
+                      })
+                    ],
+                  ),
+                ),
+              addVerticalSpaing(4),
+              Consumer<HomeProvider>(builder: (context, vModel, _) {
+                final surahLastReadIndex = vModel.savedSurahIndex;
+                return vModel.savedSurahIndex != null
+                    ? Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 15,
+                          vertical: 15,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Last Read:",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    fontSize: 16.sp,
+                                    fontFamily:
+                                        KTypography.normalFontFamilyName,
+                                    color: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .color!
+                                        .withOpacity(0.5),
+                                  ),
                             ),
-                            addVerticalSpaing(15),
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                " 1. Praise be to Allah, Lord of the worlds",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                      color: KColors.whiteColor,
-                                      fontSize: 15.sp,
-                                    ),
-                              ),
-                            ),
+                            addVerticalSpaing(10),
+                            AyahTile(
+                              ayahArabicName: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex!].arabicName,
+                              ayahEnglishName: KAppConstants
+                                  .surahArabicList!
+                                  .surahs![surahLastReadIndex]
+                                  .englishTransliterationName,
+                              ayahIndex: surahLastReadIndex + 1,
+                              ayahName: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex].englishName,
+                              numberOfAyah: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex].ayahs!.length,
+                              revelationType: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex].revelationType,
+                              onTap: () {
+                                KNavigator.navigateToRoute(
+                                  SurahIndexScreen(
+                                    index: surahLastReadIndex,
+                                    surahs:
+                                        KAppConstants.surahArabicList!.surahs,
+                                    ayahArabicText: KAppConstants
+                                        .surahArabicList!
+                                        .surahs![surahLastReadIndex]
+                                        .ayahs,
+                                    ayahEnglishText: KAppConstants
+                                        .surahEnglishList!
+                                        .surahs![surahLastReadIndex]
+                                        .ayahs,
+                                  ),
+                                );
+                              },
+                            )
                           ],
                         ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              addVerticalSpaing(4),
-              Container(
-                margin: EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 15,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Last Read:",
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontSize: 16.sp,
-                            fontFamily: KTypography.normalFontFamilyName,
-                            color: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .color!
-                                .withOpacity(0.5),
-                          ),
-                    ),
-                    addVerticalSpaing(10),
-                    AyahTile(
-                      ayahArabicName: "‎ةَحِتاَفْلا",
-                      ayahEnglishName: "Suratul Al-faatiha",
-                      ayahIndex: 2,
-                      ayahName: "",
-                      numberOfAyah: 2,
-                      revelationType: "MECCAN",
-                      onTap: () {},
-                    )
-                  ],
-                ),
-              ),
+                      )
+                    : SizedBox.shrink();
+              }),
               Container(
                 margin: EdgeInsets.symmetric(
                   horizontal: 15,
@@ -264,7 +331,7 @@ class AlKitabHomeView extends StatelessWidget {
                           children: [
                             addVerticalSpaing(25),
                             Text(
-                              "Suratul Baqarah{chapter 2 Verse 43}",
+                              "${dailyRemainderObjectList[randomIndexForDailyRemainder].surahEnglishName}{chapter ${dailyRemainderObjectList[randomIndexForDailyRemainder].surahChapter} Verse ${dailyRemainderObjectList[randomIndexForDailyRemainder].surahVerse}}",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
@@ -275,7 +342,7 @@ class AlKitabHomeView extends StatelessWidget {
                             ),
                             addVerticalSpaing(10),
                             Text(
-                              "“You shall observe the Contact Prayers (Salat) and give the obligatory charity (Zakat),  and bow down with those who bow down”.",
+                              "“${dailyRemainderObjectList[randomIndexForDailyRemainder].surahEnglishTeext}”.",
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!

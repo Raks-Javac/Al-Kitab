@@ -12,11 +12,12 @@ import '../../../../shared/res/res.dart';
 import '../../../../shared/widgets/app_bar/custom_app_bar.dart';
 import '../../../../shared/widgets/ayahDetail.dart';
 import '../../../../shared/widgets/bottom_sheet.dart/reusable_bottom.dart';
+import '../../../homeScreen/provider/home_provider.dart';
 import '../controller/controller.dart';
 import 'translation_mode_toggle.dart';
 
 // ignore: must_be_immutable
-class SurahIndexScreen extends StatelessWidget {
+class SurahIndexScreen extends StatefulWidget {
   final int? index;
   final List<Surah>? surahs;
   final List<Ayah>? ayahEnglishText;
@@ -26,12 +27,23 @@ class SurahIndexScreen extends StatelessWidget {
       {this.ayahArabicText, this.surahs, this.index, this.ayahEnglishText});
 
   @override
+  State<SurahIndexScreen> createState() => _SurahIndexScreenState();
+}
+
+class _SurahIndexScreenState extends State<SurahIndexScreen> {
+  @override
+  void initState() {
+    context.read<HomeProvider>().saveKeyToStore(widget.index!);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: KWidgetsCustomAppBar(
-          title: "${surahs![index!].englishTransliterationName}",
+          title: "${widget.surahs![widget.index!].englishTransliterationName}",
         ),
         body: Container(
             child: Container(
@@ -41,20 +53,25 @@ class SurahIndexScreen extends StatelessWidget {
                     return [
                       AyahDetail(
                         size: size,
-                        ayahEnglishName: surahs![index!].englishName,
-                        ayahTransliterationName: surahs![index!].englishName,
-                        ayahName: surahs![index!].arabicName,
-                        ayahIndex: surahs![index!].number,
-                        numberOfAyah: surahs![index!].ayahs!.length,
-                        revelationType: surahs![index!].revelationType,
-                        ayahArabicName: surahs![index!].arabicName,
+                        ayahEnglishName:
+                            widget.surahs![widget.index!].englishName,
+                        ayahTransliterationName:
+                            widget.surahs![widget.index!].englishName,
+                        ayahName: widget.surahs![widget.index!].arabicName,
+                        ayahIndex: widget.surahs![widget.index!].number,
+                        numberOfAyah:
+                            widget.surahs![widget.index!].ayahs!.length,
+                        revelationType:
+                            widget.surahs![widget.index!].revelationType,
+                        ayahArabicName:
+                            widget.surahs![widget.index!].arabicName,
                       )
                     ];
                   },
                   body: Container(
                     child: ListView.builder(
                         physics: BouncingScrollPhysics(),
-                        itemCount: ayahArabicText!.length,
+                        itemCount: widget.ayahArabicText!.length,
                         itemBuilder: (context, index) {
                           return Builder(builder: (context) {
                             Provider.of<SurahProvider>(context, listen: true);
@@ -110,7 +127,7 @@ class SurahIndexScreen extends StatelessWidget {
                                                         .primaryColor,
                                                 child: Center(
                                                   child: Text(
-                                                    "${ayahEnglishText![index].ayahIndex}",
+                                                    "${widget.ayahEnglishText![index].ayahIndex}",
                                                     style: Theme.of(context)
                                                         .textTheme
                                                         .bodyMedium!
@@ -138,9 +155,9 @@ class SurahIndexScreen extends StatelessWidget {
                                                   imgPath: KIcons.copyIcon,
                                                   onTap: () {
                                                     KFunctions.copy(
-                                                        '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
+                                                        '${widget.ayahArabicText![index].ayahText} \n ${widget.ayahEnglishText![index].ayahText}',
                                                         'Quran ${index + 1}',
-                                                        'v${ayahEnglishText![index].ayahIndex}',
+                                                        'v${widget.ayahEnglishText![index].ayahIndex}',
                                                         context);
                                                   },
                                                 ),
@@ -148,9 +165,9 @@ class SurahIndexScreen extends StatelessWidget {
                                                     imgPath: KIcons.shareIcon,
                                                     onTap: () {
                                                       KFunctions.share(
-                                                          '${ayahArabicText![index].ayahText} \n ${ayahEnglishText![index].ayahText}',
+                                                          '${widget.ayahArabicText![index].ayahText} \n ${widget.ayahEnglishText![index].ayahText}',
                                                           'Quran ${index + 1}',
-                                                          'v${ayahEnglishText![index].ayahIndex}');
+                                                          'v${widget.ayahEnglishText![index].ayahIndex}');
                                                       // _functions.showToast(context);
                                                     }),
                                                 icons(
@@ -184,7 +201,7 @@ class SurahIndexScreen extends StatelessWidget {
                                     padding:
                                         EdgeInsets.only(right: 9, left: 10),
                                     child: Text(
-                                      "ََ${ayahArabicText![index].ayahText}",
+                                      "ََ${widget.ayahArabicText![index].ayahText}",
                                       textAlign: TextAlign.right,
                                       style: Theme.of(context)
                                           .textTheme
@@ -240,7 +257,7 @@ class SurahIndexScreen extends StatelessWidget {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                "${ayahEnglishText![index].ayahText}",
+                                                "${widget.ayahEnglishText![index].ayahText}",
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodyMedium!

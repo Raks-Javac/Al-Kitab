@@ -21,11 +21,12 @@ class JuzList extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Container(
         margin: EdgeInsets.only(bottom: 30),
         child: AnimationLimiter(
           child: GridView.count(
+            physics: BouncingScrollPhysics(),
             crossAxisCount: columnCount,
             children: List.generate(
               30,
@@ -47,7 +48,12 @@ class JuzList extends StatelessWidget {
                               child: Text(
                                 "${index + 1}",
                                 style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
+                                  fontSize: 20,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .color,
+                                ),
                               ),
                             ),
                             Shimmer.fromColors(

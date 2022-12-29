@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'locator.dart';
 import 'src/core/navigation/navigation_1.0.dart';
 import 'src/core/utils/constants.dart';
+import 'src/core/utils/functions.dart';
 import 'src/features/quran/juz/juz.dart';
 import 'src/features/quran/sajda/sajda.dart';
 import 'src/features/quran/surah/views/surahList.dart';
@@ -48,6 +49,7 @@ class _AlKitabAppState extends State<AlKitabApp> {
         await surahLoader.loadSurahJson('surahArabic.json');
     KAppConstants.surahEnglishList =
         await surahLoader.loadSurahJson('surahEnglish.json');
+    logConsole(KAppConstants.surahArabicList);
   }
 
   @override

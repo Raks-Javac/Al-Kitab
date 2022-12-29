@@ -41,6 +41,7 @@ class _SajdaListState extends State<SajdaList> {
       padding: EdgeInsets.only(bottom: 10),
       child: AnimationLimiter(
         child: ListView.builder(
+            physics: BouncingScrollPhysics(),
             itemCount: KAppConstants.sajdaEnglishList!.sajdas!.length,
             itemBuilder: (context, index) {
               return AnimationConfiguration.staggeredList(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/navigation/navigation_1.0.dart';
 import '../../../core/utils/constants.dart';
 import '../../../core/utils/enums.dart';
+import '../../../core/utils/functions.dart';
 import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/res.dart';
 import '../../../shared/widgets/app_bar/custom_app_bar.dart';
@@ -115,13 +116,24 @@ class SettingsTitleObject {
       SettingsTitleObject(
           tileTitle: "Share Al - kitab to a Friend",
           iconPath: KIcons.shareIcon,
-          onTap: () {}),
+          onTap: () {
+            KFunctions.share(
+                'Dont have an offline quran reading app yet? ,\n Download Al-Kitab from the goggle playstore https://play.google.com/store/apps/details?id=com.rj.al_kitab ',
+                '',
+                '');
+          }),
       SettingsTitleObject(
           tileTitle: "Leave a Review",
           iconPath: KIcons.leaveReviewIcon,
-          onTap: () {}),
+          onTap: () {
+            KFunctions.inAppReviewKitab();
+          }),
       SettingsTitleObject(
-          tileTitle: "Contact Us", iconPath: KIcons.phoneIcon, onTap: () {}),
+          tileTitle: "Contact Us",
+          iconPath: KIcons.phoneIcon,
+          onTap: () {
+            KFunctions.contactUsThroughMail("rufaikudus2014@gmail.com");
+          }),
       SettingsTitleObject(
           tileTitle: "Meet The Team",
           iconPath: KIcons.meetTeamIcon,

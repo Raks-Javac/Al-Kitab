@@ -1,11 +1,12 @@
-import 'package:Al_Kitab/src/animations/TransitionAnimation.dart';
-import 'package:Al_Kitab/src/animations/fadeFromBottom.dart';
-import 'package:Al_Kitab/src/models/appTexts/preview.dart';
-import 'package:Al_Kitab/src/features/homeScreen/views/alKitabHome.dart';
-import 'package:Al_Kitab/src/features/introduction/Introduction.dart';
-import 'package:Al_Kitab/src/shared/res/stylesheet/splashPreviewstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../animations/TransitionAnimation.dart';
+import '../../animations/fadeFromBottom.dart';
+import '../../models/appTexts/preview.dart';
+import '../../shared/res/stylesheet/splashPreviewstyles.dart';
+import '../dashboard/main_dash.dart';
+import 'Introduction.dart';
 
 class AlKitabIntro extends StatefulWidget {
   AlKitabIntro({Key? key}) : super(key: key);
@@ -357,8 +358,8 @@ class _AlKitabIntroState extends State<AlKitabIntro> {
   }
 
   homeNavigator() {
-    return Navigator.pushReplacement(
-        context, PreviewSlideRoute(preview: AlKitabHomeView(), duration: 500));
+    return Navigator.pushReplacement(context,
+        PreviewSlideRoute(preview: MainDashBoardView(), duration: 500));
   }
 
   @override

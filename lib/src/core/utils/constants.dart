@@ -7,5 +7,7 @@ class KAppConstants {
   static SurahL? surahEnglishList;
   static SurahL? surahArabicList;
   static SajdaL? sajdaEnglishList;
+  static int? randomSurahIndex;
+   static int? randomAyahIndex;
   static SajdaL? sajdaArabicList;
 }
