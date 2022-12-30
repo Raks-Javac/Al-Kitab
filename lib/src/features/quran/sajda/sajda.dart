@@ -38,7 +38,7 @@ class _SajdaListState extends State<SajdaList> {
 
   Widget futureWidget() {
     return Container(
-      padding: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 100),
       child: AnimationLimiter(
         child: ListView.builder(
             physics: BouncingScrollPhysics(),

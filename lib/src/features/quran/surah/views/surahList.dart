@@ -33,7 +33,7 @@ class SurahListState extends State<SurahList> {
 
   Widget futureWidget() {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 100),
       child: AnimationLimiter(
         child: ListView.builder(
             physics: BouncingScrollPhysics(),
