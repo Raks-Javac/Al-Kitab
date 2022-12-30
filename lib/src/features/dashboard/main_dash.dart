@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/utils/constants.dart';
+import '../../core/utils/enums.dart';
 import '../../shared/render/render_svg.dart';
 import '../../shared/res/res.dart';
 import '../homeScreen/views/alKitabHome.dart';
@@ -74,7 +76,10 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         Container(
                           decoration: BoxDecoration(
                             color: _tabController.index == 0
-                                ? Theme.of(context).primaryColor
+                                ? KAppConstants.appThemeEnum ==
+                                        AppThemeEnum.whiteMode
+                                    ? KColors.primaryColor
+                                    : Theme.of(context).primaryColor
                                 : KColors.whiteColor,
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -110,7 +115,10 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         Container(
                           decoration: BoxDecoration(
                             color: _tabController.index == 1
-                                ? Theme.of(context).primaryColor
+                                ? KAppConstants.appThemeEnum ==
+                                        AppThemeEnum.whiteMode
+                                    ? KColors.primaryColor
+                                    : Theme.of(context).primaryColor
                                 : KColors.whiteColor,
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -146,7 +154,10 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                         Container(
                           decoration: BoxDecoration(
                             color: _tabController.index == 2
-                                ? Theme.of(context).primaryColor
+                                ? KAppConstants.appThemeEnum ==
+                                        AppThemeEnum.whiteMode
+                                    ? KColors.primaryColor
+                                    : Theme.of(context).primaryColor
                                 : KColors.whiteColor,
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -171,7 +182,7 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(
-                                  color: KColors.black,
+                                  color: KColors.primaryColor,
                                 ),
                           )
                       ],
