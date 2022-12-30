@@ -13,7 +13,7 @@ class BarText extends StatelessWidget {
     return Text(
       appBarText!,
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-            fontSize: 22.sp,
+            fontSize: 17.sp,
           ),
     );
   }

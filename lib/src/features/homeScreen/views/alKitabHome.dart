@@ -121,6 +121,72 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                   ),
                 ),
               ),
+              addVerticalSpaing(4),
+              Consumer<HomeProvider>(builder: (context, vModel, _) {
+                final surahLastReadIndex = vModel.savedSurahIndex;
+                return vModel.savedSurahIndex != null
+                    ? Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 15,
+                          vertical: 15,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Last Read:",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    fontSize: 12.sp,
+                                    fontFamily:
+                                        KTypography.regularFontFamilyName,
+                                    color: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .color!
+                                        .withOpacity(0.96),
+                                  ),
+                            ),
+                            addVerticalSpaing(10),
+                            AyahTile(
+                              ayahArabicName: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex!].arabicName,
+                              ayahEnglishName: KAppConstants
+                                  .surahArabicList!
+                                  .surahs![surahLastReadIndex]
+                                  .englishTransliterationName,
+                              ayahIndex: surahLastReadIndex + 1,
+                              ayahName: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex].englishName,
+                              numberOfAyah: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex].ayahs!.length,
+                              revelationType: KAppConstants.surahArabicList!
+                                  .surahs![surahLastReadIndex].revelationType,
+                              onTap: () {
+                                KNavigator.navigateToRoute(
+                                  SurahIndexScreen(
+                                    index: surahLastReadIndex,
+                                    surahs:
+                                        KAppConstants.surahArabicList!.surahs,
+                                    ayahArabicText: KAppConstants
+                                        .surahArabicList!
+                                        .surahs![surahLastReadIndex]
+                                        .ayahs,
+                                    ayahEnglishText: KAppConstants
+                                        .surahEnglishList!
+                                        .surahs![surahLastReadIndex]
+                                        .ayahs,
+                                  ),
+                                );
+                              },
+                            )
+                          ],
+                        ),
+                      )
+                    : SizedBox.shrink();
+              }),
               addVerticalSpaing(5),
               if (KAppConstants.surahArabicList != null &&
                   KAppConstants.surahEnglishList != null)
@@ -140,13 +206,13 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(
-                                  fontSize: 16.sp,
-                                  fontFamily: KTypography.normalFontFamilyName,
+                                  fontSize: 12.sp,
+                                  fontFamily: KTypography.regularFontFamilyName,
                                   color: Theme.of(context)
                                       .textTheme
                                       .bodyMedium!
                                       .color!
-                                      .withOpacity(0.5),
+                                      .withOpacity(0.96),
                                 ),
                           ),
                           addVerticalSpaing(10),
@@ -233,76 +299,11 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                     ),
                   ],
                 ),
-              addVerticalSpaing(4),
-              Consumer<HomeProvider>(builder: (context, vModel, _) {
-                final surahLastReadIndex = vModel.savedSurahIndex;
-                return vModel.savedSurahIndex != null
-                    ? Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 15,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Last Read:",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    fontSize: 16.sp,
-                                    fontFamily:
-                                        KTypography.normalFontFamilyName,
-                                    color: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .color!
-                                        .withOpacity(0.5),
-                                  ),
-                            ),
-                            addVerticalSpaing(10),
-                            AyahTile(
-                              ayahArabicName: KAppConstants.surahArabicList!
-                                  .surahs![surahLastReadIndex!].arabicName,
-                              ayahEnglishName: KAppConstants
-                                  .surahArabicList!
-                                  .surahs![surahLastReadIndex]
-                                  .englishTransliterationName,
-                              ayahIndex: surahLastReadIndex + 1,
-                              ayahName: KAppConstants.surahArabicList!
-                                  .surahs![surahLastReadIndex].englishName,
-                              numberOfAyah: KAppConstants.surahArabicList!
-                                  .surahs![surahLastReadIndex].ayahs!.length,
-                              revelationType: KAppConstants.surahArabicList!
-                                  .surahs![surahLastReadIndex].revelationType,
-                              onTap: () {
-                                KNavigator.navigateToRoute(
-                                  SurahIndexScreen(
-                                    index: surahLastReadIndex,
-                                    surahs:
-                                        KAppConstants.surahArabicList!.surahs,
-                                    ayahArabicText: KAppConstants
-                                        .surahArabicList!
-                                        .surahs![surahLastReadIndex]
-                                        .ayahs,
-                                    ayahEnglishText: KAppConstants
-                                        .surahEnglishList!
-                                        .surahs![surahLastReadIndex]
-                                        .ayahs,
-                                  ),
-                                );
-                              },
-                            )
-                          ],
-                        ),
-                      )
-                    : SizedBox.shrink();
-              }),
               Container(
-                margin: EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 15,
+                margin: EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                  bottom: 15,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -310,16 +311,15 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                     Text(
                       "Daily Reminder",
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontSize: 16.sp,
-                            fontFamily: KTypography.normalFontFamilyName,
+                            fontSize: 12.sp,
+                            fontFamily: KTypography.regularFontFamilyName,
                             color: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
                                 .color!
-                                .withOpacity(0.5),
+                                .withOpacity(0.96),
                           ),
                     ),
-                    addVerticalSpaing(10),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(

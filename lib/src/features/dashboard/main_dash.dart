@@ -57,8 +57,8 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                 ],
                 color: KColors.whiteColor,
               ),
-              padding: EdgeInsets.only(left: 10, right: 10, top: 5),
-              height: 75,
+              padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
+              height: 90,
               child: TabBar(
                   isScrollable: false,
                   onTap: (value) {

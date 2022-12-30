@@ -58,7 +58,7 @@ class AyahTile extends StatelessWidget {
                   "$ayahEnglishName",
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         fontFamily: KTypography.regularFontFamilyName,
-                        fontSize: 14.sp,
+                        fontSize: 12.5.sp,
                       ),
                 ),
                 subtitle: Text(
