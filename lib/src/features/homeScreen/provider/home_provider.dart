@@ -57,7 +57,6 @@ class HomeProvider extends ChangeNotifier {
       KAppConstants.surahEnglishList =
           await surahLoader.loadSurahJson('surahEnglish.json');
 
-      notifyListeners();
       logConsole(KAppConstants.surahArabicList);
     }
   }
