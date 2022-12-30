@@ -114,8 +114,8 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                                 : KColors.whiteColor,
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          width: _tabController.index == 1 ? 50 : 55,
-                          height: _tabController.index == 1 ? 40 : 45,
+                          width: _tabController.index == 1 ? 55 : 60,
+                          height: _tabController.index == 1 ? 45 : 50,
                           child: Padding(
                             padding: const EdgeInsets.all(9.5),
                             child: RenderSvg(
@@ -123,8 +123,8 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                               color: _tabController.index == 1
                                   ? KColors.whiteColor
                                   : Theme.of(context).primaryColor,
-                              svgHeight: 12,
-                              svgWidth: 12,
+                              svgHeight: 14,
+                              svgWidth: 14,
                             ),
                           ),
                         ),
