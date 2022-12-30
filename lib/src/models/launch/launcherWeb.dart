@@ -7,7 +7,6 @@ class Url {
 
 class Launcher extends Model {
   void _launchInWeb(String url) async {
-    final _url = Url(url: url);
     try {
       // if (await canLaunch(_url.url)) {
       //   await launch(
