@@ -8,7 +8,6 @@ import '../../../core/navigation/navigation_1.0.dart';
 import '../../../core/utils/constants.dart';
 import '../../../core/utils/date_formatter.dart';
 import '../../../core/utils/enums.dart';
-import '../../../core/utils/functions.dart';
 import '../../../models/surah/surah.dart';
 import '../../../shared/render/render_svg.dart';
 import '../../../shared/res/assets.dart';
@@ -39,20 +38,8 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
   @override
   void initState() {
     context.read<HomeProvider>().loadInitState();
-    loadData();
+
     super.initState();
-  }
-
-  loadData() async {
-    if (KAppConstants.surahArabicList == null &&
-        KAppConstants.surahEnglishList == null) {
-      KAppConstants.surahArabicList =
-          await surahLoader.loadSurahJson('surahArabic.json');
-      KAppConstants.surahEnglishList =
-          await surahLoader.loadSurahJson('surahEnglish.json');
-
-      logConsole(KAppConstants.surahArabicList);
-    }
   }
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();

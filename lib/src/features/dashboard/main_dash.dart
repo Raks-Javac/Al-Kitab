@@ -37,16 +37,13 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
             controller: _tabController,
             children: [
               AlKitabHomeView(),
-              QuranMainView(
-                
-              ),
+              QuranMainView(),
               SettingsMainView(),
             ]),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              margin: EdgeInsets.all(30),
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -56,16 +53,10 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                     color: KColors.grey.withOpacity(0.4),
                   )
                 ],
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
                 color: KColors.whiteColor,
               ),
-              padding: EdgeInsets.all(10),
-              height: 70,
+              padding: EdgeInsets.only(left: 10, right: 10, top: 5),
+              height: 75,
               child: TabBar(
                   isScrollable: false,
                   onTap: (value) {
@@ -77,68 +68,113 @@ class _MainDashBoardViewState extends State<MainDashBoardView>
                   indicatorWeight: 0.02,
                   controller: _tabController,
                   tabs: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: _tabController.index == 0
-                            ? Theme.of(context).primaryColor
-                            : KColors.whiteColor,
-                        borderRadius: BorderRadius.circular(200),
-                      ),
-                      width: 80,
-                      height: 80,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: RenderSvg(
-                          svgPath: KIcons.homeIcon,
-                          color: _tabController.index == 0
-                              ? KColors.whiteColor
-                              : Theme.of(context).primaryColor,
-                          svgHeight: 15,
-                          svgWidth: 15,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: _tabController.index == 0
+                                ? Theme.of(context).primaryColor
+                                : KColors.whiteColor,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          width: _tabController.index == 0 ? 50 : 55,
+                          height: _tabController.index == 0 ? 40 : 45,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.5),
+                            child: RenderSvg(
+                              svgPath: KIcons.homeIcon,
+                              color: _tabController.index == 0
+                                  ? KColors.whiteColor
+                                  : Theme.of(context).primaryColor,
+                              svgHeight: 12,
+                              svgWidth: 12,
+                            ),
+                          ),
                         ),
-                      ),
+                        if (_tabController.index == 0)
+                          Text(
+                            "Home",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: KColors.black,
+                                ),
+                          )
+                      ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: _tabController.index == 1
-                            ? Theme.of(context).primaryColor
-                            : KColors.whiteColor,
-                        borderRadius: BorderRadius.circular(200),
-                      ),
-                      width: 80,
-                      height: 80,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: RenderSvg(
-                          svgPath: KIcons.readIcon,
-                          color: _tabController.index == 1
-                              ? KColors.whiteColor
-                              : Theme.of(context).primaryColor,
-                          svgHeight: 15,
-                          svgWidth: 15,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: _tabController.index == 1
+                                ? Theme.of(context).primaryColor
+                                : KColors.whiteColor,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          width: _tabController.index == 1 ? 50 : 55,
+                          height: _tabController.index == 1 ? 40 : 45,
+                          child: Padding(
+                            padding: const EdgeInsets.all(9.5),
+                            child: RenderSvg(
+                              svgPath: KIcons.readIcon,
+                              color: _tabController.index == 1
+                                  ? KColors.whiteColor
+                                  : Theme.of(context).primaryColor,
+                              svgHeight: 12,
+                              svgWidth: 12,
+                            ),
+                          ),
                         ),
-                      ),
+                        if (_tabController.index == 1)
+                          Text(
+                            "Quran",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: KColors.black,
+                                ),
+                          )
+                      ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: _tabController.index == 2
-                            ? Theme.of(context).primaryColor
-                            : KColors.whiteColor,
-                        borderRadius: BorderRadius.circular(200),
-                      ),
-                      width: 80,
-                      height: 80,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: RenderSvg(
-                          svgPath: KIcons.settingsIcon,
-                          color: _tabController.index == 2
-                              ? KColors.whiteColor
-                              : Theme.of(context).primaryColor,
-                          svgHeight: 15,
-                          svgWidth: 15,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: _tabController.index == 2
+                                ? Theme.of(context).primaryColor
+                                : KColors.whiteColor,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          width: _tabController.index == 2 ? 50 : 55,
+                          height: _tabController.index == 2 ? 40 : 45,
+                          child: Padding(
+                            padding: const EdgeInsets.all(9.5),
+                            child: RenderSvg(
+                              svgPath: KIcons.settingsIcon,
+                              color: _tabController.index == 2
+                                  ? KColors.whiteColor
+                                  : Theme.of(context).primaryColor,
+                              svgHeight: 12,
+                              svgWidth: 12,
+                            ),
+                          ),
                         ),
-                      ),
+                        if (_tabController.index == 2)
+                          Text(
+                            "Settings",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: KColors.black,
+                                ),
+                          )
+                      ],
                     ),
                   ]),
             ),

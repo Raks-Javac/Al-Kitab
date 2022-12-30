@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -24,22 +22,6 @@ class HomeProvider extends ChangeNotifier {
   static Future<int?> getInitialIndexFromStore() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getInt(savedIndexKey);
-  }
-
-  loadIndex() {
-    if (KAppConstants.surahArabicList != null ||
-        KAppConstants.surahEnglishList != null) {
-      if (KAppConstants.randomAyahIndex == null ||
-          KAppConstants.randomSurahIndex == null) {
-        KAppConstants.randomSurahIndex =
-            Random().nextInt(KAppConstants.surahEnglishList!.surahs!.length);
-        KAppConstants.randomAyahIndex = Random().nextInt(KAppConstants
-            .surahEnglishList!
-            .surahs![KAppConstants.randomSurahIndex!]
-            .ayahs!
-            .length);
-      }
-    }
   }
 
   saveKeyToStore(int index) async {
