@@ -6,12 +6,8 @@ import 'package:provider/provider.dart';
 
 import 'locator.dart';
 import 'src/core/navigation/navigation_1.0.dart';
-import 'src/core/utils/constants.dart';
-import 'src/core/utils/functions.dart';
 import 'src/features/settings/theme/provider/theme_provider.dart';
 import 'src/features/splashScreen/splashScreen.dart';
-import 'src/models/sajda/sajda.dart';
-import 'src/models/surah/surah.dart';
 import 'src/shared/res/res.dart';
 
 void main() async {
@@ -24,32 +20,7 @@ void main() async {
 }
 
 //This returns a moterial App
-class AlKitabApp extends StatefulWidget {
-  @override
-  State<AlKitabApp> createState() => _AlKitabAppState();
-}
-
-class _AlKitabAppState extends State<AlKitabApp> {
-  final surahLoader = new SurahModel();
-  final _sajda = SajdaModel();
-  @override
-  void initState() {
-    loadData();
-    super.initState();
-  }
-
-  loadData() async {
-    KAppConstants.sajdaArabicList =
-        await _sajda.loadSajdaJson('sajdaArabic.json');
-    KAppConstants.sajdaEnglishList =
-        await _sajda.loadSajdaJson('sajdaEnglish.json');
-    KAppConstants.surahArabicList =
-        await surahLoader.loadSurahJson('surahArabic.json');
-    KAppConstants.surahEnglishList =
-        await surahLoader.loadSurahJson('surahEnglish.json');
-    logConsole(KAppConstants.surahArabicList);
-  }
-
+class AlKitabApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

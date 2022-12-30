@@ -5,6 +5,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../animations/FadeInAnimation.dart';
 import '../../core/navigation/navigation_1.0.dart';
+import '../../core/utils/constants.dart';
+import '../../core/utils/functions.dart';
+import '../../models/sajda/sajda.dart';
+import '../../models/surah/surah.dart';
 import '../dashboard/main_dash.dart';
 import '../introduction/intro.dart';
 
@@ -19,24 +23,47 @@ class AlKitabSplashScreen extends StatefulWidget {
 
 class _AlKitabSplashScreenState extends State<AlKitabSplashScreen> {
   double seconds = 3;
+  final _sajda = SajdaModel();
   @override
   void initState() {
     super.initState();
     splashTimer();
   }
 
+  final surahLoader = new SurahModel();
+
+  Future<bool> loadData() async {
+    KAppConstants.surahArabicList =
+        await surahLoader.loadSurahJson('surahArabic.json');
+    KAppConstants.surahEnglishList =
+        await surahLoader.loadSurahJson('surahEnglish.json');
+
+    KAppConstants.sajdaArabicList =
+        await _sajda.loadSajdaJson('sajdaArabic.json');
+    KAppConstants.sajdaEnglishList =
+        await _sajda.loadSajdaJson('sajdaEnglish.json');
+
+    logConsole(KAppConstants.surahArabicList);
+
+    return KAppConstants.surahArabicList == null &&
+        KAppConstants.surahEnglishList == null &&
+        KAppConstants.surahArabicList == null &&
+        KAppConstants.sajdaEnglishList == null;
+  }
+
   checkForOnBoard() async {
     // Obtain shared preferences.
     final prefs = await SharedPreferences.getInstance();
-
-    final bool? onBoarded = prefs.getBool(checkForOnBoardKey);
-    if (onBoarded == true) {
-      KNavigator.navigateAndRemoveUntilRoute(MainDashBoardView());
-    } else {
-      KNavigator.navigateAndRemoveUntilRoute(AlKitabIntroView());
-    }
-    // Save an boolean value to []' key.
-    await prefs.setBool(checkForOnBoardKey, true);
+    loadData().then((value) async {
+      final bool? onBoarded = prefs.getBool(checkForOnBoardKey);
+      if (onBoarded == true) {
+        KNavigator.navigateAndRemoveUntilRoute(MainDashBoardView());
+      } else {
+        KNavigator.navigateAndRemoveUntilRoute(AlKitabIntroView());
+      }
+      // Save an boolean value to []' key.
+      await prefs.setBool(checkForOnBoardKey, true);
+    });
   }
 
   Timer splashTimer() {

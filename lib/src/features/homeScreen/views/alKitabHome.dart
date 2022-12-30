@@ -22,6 +22,11 @@ import 'drawer.dart';
 final dailyRemainderObjectList = DailyReminderObject().dailyReminderList();
 final randomIndexForDailyRemainder =
     Random().nextInt(dailyRemainderObjectList.length);
+final randomeDailyVerseIndexForSurah = Random()
+    .nextInt(Random().nextInt(KAppConstants.surahEnglishList!.surahs!.length));
+final randomeDailyVerseIndexForAyah = Random().nextInt(Random().nextInt(
+    KAppConstants.surahEnglishList!.surahs![randomeDailyVerseIndexForSurah]
+        .ayahs!.length));
 
 class AlKitabHomeView extends StatefulWidget {
   @override
@@ -117,55 +122,99 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                 ),
               ),
               addVerticalSpaing(5),
-              if (KAppConstants.surahArabicList != null ||
+              if (KAppConstants.surahArabicList != null &&
                   KAppConstants.surahEnglishList != null)
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 15,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Daily verse:",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              fontSize: 16.sp,
-                              fontFamily: KTypography.normalFontFamilyName,
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .color!
-                                  .withOpacity(0.5),
-                            ),
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 15,
                       ),
-                      addVerticalSpaing(10),
-                      Consumer<HomeProvider>(builder: (context, vModel, _) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(16),
-                            ),
-                            image: DecorationImage(
-                              image: AssetImage(
-                                KAssets.dailyVerseBackground,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Daily verse:",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  fontSize: 16.sp,
+                                  fontFamily: KTypography.normalFontFamilyName,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .color!
+                                      .withOpacity(0.5),
+                                ),
+                          ),
+                          addVerticalSpaing(10),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(16),
                               ),
-                              fit: BoxFit.cover,
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  KAssets.dailyVerseBackground,
+                                ),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(17.0),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      KAppConstants
-                                          .surahEnglishList!
-                                          .surahs![vModel.savedSurahIndex!]
-                                          .englishTransliterationName!,
+                            child: Padding(
+                              padding: const EdgeInsets.all(17.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        KAppConstants
+                                            .surahEnglishList!
+                                            .surahs![
+                                                randomeDailyVerseIndexForSurah]
+                                            .englishTransliterationName!,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              color: KColors.whiteColor,
+                                              fontSize: 15.sp,
+                                            ),
+                                      ),
+                                      Text(
+                                        "Verse ${KAppConstants.surahEnglishList!.surahs![randomeDailyVerseIndexForSurah].ayahs![randomeDailyVerseIndexForAyah].ayahIndex}",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              color: KColors.whiteColor,
+                                              fontSize: 15.sp,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                  addVerticalSpaing(12),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Text(
+                                      "َ${KAppConstants.surahArabicList!.surahs![randomeDailyVerseIndexForSurah].ayahs![randomeDailyVerseIndexForAyah].ayahText}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                            color: KColors.whiteColor,
+                                            fontSize: 17.sp,
+                                          ),
+                                    ),
+                                  ),
+                                  addVerticalSpaing(15),
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "َ${KAppConstants.surahEnglishList!.surahs![randomeDailyVerseIndexForSurah].ayahs![randomeDailyVerseIndexForAyah].ayahText}",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
@@ -174,53 +223,15 @@ class _AlKitabHomeViewState extends State<AlKitabHomeView> {
                                             fontSize: 15.sp,
                                           ),
                                     ),
-                                    Text(
-                                      "Verse ${KAppConstants.surahEnglishList!.surahs![vModel.savedSurahIndex!].ayahs![vModel.savedSurahIndex!].ayahIndex}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                            color: KColors.whiteColor,
-                                            fontSize: 15.sp,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                                addVerticalSpaing(12),
-                                Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Text(
-                                    "َ${KAppConstants.surahArabicList!.surahs![vModel.savedSurahIndex!].ayahs![vModel.savedSurahIndex!].ayahText}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                          color: KColors.whiteColor,
-                                          fontSize: 17.sp,
-                                        ),
                                   ),
-                                ),
-                                addVerticalSpaing(15),
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    "َ${KAppConstants.surahEnglishList!.surahs![vModel.savedSurahIndex!].ayahs![vModel.savedSurahIndex!].ayahText}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                          color: KColors.whiteColor,
-                                          fontSize: 15.sp,
-                                        ),
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      })
-                    ],
-                  ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               addVerticalSpaing(4),
               Consumer<HomeProvider>(builder: (context, vModel, _) {

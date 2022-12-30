@@ -47,8 +47,8 @@ class QuranAPI {
         );
       }
       return null;
-    } on Exception catch (SocketException) {
-      print("Unknown exception $SocketException");
+    } on Exception catch (socketException) {
+      print("Unknown exception $socketException");
     } catch (e) {
       print(e);
     }
