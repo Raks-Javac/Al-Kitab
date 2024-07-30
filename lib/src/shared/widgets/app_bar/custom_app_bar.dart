@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'appBarText.dart';
 import 'backHome.dart';
 
-class KWidgetsCustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class KWidgetsCustomAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
   final Widget? leadingIcon;
   final String? title;
   final List<Widget>? trailing;
